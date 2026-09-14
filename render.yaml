@@ -4,6 +4,7 @@ services:
     env: python
     plan: free
     region: ohio
+    pythonVersion: 3.11
 
     # Comando para iniciar a aplicação
     startCommand: "cd cabos-app && uvicorn app.main:app --host 0.0.0.0 --port 8000"
@@ -21,8 +22,6 @@ services:
         value: "production"
       - key: DEBUG
         value: "false"
-      - key: PYTHON_VERSION
-        value: "3.11"
 
 # Banco de dados PostgreSQL
 databases:
