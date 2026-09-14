@@ -1,0 +1,85 @@
+REVISOR DE PDF COM COMENTÁRIOS CLASSIFICADOS
+==============================================
+
+INSTALAÇÃO (fazer uma única vez)
+---------------------------------
+1. Tenha o Python 3 instalado (python.org, marque "Add to PATH" na instalação).
+2. Abra o terminal/prompt de comando na pasta onde estão estes arquivos.
+3. Rode:
+   pip install -r requirements.txt
+
+   Se der erro de permissão, tente:
+   pip install -r requirements.txt --break-system-packages
+   ou
+   pip install -r requirements.txt --user
+
+
+COMO USAR
+---------
+1. Rode o programa:
+   python revisor_pdf.py
+
+2. Clique em "Abrir PDF" e selecione o documento a revisar.
+   -> Uma janela pedirá os dados gerais: código do documento, elaborado por,
+      data de elaboração, verificado por, data de verificação.
+      (Pode editar depois pelo botão "Dados do documento".)
+
+3. Clique em qualquer ponto da página do PDF para inserir um comentário
+   naquele local. Escolha a classificação na lista e digite o texto.
+
+4. Os comentários aparecem:
+   - Como um marcador numerado (círculo amarelo) na própria página.
+   - Na lista à direita, onde dá para dar duplo clique para editar,
+     selecionar e excluir, ou usar "Ir até" para pular até a página dele.
+
+5. Use "Zoom +/-" e as setas "◀ Página / Página ▶" (ou as teclas de
+   seta do teclado) para navegar pelo documento.
+
+6. Quando terminar a revisão:
+   - "Salvar PDF com comentários" -> gera um PDF novo com todos os
+     comentários inseridos como anotações reais (aparecem no Adobe
+     Reader, Preview, navegador etc. como comentários clicáveis).
+   - "Exportar Excel" -> gera uma planilha .xlsx com:
+       Aba "Comentários": lista completa (nº, página, classificação,
+         texto, data) + dados do documento no topo.
+       Aba "Resumo": quantidade de erros por classificação, com todas
+         as 23 categorias listadas (mesmo as com zero ocorrências) e
+         um gráfico de barras.
+
+7. "Salvar projeto" / "Abrir projeto": salva o trabalho em um arquivo
+   .json para continuar depois sem perder os comentários já inseridos
+   (útil se a revisão for longa e você quiser pausar).
+
+
+PERSONALIZANDO AS CATEGORIAS
+-----------------------------
+As 23 categorias de classificação estão no início do arquivo
+revisor_pdf.py, na lista CLASSIFICACOES. Para adicionar, remover ou
+renomear uma categoria, edite essa lista diretamente (entre aspas,
+separadas por vírgula) e salve o arquivo.
+
+
+OPACIDADE DE BORDA E PREENCHIMENTO (Retângulo/Elipse/Nuvem)
+-------------------------------------------------------------
+O formato de anotação do PDF só permite UM valor de opacidade (/CA) por
+anotação — não existe um campo nativo separado para a opacidade da borda e a
+opacidade do preenchimento na mesma marcação. Por isso, os controles de
+"Opacidade da borda" e "Opacidade do preenchimento" do programa usam a
+abordagem pragmática combinada (alpha blend): a cor escolhida é misturada
+matematicamente com o branco na proporção equivalente à opacidade pedida
+(ex.: vermelho a 30% de opacidade vira uma cor sólida bem mais clara), e essa
+cor já "clareada" é aplicada como cor sólida normal na anotação. O resultado
+visual é equivalente ao de uma opacidade real sobre fundo branco, mas não é
+uma transparência de verdade (não deixa ver o que está por trás caso haja
+outra marcação sobreposta, por exemplo). Essa lógica está na função
+`cor_com_opacidade_simulada()` em revisor_pdf.py.
+
+
+DÚVIDAS COMUNS
+---------------
+- "ModuleNotFoundError: fitz" -> rode novamente o pip install do passo 1.
+- A janela não abre / erro de "Tkinter" -> no Linux, instale com
+  o gerenciador de pacotes: sudo apt install python3-tk
+  (no Windows e Mac o Tkinter já vem com o Python).
+- PDFs muito grandes podem demorar alguns segundos para renderizar
+  cada página — isso é normal.

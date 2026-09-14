@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m py_compile revisor_pdf.py)",
+      "Bash(py -3 test_marcacoes.py)",
+      "Bash(py -3 -m py_compile revisor_pdf.py)",
+      "Bash(py -3 -c ' *)",
+      "Bash(py -3 -c \"import sv_ttk; print\\('sv_ttk OK', sv_ttk.__file__\\)\")",
+      "Bash(py -3 -c \"from PIL import Image, ImageDraw, ImageFont; im=Image.new\\('RGBA',\\(10,10\\)\\); d=ImageDraw.Draw\\(im\\); print\\(hasattr\\(d,'rounded_rectangle'\\)\\)\")",
+      "Bash(py -3 -m pip install --quiet sv-ttk)",
+      "Bash(py -3 -c \"import sv_ttk; print\\('sv_ttk OK version dir:', dir\\(sv_ttk\\)\\)\")",
+      "Bash(py -3 test_parte2.py)",
+      "Bash(py -3 test_parte3_excel.py)",
+      "Bash(py -3 test_parte4.py)",
+      "Bash(py -3 test_parte5.py)",
+      "Bash(cd \"/c/Users/Rafael Castro/Downloads/files\" && ls -la *.png *.jpg *.jpeg 2>/dev/null; echo \"---downloads---\"; ls -la \"/c/Users/Rafael Castro/Downloads\" 2>/dev/null | grep -i -E \"prevent|logo\" ; echo \"---done---\")",
+      "Bash(find \"/c/Users/Rafael Castro\" -iname \"*prevent*\" -o -iname \"*logo*\" 2>/dev/null | grep -v -E \"AppData/Local/\\(Microsoft|Packages|Temp/claude\\)\" | head -50)",
+      "Read(//c/Users/RAFAEL~1/AppData/Local/Temp/claude/C--Users-Rafael-Castro-Downloads-files/22c6e218-6a8f-4984-ac76-93911b552b98/scratchpad/**)",
+      "Read(//c/Users/RAFAEL~1/AppData/Local/Temp/claude/C--Users-Rafael-Castro-Downloads-files/22c6e218-6a8f-4984-ac76-93911b552b98/**)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(py -3 test_parte6.py)",
+      "Bash(py -3 -c \"from PIL import Image; im=Image.open\\('logo_prevent.png'\\); print\\('tamanho:', im.size, 'modo:', im.mode\\)\")",
+      "Bash(cd /d \"C:\\\\Users\\\\Rafael Castro\\\\Downloads\\\\files\")",
+      "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\extract_tabelas.py\")",
+      "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\parse_tabelas.py\")",
+      "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\parse_tabelas2.py\")",
+      "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\debug_excel.py\")",
+      "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\extract_correto.py\")",
+      "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\extract_final.py\")",
+      "Bash(tee \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\tabelas_extraidas.txt\")",
+      "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\extract_com_colunas_c_e_g.py\")",
+      "Bash(tee \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\dados_completos.txt\")",
+      "Bash(python)",
+      "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\generate_capacidade_dict.py\")",
+      "PowerShell(Stop-Process -Name python -Force -ErrorAction SilentlyContinue)",
+      "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\importar_planilha.py\")",
+      "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\importar_planilha2.py\")",
+      "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\importar_planilha3.py\")"
+    ]
+  }
+}
