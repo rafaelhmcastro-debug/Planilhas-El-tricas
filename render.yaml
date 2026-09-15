@@ -9,8 +9,8 @@ services:
     # Comando para iniciar a aplicação
     startCommand: "cd cabos-app && uvicorn app.main:app --host 0.0.0.0 --port 8000"
 
-    # Comando para instalar dependências
-    buildCommand: "cd cabos-app && pip install -r requirements.txt"
+    # Comando para instalar dependências (especificar caminho completo)
+    buildCommand: "pip install -r cabos-app/requirements.txt"
 
     # Variáveis de ambiente
     envVars:
