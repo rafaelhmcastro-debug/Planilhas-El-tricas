@@ -8,24 +8,40 @@ from sqlalchemy import inspect, text
 from .database import Base
 
 
+def _divergente(insp, tabela):
+    cols_db = {c["name"]: c for c in insp.get_columns(tabela.name)}
+    cols_modelo = {c.name: c for c in tabela.columns}
+    if set(cols_db) != set(cols_modelo):
+        return True
+    return not all(
+        bool(cols_db[n]["nullable"]) == bool(cols_modelo[n].nullable) or cols_modelo[n].primary_key
+        for n in cols_db if n in cols_modelo
+    )
+
+
 def migrate(engine):
     insp = inspect(engine)
     existentes = set(insp.get_table_names())
+    divergentes = [
+        t for t in Base.metadata.sorted_tables
+        if t.name in existentes and _divergente(insp, t)
+    ]
+    if not divergentes:
+        return
+
+    # Recriar a tabela só é seguro no SQLite, onde índices e constraints acompanham
+    # o RENAME. No PostgreSQL eles ficam no schema e colidem ao recriar a tabela.
+    if engine.dialect.name != "sqlite":
+        nomes = ", ".join(t.name for t in divergentes)
+        print(f"AVISO: esquema divergente do modelo em: {nomes}.")
+        print("Ajuste essas tabelas manualmente — a recriação automática só roda em SQLite.")
+        return
+
     with engine.begin() as conn:
-        for tabela in Base.metadata.sorted_tables:
+        for tabela in divergentes:
             nome = tabela.name
-            if nome not in existentes:
-                continue
             cols_db = {c["name"]: c for c in insp.get_columns(nome)}
             cols_modelo = {c.name: c for c in tabela.columns}
-            mesmas_colunas = set(cols_db) == set(cols_modelo)
-            mesma_nulabilidade = all(
-                bool(cols_db[n]["nullable"]) == bool(cols_modelo[n].nullable) or cols_modelo[n].primary_key
-                for n in cols_db if n in cols_modelo
-            )
-            if mesmas_colunas and mesma_nulabilidade:
-                continue
-
             destino = [n for n in cols_modelo if n in cols_db]
             origem = [f'"{n}"' for n in destino]
             # colunas renomeadas entre versões: (coluna nova, expressão SQL sobre a tabela antiga, colunas antigas exigidas)

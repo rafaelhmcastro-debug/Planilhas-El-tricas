@@ -17,6 +17,29 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 UPLOAD_DIR = os.path.join(BASE_DIR, "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
+
+def _criar_admin_padrao(db):
+    admin_existente = obter_usuario_por_username(db, "admin")
+    if admin_existente:
+        return
+
+    print("Criando usuário admin padrão...")
+    criar_usuario(
+        db=db,
+        username="admin",
+        email="admin@example.com",
+        empresa="Administração",
+        senha="admin123",
+        role="admin",
+        ativo=True,
+        aprovado=True
+    )
+    print("✓ Usuário admin criado com sucesso")
+    print("  Username: admin")
+    print("  Senha: admin123")
+    print("  ⚠️ IMPORTANTE: Mude a senha após o primeiro login!")
+
+
 migrate(engine)
 Base.metadata.create_all(bind=engine)
 with SessionLocal() as db:
@@ -42,25 +65,3 @@ app.include_router(relatorios.router)
 
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
 app.mount("/", StaticFiles(directory=STATIC_DIR, html=True), name="static")
-
-
-def _criar_admin_padrao(db):
-    admin_existente = obter_usuario_por_username(db, "admin")
-    if admin_existente:
-        return
-
-    print("Criando usuário admin padrão...")
-    criar_usuario(
-        db=db,
-        username="admin",
-        email="admin@example.com",
-        empresa="Administração",
-        senha="admin123",
-        role="admin",
-        ativo=True,
-        aprovado=True
-    )
-    print("✓ Usuário admin criado com sucesso")
-    print("  Username: admin")
-    print("  Senha: admin123")
-    print("  ⚠️ IMPORTANTE: Mude a senha após o primeiro login!")

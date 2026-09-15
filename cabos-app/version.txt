@@ -1,3 +1,0 @@
-# Version marker for Render deployment
-# Updated: 2026-09-15 13:40 GMT-3
-# Status: EmailStr removed, using str type instead

@@ -22,8 +22,6 @@ services:
         value: "production"
       - key: DEBUG
         value: "false"
-      - key: REBUILD_TRIGGER
-        value: "2026-09-15-rebuild-cache"
 
 # Banco de dados PostgreSQL
 databases:
