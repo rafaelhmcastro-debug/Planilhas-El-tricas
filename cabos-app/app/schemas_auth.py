@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, Field
 from typing import Optional
 from datetime import datetime
 
@@ -16,7 +16,7 @@ class LoginResponse(BaseModel):
 
 class CadastroRequest(BaseModel):
     username: str = Field(..., min_length=3, max_length=50, pattern="^[a-zA-Z0-9_-]+$")
-    email: EmailStr
+    email: str = Field(..., min_length=5)
     empresa: str = Field(..., min_length=1, max_length=100)
     senha: str = Field(..., min_length=8)
     confirmar_senha: str = Field(..., min_length=8)
