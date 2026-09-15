@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Planilhas Elétricas</title>
+    <link rel="stylesheet" href="/css/auth.css?v=1">
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- Logo -->
+            <div class="auth-header">
+                <div class="auth-logo">⚡</div>
+                <h1>Planilhas Elétricas</h1>
+                <p class="auth-subtitle">Cálculo de Cabos e Demanda</p>
+            </div>
+
+            <!-- Form -->
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="username">Usuário</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Digite seu usuário"
+                        required
+                        minlength="3"
+                    >
+                    <span class="error-message" id="usernameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Digite sua senha"
+                            required
+                            minlength="6"
+                        >
+                        <button type="button" class="toggle-password" onclick="togglePassword()">
+                            👁️
+                        </button>
+                    </div>
+                    <span class="error-message" id="senhaError"></span>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="lembrar" name="lembrar">
+                    <label for="lembrar">Lembrar-me</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    <span id="btnText">Entrar</span>
+                    <span id="btnLoading" class="hidden">Entrando...</span>
+                </button>
+
+                <span class="error-message" id="formError"></span>
+            </form>
+
+            <!-- Links -->
+            <div class="auth-footer">
+                <p>Não tem conta? <a href="/cadastro.html" class="link">Criar conta</a></p>
+                <p><a href="#" class="link" onclick="mostrarRecuperaSenha()">Esqueceu a senha?</a></p>
+            </div>
+
+            <!-- Status de Carregamento -->
+            <div id="loadingSpinner" class="hidden">
+                <div class="spinner"></div>
+            </div>
+        </div>
+
+        <!-- Card de Informação -->
+        <div class="info-card">
+            <h3>🔐 Segurança</h3>
+            <p>Sua senha é criptografada e armazenada com segurança.</p>
+            <p>Faça logout após usar em computadores compartilhados.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/auth.js?v=1"></script>
+    <script>
+        // Form submit
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            await fazerLogin();
+        });
+
+        function togglePassword() {
+            const input = document.getElementById('senha');
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+
+        function mostrarRecuperaSenha() {
+            alert('Funcionalidade de recuperação de senha em breve!');
+        }
+    </script>
+</body>
+</html>

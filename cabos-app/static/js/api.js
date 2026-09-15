@@ -1,6 +1,12 @@
 const Api = (() => {
   async function req(method, url, body, isForm) {
     const opts = { method, headers: {} };
+
+    const token = localStorage.getItem('auth_token');
+    if (token) {
+      opts.headers["Authorization"] = `Bearer ${token}`;
+    }
+
     if (body !== undefined) {
       if (isForm) {
         opts.body = body;
@@ -10,6 +16,13 @@ const Api = (() => {
       }
     }
     const resp = await fetch(url, opts);
+
+    if (resp.status === 401) {
+      localStorage.removeItem('auth_token');
+      window.location.href = '/login.html';
+      return;
+    }
+
     if (!resp.ok) {
       let msg = `Erro ${resp.status}`;
       try {

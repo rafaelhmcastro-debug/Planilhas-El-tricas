@@ -1,5 +1,11 @@
 const App = (() => {
   async function init() {
+    const token = localStorage.getItem('auth_token');
+    if (!token) {
+      window.location.href = '/login.html';
+      return;
+    }
+
     try {
       await carregarProjetos();
     } catch (e) {
@@ -32,6 +38,7 @@ const App = (() => {
         ${projetos.map((p) => `<option value="${p.id}" ${ativo && ativo.id === p.id ? "selected" : ""}>${Util.esc(p.numero_projeto)} — ${Util.esc(p.nome_projeto)}</option>`).join("")}
       </select>
       ${ativo ? `<span class="tag">${Util.esc(ativo.revisao || "")}</span>` : ""}
+      <button id="btn-logout" style="margin-left: auto; padding: 6px 12px; background: #ef4444; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">Sair</button>
     `;
     document.getElementById("sel-projeto").addEventListener("change", (e) => {
       const id = Number(e.target.value);
@@ -39,6 +46,12 @@ const App = (() => {
       State.setProjetoAtivo(p);
       renderTopbar();
       irPara(p ? "equipamentos" : "projetos");
+    });
+    document.getElementById("btn-logout").addEventListener("click", () => {
+      if (confirm("Tem certeza que deseja sair?")) {
+        localStorage.removeItem('auth_token');
+        window.location.href = '/login.html';
+      }
     });
   }
 

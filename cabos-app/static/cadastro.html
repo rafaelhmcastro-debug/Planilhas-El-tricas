@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta - Planilhas Elétricas</title>
+    <link rel="stylesheet" href="/css/auth.css?v=1">
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- Logo -->
+            <div class="auth-header">
+                <div class="auth-logo">⚡</div>
+                <h1>Criar Conta</h1>
+                <p class="auth-subtitle">Preencha os dados abaixo</p>
+            </div>
+
+            <!-- Form -->
+            <form id="cadastroForm" class="auth-form">
+                <div class="form-group">
+                    <label for="username">Usuário</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Escolha um usuário"
+                        required
+                        minlength="3"
+                        maxlength="50"
+                        pattern="^[a-zA-Z0-9_-]+$"
+                        title="Use apenas letras, números, - e _"
+                    >
+                    <small class="hint">3-50 caracteres, apenas letras, números, - e _</small>
+                    <span class="error-message" id="usernameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="seu@email.com"
+                        required
+                    >
+                    <small class="hint">Você receberá confirmação neste email</small>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="empresa">Empresa</label>
+                    <input
+                        type="text"
+                        id="empresa"
+                        name="empresa"
+                        placeholder="Nome da sua empresa"
+                        required
+                        minlength="1"
+                        maxlength="100"
+                    >
+                    <span class="error-message" id="empresaError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Escolha uma senha segura"
+                            required
+                            minlength="8"
+                        >
+                        <button type="button" class="toggle-password" onclick="togglePassword('senha')">
+                            👁️
+                        </button>
+                    </div>
+                    <small class="hint">Mínimo 8 caracteres</small>
+                    <div class="password-strength" id="strengthIndicator"></div>
+                    <span class="error-message" id="senhaError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmarSenha">Confirmar Senha</label>
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="confirmarSenha"
+                            name="confirmarSenha"
+                            placeholder="Confirme a senha"
+                            required
+                            minlength="8"
+                        >
+                        <button type="button" class="toggle-password" onclick="togglePassword('confirmarSenha')">
+                            👁️
+                        </button>
+                    </div>
+                    <span class="error-message" id="confirmarSenhaError"></span>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="termos" name="termos" required>
+                    <label for="termos">
+                        Concordo com os <a href="#" class="link-inline">Termos de Uso</a>
+                    </label>
+                    <span class="error-message" id="termosError"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    <span id="btnText">Criar Conta</span>
+                    <span id="btnLoading" class="hidden">Criando...</span>
+                </button>
+
+                <span class="error-message" id="formError"></span>
+                <div id="successMessage" class="success-message hidden">
+                    ✓ Conta criada com sucesso! Aguarde aprovação do administrador.
+                    <br><small>Você receberá um email de confirmação.</small>
+                </div>
+            </form>
+
+            <!-- Links -->
+            <div class="auth-footer">
+                <p>Já tem conta? <a href="/login.html" class="link">Faça login</a></p>
+            </div>
+
+            <!-- Status de Carregamento -->
+            <div id="loadingSpinner" class="hidden">
+                <div class="spinner"></div>
+            </div>
+        </div>
+
+        <!-- Card de Informação -->
+        <div class="info-card">
+            <h3>⏳ Processo de Aprovação</h3>
+            <p><strong>1.</strong> Preencha o formulário</p>
+            <p><strong>2.</strong> Aguarde a aprovação do administrador</p>
+            <p><strong>3.</strong> Receba email de confirmação</p>
+            <p><strong>4.</strong> Faça login com suas credenciais</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/auth.js?v=1"></script>
+    <script>
+        // Form submit
+        document.getElementById('cadastroForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            await fazerCadastro();
+        });
+
+        // Indicador de força de senha
+        document.getElementById('senha').addEventListener('input', (e) => {
+            const force = verificarForcaSenha(e.target.value);
+            const indicator = document.getElementById('strengthIndicator');
+            indicator.className = 'password-strength ' + force.classe;
+            indicator.textContent = force.texto;
+        });
+
+        function togglePassword(fieldId) {
+            const input = document.getElementById(fieldId);
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+
+        function verificarForcaSenha(senha) {
+            let forca = 0;
+            let classe = 'weak';
+            let texto = 'Senha fraca';
+
+            if (senha.length >= 8) forca++;
+            if (senha.length >= 12) forca++;
+            if (/[a-z]/.test(senha) && /[A-Z]/.test(senha)) forca++;
+            if (/[0-9]/.test(senha)) forca++;
+            if (/[!@#$%^&*]/.test(senha)) forca++;
+
+            if (forca >= 4) {
+                classe = 'strong';
+                texto = 'Senha forte ✓';
+            } else if (forca >= 2) {
+                classe = 'medium';
+                texto = 'Senha média';
+            }
+
+            return { forca, classe, texto };
+        }
+    </script>
+</body>
+</html>
