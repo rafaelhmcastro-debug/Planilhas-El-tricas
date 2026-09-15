@@ -11,8 +11,12 @@ from .database import Base
 def migrate(engine):
     insp = inspect(engine)
     existentes = set(insp.get_table_names())
+    is_sqlite = engine.dialect.name == 'sqlite'
+
     with engine.begin() as conn:
-        conn.execute(text("PRAGMA foreign_keys=OFF"))
+        if is_sqlite:
+            conn.execute(text("PRAGMA foreign_keys=OFF"))
+
         for tabela in Base.metadata.sorted_tables:
             nome = tabela.name
             if nome not in existentes:
@@ -45,7 +49,9 @@ def migrate(engine):
                 ))
             conn.execute(text(f'DROP TABLE "{temp}"'))
             _pos_migracao(conn, nome)
-        conn.execute(text("PRAGMA foreign_keys=ON"))
+
+        if is_sqlite:
+            conn.execute(text("PRAGMA foreign_keys=ON"))
 
 
 RENOMEADAS = {
