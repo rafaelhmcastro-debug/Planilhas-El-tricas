@@ -1,0 +1,310 @@
+/* ==================== PERFIL CONTAINER ====================  */
+
+.perfil-container {
+  padding: 20px;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+.perfil-header {
+  margin-bottom: 32px;
+}
+
+.perfil-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.perfil-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ==================== PERFIL GRID ====================  */
+
+.perfil-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.perfil-card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #2563eb;
+}
+
+.perfil-card:nth-child(2) {
+  border-top-color: #10b981;
+}
+
+.perfil-card:nth-child(3) {
+  border-top-color: #8b5cf6;
+}
+
+.perfil-card-full {
+  grid-column: 1 / -1;
+}
+
+.perfil-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.perfil-card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==================== INFO GROUP ====================  */
+
+.info-group {
+  margin-bottom: 16px;
+}
+
+.info-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.info-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #f9fafb;
+  color: #1f2937;
+}
+
+.info-group input:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.info-group input:not(:disabled):focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.info-group small {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* ==================== PASSWORD WRAPPER ====================  */
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.toggle-password-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  color: #6b7280;
+  transition: color 0.2s;
+}
+
+.toggle-password-btn:hover {
+  color: #1f2937;
+}
+
+/* ==================== SECURITY SECTION ====================  */
+
+.security-section {
+  padding-top: 12px;
+}
+
+.security-section h4:first-child {
+  margin-top: 0;
+}
+
+/* ==================== BUTTONS ====================  */
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  width: 100%;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #1d4ed8;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==================== MESSAGES ====================  */
+
+.error-message {
+  display: none;
+  font-size: 13px;
+  color: #ef4444;
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: #fee2e2;
+  border-radius: 6px;
+  border-left: 3px solid #ef4444;
+}
+
+.error-message:not(:empty) {
+  display: block;
+}
+
+.success-message {
+  display: none;
+  font-size: 13px;
+  color: #166534;
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: #dcfce7;
+  border-radius: 6px;
+  border-left: 3px solid #10b981;
+}
+
+.success-message:not(.hidden) {
+  display: block;
+}
+
+/* ==================== ATIVIDADE ====================  */
+
+.atividade-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.atividade-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+  border-left: 3px solid #2563eb;
+  font-size: 13px;
+}
+
+.atividade-time {
+  font-weight: 600;
+  color: #374151;
+  min-width: 180px;
+}
+
+.atividade-action {
+  flex: 1;
+  color: #6b7280;
+}
+
+.atividade-ip {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 11px;
+  color: #9ca3af;
+  text-align: right;
+  min-width: 120px;
+}
+
+/* ==================== BADGE ====================  */
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-acao {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+/* ==================== RESPONSIVE ====================  */
+
+@media (max-width: 768px) {
+  .perfil-container {
+    padding: 12px;
+  }
+
+  .perfil-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .perfil-card {
+    padding: 16px;
+  }
+
+  .perfil-header h2 {
+    font-size: 24px;
+  }
+
+  .atividade-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .atividade-time {
+    min-width: auto;
+  }
+
+  .atividade-ip {
+    min-width: auto;
+    text-align: left;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+}

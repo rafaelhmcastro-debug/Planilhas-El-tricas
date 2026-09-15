@@ -98,7 +98,7 @@ const App = (() => {
       const modulos = {
         projetos: TelaProjetos, equipamentos: TelaEquipamentos, infraestrutura: TelaInfraestrutura,
         cabos: TelaCabos, cargas: TelaCargas, relatorios: TelaRelatorios, config: TelaConfig,
-        admin: TelaAdmin,
+        perfil: TelaPerfil, admin: TelaAdmin,
       };
       await modulos[telaId].render(conteudo);
     } catch (e) {
