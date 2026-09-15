@@ -122,6 +122,12 @@ table.grid tr.total td { background: #dbe8f5; font-weight: 700; }
 
 .alerta-box { background: #fdecea; border: 1px solid #f5c6cb; color: var(--vermelho); padding: 10px 12px; border-radius: var(--raio); font-size: 13px; margin-bottom: 12px; }
 .aviso-box { background: #fff8e5; border: 1px solid #ffe6a8; color: #7a5b00; padding: 10px 12px; border-radius: var(--raio); font-size: 13px; margin-bottom: 12px; }
+.config-aviso-box { background: #e8f4f8; border-left: 4px solid #0284c7; color: #0c4a6e; padding: 14px 16px; border-radius: var(--raio); font-size: 13px; margin-bottom: 16px; }
+.config-aviso-box strong { color: #0c4a6e; font-weight: 600; display: block; margin-bottom: 8px; }
+.config-aviso-box p { margin: 8px 0; line-height: 1.5; }
+.config-aviso-box p:first-of-type { margin-top: 0; }
+.config-aviso-box ul { margin: 8px 0 0 20px; padding: 0; }
+.config-aviso-box li { margin-bottom: 6px; }
 .info-box { background: var(--azul-claro); border: 1px solid #c9dbee; color: var(--azul-escuro); padding: 10px 12px; border-radius: var(--raio); font-size: 13px; margin-bottom: 12px; }
 .vazio { color: var(--cinza); padding: 24px; text-align: center; font-size: 13.5px; }
 

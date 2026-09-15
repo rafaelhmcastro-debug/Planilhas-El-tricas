@@ -1,11 +1,37 @@
 const TelaConfig = (() => {
   let subtela = "cabos";
+  let usuarioRole = null;
 
   async function render(el) {
+    try {
+      const token = localStorage.getItem('auth_token');
+      if (token) {
+        const resp = await fetch('/api/auth/perfil', {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (resp.ok) {
+          const user = await resp.json();
+          usuarioRole = user.role;
+        }
+      }
+    } catch (e) { /* ignore */ }
+
     el.innerHTML = `
       <div class="card">
         <h2>Configurações / Normas</h2>
         <p style="color:var(--cinza);font-size:13px;margin-top:-6px">Tabelas e catálogos globais, compartilhados entre todos os projetos.</p>
+        ${usuarioRole !== 'admin' ? `
+          <div class="config-aviso-box">
+            <strong>⚠️ Acesso Limitado</strong>
+            <p>Você tem acesso apenas de leitura. Apenas administradores podem editar, adicionar ou remover itens dos catálogos.</p>
+            <p><strong>Para sugerir alterações:</strong></p>
+            <ul>
+              <li>Entre em contato com o administrador do sistema</li>
+              <li>Descreva qual item precisa ser adicionado/modificado e por quê</li>
+              <li>Forneça datasheets ou referências (ex: fabricante, norma técnica)</li>
+            </ul>
+          </div>
+        ` : ''}
         <div class="tab-interna" id="subtabs">
           ${sub("cabos", "Catálogo de Cabos")}
           ${sub("infra", "Catálogo de Infraestrutura (Elecon)")}
@@ -28,15 +54,16 @@ const TelaConfig = (() => {
   // ---------------- Catálogo de cabos ----------------
   async function renderCabos(cont) {
     const itens = await Api.catalogoCabos();
+    const soLeitura = usuarioRole !== 'admin';
     cont.innerHTML = `
       <div class="toolbar">
         <span>${itens.length} cabos cadastrados</span>
         <input type="text" id="filtro-cabos" placeholder="Filtrar por linha, isolação…">
         <div class="spacer"></div>
-        <button class="btn pequeno" id="btn-novo-cabo-cat">+ Cadastrar cabo manualmente</button>
+        <button class="btn pequeno" id="btn-novo-cabo-cat" ${soLeitura ? 'disabled title="Apenas administradores podem cadastrar"' : ''}>+ Cadastrar cabo manualmente</button>
         <a class="btn secundario pequeno" href="${Api.urlModeloCabos}">Baixar planilha-modelo</a>
-        <label class="btn secundario pequeno" style="cursor:pointer">Importar planilha
-          <input type="file" id="arquivo-import-cabos" accept=".xlsx" style="display:none">
+        <label class="btn secundario pequeno" style="cursor:pointer;${soLeitura ? 'opacity:0.5;cursor:not-allowed' : ''}">Importar planilha
+          <input type="file" id="arquivo-import-cabos" accept=".xlsx" style="display:none" ${soLeitura ? 'disabled' : ''}>
         </label>
       </div>
       <div class="wrap-table">
@@ -53,29 +80,41 @@ const TelaConfig = (() => {
         <td class="num">${Util.fmt(i.secao_nominal_mm2, 1)}</td><td class="num">${Util.fmt(i.diametro_externo_nominal_mm, 2)}</td>
         <td class="num">${Util.fmt(i.peso_kg_km, 0)}</td><td class="num">${Util.fmt(i.resistencia_condutor_20c_ohm_km, 4)}</td><td class="num">${Util.fmt(i.reatancia_ohm_km, 3)}</td>
         <td><small>${Util.esc(i.fonte_datasheet || "")}</small></td>
-        <td class="acoes-col"><button class="link" data-editar="${i.id}">editar</button> · <button class="link perigo" data-excluir="${i.id}">excluir</button></td></tr>`).join("") || '<tr><td colspan="14" class="vazio">Nenhum cabo no catálogo.</td></tr>';
-      cont.querySelectorAll("[data-editar]").forEach((b) => b.addEventListener("click", () => formCabo(itens.find((x) => x.id === Number(b.dataset.editar)))));
-      cont.querySelectorAll("[data-excluir]").forEach((b) => b.addEventListener("click", async () => {
-        if (!Util.confirmar("Excluir este cabo do catálogo?")) return;
-        try { await Api.removerCatalogoCabo(Number(b.dataset.excluir)); Util.toast("Removido.", "ok"); App.irPara("config"); } catch (err) { Util.erro(err); }
-      }));
+        <td class="acoes-col">${soLeitura ? '<small style="color:#999">apenas leitura</small>' : `<button class="link" data-editar="${i.id}">editar</button> · <button class="link perigo" data-excluir="${i.id}">excluir</button>`}</td></tr>`).join("") || '<tr><td colspan="14" class="vazio">Nenhum cabo no catálogo.</td></tr>';
+      if (!soLeitura) {
+        cont.querySelectorAll("[data-editar]").forEach((b) => b.addEventListener("click", () => formCabo(itens.find((x) => x.id === Number(b.dataset.editar)))));
+        cont.querySelectorAll("[data-excluir]").forEach((b) => b.addEventListener("click", async () => {
+          if (!Util.confirmar("Excluir este cabo do catálogo?")) return;
+          try { await Api.removerCatalogoCabo(Number(b.dataset.excluir)); Util.toast("Removido.", "ok"); App.irPara("config"); } catch (err) { Util.erro(err); }
+        }));
+      }
     };
     desenhar(itens);
     cont.querySelector("#filtro-cabos").addEventListener("input", (e) => {
       const q = e.target.value.toLowerCase();
       desenhar(itens.filter((i) => [i.fabricante, i.linha_produto, i.tipo_isolacao, i.construcao_basica, i.aplicacao].join(" ").toLowerCase().includes(q)));
     });
-    cont.querySelector("#btn-novo-cabo-cat").addEventListener("click", () => formCabo());
-    cont.querySelector("#arquivo-import-cabos").addEventListener("change", async (e) => {
-      const f = e.target.files[0]; if (!f) return;
-      const substituir = Util.confirmar("Substituir TODO o catálogo de cabos pelo conteúdo da planilha?\n\nOK = substituir tudo · Cancelar = apenas acrescentar os itens da planilha");
-      const fd = new FormData(); fd.append("arquivo", f);
-      try {
-        const r = await Api.importarCatalogoCabos(fd, substituir);
-        Util.toast(`${r.importados} cabos importados.`, "ok");
-        App.irPara("config");
-      } catch (err) { Util.erro(err); }
-    });
+    if (!soLeitura) {
+      cont.querySelector("#btn-novo-cabo-cat").addEventListener("click", () => formCabo());
+      cont.querySelector("#arquivo-import-cabos").addEventListener("change", async (e) => {
+        const f = e.target.files[0]; if (!f) return;
+        const substituir = Util.confirmar("Substituir TODO o catálogo de cabos pelo conteúdo da planilha?\n\nOK = substituir tudo · Cancelar = apenas acrescentar os itens da planilha");
+        const fd = new FormData(); fd.append("arquivo", f);
+        try {
+          const r = await Api.importarCatalogoCabos(fd, substituir);
+          Util.toast(`${r.importados} cabos importados.`, "ok");
+          App.irPara("config");
+        } catch (err) { Util.erro(err); }
+      });
+    } else {
+      cont.querySelector("#arquivo-import-cabos").disabled = true;
+      const labelImport = cont.querySelector('label[style*="cursor:pointer"]');
+      if (labelImport) {
+        labelImport.style.opacity = '0.5';
+        labelImport.style.cursor = 'not-allowed';
+        labelImport.title = 'Apenas administradores podem importar';
+      }
+    }
   }
 
   function formCabo(item) {
@@ -126,15 +165,16 @@ const TelaConfig = (() => {
   // ---------------- Catálogo de infraestrutura ----------------
   async function renderInfra(cont) {
     const itens = await Api.catalogoInfra();
+    const soLeitura = usuarioRole !== 'admin';
     cont.innerHTML = `
       <div class="toolbar">
         <span>${itens.length} itens cadastrados</span>
         <input type="text" id="filtro-infra" placeholder="Filtrar por linha ou tipo…">
         <div class="spacer"></div>
-        <button class="btn secundario pequeno" id="btn-nova-eletrocalha">+ Eletrocalha customizada</button>
+        <button class="btn secundario pequeno" id="btn-nova-eletrocalha" ${soLeitura ? 'disabled title="Apenas administradores podem cadastrar"' : ''}>+ Eletrocalha customizada</button>
         <a class="btn secundario pequeno" href="${Api.urlModeloInfra}">Baixar planilha-modelo</a>
-        <label class="btn secundario pequeno" style="cursor:pointer">Importar planilha
-          <input type="file" id="arquivo-import-infra" accept=".xlsx" style="display:none">
+        <label class="btn secundario pequeno" style="cursor:pointer;${soLeitura ? 'opacity:0.5;cursor:not-allowed' : ''}">Importar planilha
+          <input type="file" id="arquivo-import-infra" accept=".xlsx" style="display:none" ${soLeitura ? 'disabled' : ''}>
         </label>
       </div>
       <div class="wrap-table">
@@ -157,17 +197,18 @@ const TelaConfig = (() => {
       const q = e.target.value.toLowerCase();
       desenhar(itens.filter((i) => [i.linha_produto, i.tipo].join(" ").toLowerCase().includes(q)));
     });
-    cont.querySelector("#arquivo-import-infra").addEventListener("change", async (e) => {
-      const f = e.target.files[0]; if (!f) return;
-      const substituir = Util.confirmar("Substituir TODO o catálogo de infraestrutura pelo conteúdo da planilha?\n\nOK = substituir tudo · Cancelar = apenas acrescentar");
-      const fd = new FormData(); fd.append("arquivo", f);
-      try {
-        const r = await Api.importarCatalogoInfra(fd, substituir);
-        Util.toast(`${r.importados} itens importados.`, "ok");
-        App.irPara("config");
-      } catch (err) { Util.erro(err); }
-    });
-    cont.querySelector("#btn-nova-eletrocalha").addEventListener("click", () => {
+    if (!soLeitura) {
+      cont.querySelector("#arquivo-import-infra").addEventListener("change", async (e) => {
+        const f = e.target.files[0]; if (!f) return;
+        const substituir = Util.confirmar("Substituir TODO o catálogo de infraestrutura pelo conteúdo da planilha?\n\nOK = substituir tudo · Cancelar = apenas acrescentar");
+        const fd = new FormData(); fd.append("arquivo", f);
+        try {
+          const r = await Api.importarCatalogoInfra(fd, substituir);
+          Util.toast(`${r.importados} itens importados.`, "ok");
+          App.irPara("config");
+        } catch (err) { Util.erro(err); }
+      });
+      cont.querySelector("#btn-nova-eletrocalha").addEventListener("click", () => {
       Util.abrirModal(`
         ${Util.cabecalhoModal("Nova eletrocalha customizada")}
         <form id="form-eletrocalha">
@@ -193,11 +234,20 @@ const TelaConfig = (() => {
           catch (err) { Util.erro(err); }
         });
       });
-    });
+    } else {
+      cont.querySelector("#arquivo-import-infra").disabled = true;
+      const labelImport = cont.querySelector('label[style*="cursor:pointer"]');
+      if (labelImport) {
+        labelImport.style.opacity = '0.5';
+        labelImport.style.cursor = 'not-allowed';
+        labelImport.title = 'Apenas administradores podem importar';
+      }
+    }
   }
 
   // ---------------- Normas ----------------
   async function renderNormas(cont) {
+    const soLeitura = usuarioRole !== 'admin';
     const [cap, temp, agr, resist, limite] = await Promise.all([
       Api.tabCapacidade(), Api.tabTemperatura(), Api.tabAgrupamento(), Api.tabResistividade(), Api.tabLimiteEletroduto(),
     ]);
@@ -220,7 +270,7 @@ const TelaConfig = (() => {
       <div class="aviso-box">Os valores abaixo são de referência (NBR 5410, tabelas 36 a 42). Confira com a edição vigente da norma antes de liberar projetos.
         A tabela de capacidade de condução pode ser substituída por planilha:
         <a href="${Api.urlModeloCapacidade}">baixar planilha-modelo</a> ·
-        <label style="cursor:pointer;text-decoration:underline">importar planilha<input type="file" id="arquivo-import-cap" accept=".xlsx" style="display:none"></label>
+        <label style="cursor:pointer;text-decoration:underline;${soLeitura ? 'opacity:0.5;cursor:not-allowed' : ''}">importar planilha<input type="file" id="arquivo-import-cap" accept=".xlsx" style="display:none" ${soLeitura ? 'disabled' : ''}></label>
       </div>
 
       <h3>Capacidade de condução (A) — isolação PVC (70 °C), condutor de cobre — métodos A1 a G</h3>
@@ -251,13 +301,17 @@ const TelaConfig = (() => {
         </div>
       </div>
     `;
-    cont.querySelector("#arquivo-import-cap").addEventListener("change", async (e) => {
-      const f = e.target.files[0]; if (!f) return;
-      if (!Util.confirmar("Substituir TODA a tabela de capacidade de condução pela planilha?")) return;
-      const fd = new FormData(); fd.append("arquivo", f);
-      try { const r = await Api.importarCapacidade(fd); Util.toast(`${r.importados} linhas importadas.`, "ok"); App.irPara("config"); }
-      catch (err) { Util.erro(err); }
-    });
+    if (!soLeitura) {
+      cont.querySelector("#arquivo-import-cap").addEventListener("change", async (e) => {
+        const f = e.target.files[0]; if (!f) return;
+        if (!Util.confirmar("Substituir TODA a tabela de capacidade de condução pela planilha?")) return;
+        const fd = new FormData(); fd.append("arquivo", f);
+        try { const r = await Api.importarCapacidade(fd); Util.toast(`${r.importados} linhas importadas.`, "ok"); App.irPara("config"); }
+        catch (err) { Util.erro(err); }
+      });
+    } else {
+      cont.querySelector("#arquivo-import-cap").disabled = true;
+    }
   }
 
   return { render };
