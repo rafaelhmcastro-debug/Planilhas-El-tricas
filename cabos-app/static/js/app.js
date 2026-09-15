@@ -13,8 +13,8 @@ const App = (() => {
       return;
     }
     renderTopbar();
-    renderTabs();
-    irPara(State.getProjetoAtivo() ? "equipamentos" : "projetos");
+    await renderTabs();
+    await irPara(State.getProjetoAtivo() ? "equipamentos" : "projetos");
   }
 
   async function carregarProjetos() {
@@ -55,11 +55,28 @@ const App = (() => {
     });
   }
 
-  function renderTabs() {
+  async function renderTabs() {
     const nav = document.getElementById("tabs");
     const ativa = State.getTelaAtiva();
     const ativo = State.getProjetoAtivo();
-    nav.innerHTML = State.TELAS.map((t) => `
+
+    let usuarioRole = null;
+    try {
+      const token = localStorage.getItem('auth_token');
+      if (token) {
+        const resp = await fetch('/api/auth/perfil', {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (resp.ok) {
+          const user = await resp.json();
+          usuarioRole = user.role;
+        }
+      }
+    } catch (e) { /* ignore */ }
+
+    nav.innerHTML = State.TELAS
+      .filter(t => !t.apenasAdmin || usuarioRole === 'admin')
+      .map((t) => `
       <button data-tela="${t.id}" class="${t.id === ativa ? "ativo" : ""}" ${t.exigeProjeto && !ativo ? "disabled title='Selecione um projeto primeiro'" : ""}>
         ${t.label}
       </button>
@@ -74,13 +91,14 @@ const App = (() => {
       telaId = "projetos";
     }
     State.setTelaAtiva(telaId);
-    renderTabs();
+    await renderTabs();
     const conteudo = document.getElementById("conteudo");
     conteudo.innerHTML = '<div class="vazio">Carregando…</div>';
     try {
       const modulos = {
         projetos: TelaProjetos, equipamentos: TelaEquipamentos, infraestrutura: TelaInfraestrutura,
         cabos: TelaCabos, cargas: TelaCargas, relatorios: TelaRelatorios, config: TelaConfig,
+        admin: TelaAdmin,
       };
       await modulos[telaId].render(conteudo);
     } catch (e) {
@@ -92,7 +110,7 @@ const App = (() => {
   async function recarregarProjetosERender() {
     await carregarProjetos();
     renderTopbar();
-    renderTabs();
+    await renderTabs();
   }
 
   return { init, irPara, recarregarProjetosERender };

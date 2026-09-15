@@ -11,6 +11,7 @@ const State = (() => {
     { id: "cargas", label: "Cargas e Demanda", exigeProjeto: true },
     { id: "relatorios", label: "Relatórios", exigeProjeto: true },
     { id: "config", label: "Configurações/Normas", exigeProjeto: false },
+    { id: "admin", label: "👨‍💼 Administração", exigeProjeto: false, apenasAdmin: true },
   ];
 
   function getProjetos() { return projetos; }

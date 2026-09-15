@@ -1,0 +1,328 @@
+/* ==================== ADMIN CONTAINER ====================  */
+
+.admin-container {
+  padding: 20px;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+.admin-container h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1f2937;
+}
+
+/* ==================== STATS GRID ====================  */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #2563eb;
+  transition: all 0.2s;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.stat-card:nth-child(2) {
+  border-left-color: #10b981;
+}
+
+.stat-card:nth-child(3) {
+  border-left-color: #8b5cf6;
+}
+
+.stat-card:nth-child(4) {
+  border-left-color: #f59e0b;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* ==================== ADMIN TABS ====================  */
+
+.admin-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.admin-tab-btn {
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-tab-btn:hover {
+  color: #2563eb;
+}
+
+.admin-tab-btn.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
+
+.admin-tab-content {
+  display: none;
+}
+
+.admin-tab-content.active {
+  display: block;
+}
+
+/* ==================== ADMIN TABLE ====================  */
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.admin-table thead {
+  background: #f3f4f6;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.admin-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.admin-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==================== BADGES ====================  */
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-admin {
+  background: #dbeafe;
+  color: #0c4a6e;
+}
+
+.badge-user {
+  background: #dbeafe;
+  color: #0c4a6e;
+}
+
+.badge-ativo {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-inativo {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-acao {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+/* ==================== BUTTONS ====================  */
+
+.btn-aprovar,
+.btn-rejeitar,
+.btn-desativar {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-right: 6px;
+}
+
+.btn-aprovar {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.btn-aprovar:hover {
+  background: #86efac;
+  color: #15803d;
+}
+
+.btn-rejeitar {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.btn-rejeitar:hover {
+  background: #fca5a5;
+  color: #7f1d1d;
+}
+
+.btn-desativar {
+  background: #fed7aa;
+  color: #92400e;
+  border: 1px solid #fdba74;
+}
+
+.btn-desativar:hover {
+  background: #fdba74;
+  color: #78350f;
+}
+
+/* ==================== FILTROS ====================  */
+
+.logs-filtros {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.logs-filtros input,
+.logs-filtros select {
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.logs-filtros input:focus,
+.logs-filtros select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.logs-filtros button {
+  padding: 8px 16px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logs-filtros button:hover {
+  background: #1d4ed8;
+}
+
+#btn-exportar-logs {
+  background: #10b981;
+}
+
+#btn-exportar-logs:hover {
+  background: #059669;
+}
+
+/* ==================== CODE/MONOSPACE ====================  */
+
+code {
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 12px;
+  color: #1f2937;
+}
+
+/* ==================== RESPONSIVE ====================  */
+
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 12px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .admin-tabs {
+    flex-wrap: wrap;
+  }
+
+  .admin-table {
+    font-size: 12px;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 8px 12px;
+  }
+
+  .btn-aprovar,
+  .btn-rejeitar,
+  .btn-desativar {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .logs-filtros {
+    flex-direction: column;
+  }
+
+  .logs-filtros input,
+  .logs-filtros select,
+  .logs-filtros button {
+    width: 100%;
+  }
+}
