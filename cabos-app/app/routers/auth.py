@@ -1,12 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Request
 from sqlalchemy.orm import Session
 from datetime import datetime
+from typing import List
 
 from ..database import get_db
 from ..models_auth import Usuario, SolicitacaoUsuario, AccessLog
 from ..schemas_auth import (
     LoginRequest, LoginResponse, CadastroRequest, CadastroResponse,
-    UsuarioResponse, AlterarSenhaRequest
+    UsuarioResponse, AlterarSenhaRequest, AccessLogResponse
 )
 from ..utils_auth import (
     criar_access_token, decodificar_token, autenticar_usuario,
@@ -198,6 +199,31 @@ def fazer_cadastro(
 @router.get("/perfil", response_model=UsuarioResponse)
 def obter_perfil(usuario: Usuario = Depends(obter_usuario_atual)):
     return UsuarioResponse.from_orm(usuario)
+
+
+@router.get("/minhas-atividades", response_model=List[AccessLogResponse])
+def listar_minhas_atividades(
+    usuario: Usuario = Depends(obter_usuario_atual),
+    db: Session = Depends(get_db),
+    limit: int = 20
+):
+    logs = db.query(AccessLog).filter(
+        AccessLog.usuario_id == usuario.id
+    ).order_by(AccessLog.data_hora.desc()).limit(limit).all()
+
+    return [
+        AccessLogResponse(
+            id=log.id,
+            usuario_id=log.usuario_id,
+            username=usuario.username,
+            acao=log.acao,
+            data_hora=log.data_hora,
+            ip_address=log.ip_address,
+            projeto_id=log.projeto_id,
+            detalhes=log.detalhes,
+        )
+        for log in logs
+    ]
 
 
 @router.post("/alterar-senha")

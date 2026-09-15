@@ -170,14 +170,13 @@ const TelaPerfil = (() => {
 
   async function carregarAtividade() {
     try {
-      const response = await fetch('/api/admin/logs?limit=20', {
+      const response = await fetch('/api/auth/minhas-atividades?limit=20', {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('auth_token')}` }
       });
 
       if (!response.ok) throw new Error('Erro ao carregar logs');
 
-      let logs = await response.json();
-      logs = logs.filter(l => l.usuario_id === usuarioAtual.id);
+      const logs = await response.json();
 
       const container = document.getElementById('atividade-container');
 

@@ -234,6 +234,7 @@ const TelaConfig = (() => {
           catch (err) { Util.erro(err); }
         });
       });
+      });
     } else {
       cont.querySelector("#arquivo-import-infra").disabled = true;
       const labelImport = cont.querySelector('label[style*="cursor:pointer"]');
