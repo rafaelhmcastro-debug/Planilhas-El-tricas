@@ -1,0 +1,11 @@
+{
+  "tabela": "limites_toleraveis",
+  "simbolo": "RT1, RT3 (nomes tentativos)",
+  "descricao": "Valores de risco tolerável para comparação: RT1 para perda de vida humana (R1), RT3 para perda de patrimônio cultural (R3). R4 (perda de valor econômico) tipicamente não tem limite tolerável fixo — é avaliado por comparação custo-benefício (Anexo D) — CONFIRMAR se a edição 2026 mantém esse tratamento ou define um RT4.",
+  "status": "SIMBOLO_PARCIALMENTE_CONFIRMADO_AGUARDA_VALOR",
+  "observacao": "O risco R1 e R3 em si foram confirmados no escopo da v1. O nome exato do símbolo do limite tolerável (RT1/RT3 vs. outra notação da edição 2026) não foi confirmado.",
+  "entradas": [
+    {"chave": "rt1_perda_vida_humana", "descricao": "Risco tolerável para perda de vida humana", "valor": null, "referencia": null},
+    {"chave": "rt3_perda_patrimonio_cultural", "descricao": "Risco tolerável para perda de patrimônio cultural insubstituível", "valor": null, "referencia": null}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "tabela": "anexo_d_valores_economicos_r4",
+  "simbolo": "ca, cb, cc, cs (nomes tentativos)",
+  "descricao": "Coeficientes/relações de valor econômico usados no cálculo de R4 conforme o Anexo D (relação entre valor de animais, estrutura/conteúdo e sistemas internos, e valor total da estrutura).",
+  "status": "AGUARDA_CONFIRMACAO_SIMBOLO",
+  "observacao": "Não recebi confirmação de símbolos específicos do Anexo D. Os nomes abaixo (ca = valor de animais, cb = valor da estrutura e conteúdo, cc = valor dos sistemas internos, cs = valor total da estrutura) seguem a lógica da edição 2015/IEC 62305-2 Anexo D como placeholder. CONFIRMAR nomenclatura e se o método de composição de La/Lb/Lc para R4 mudou na edição 2026.",
+  "entradas": [
+    {"chave": "nenhum_valor_definido_ainda", "descricao": "Placeholder — aguardando descrição do engenheiro sobre a estrutura real do Anexo D na edição 2026 antes de detalhar entradas", "valor": null, "referencia": null}
+  ]
+}

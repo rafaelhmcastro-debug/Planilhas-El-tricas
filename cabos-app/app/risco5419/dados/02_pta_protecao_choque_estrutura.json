@@ -1,0 +1,13 @@
+{
+  "tabela": "pta_protecao_choque",
+  "simbolo": "PTA",
+  "descricao": "Probabilidade de dano a seres vivos por choque elétrico (tensões de toque e passo) em função das medidas de proteção adotadas.",
+  "status": "CONFIRMADO_SIMBOLO_AGUARDA_VALOR",
+  "entradas": [
+    {"chave": "sem_medidas", "descricao": "Nenhuma medida de proteção adicional", "valor": null, "referencia": null},
+    {"chave": "avisos_de_alerta", "descricao": "Placas de aviso de alerta", "valor": null, "referencia": null},
+    {"chave": "isolacao_eletrica", "descricao": "Isolação elétrica das partes expostas (ex.: cabo isolado, piso isolante)", "valor": null, "referencia": null},
+    {"chave": "equipotencializacao_efetiva", "descricao": "Equipotencialização efetiva do solo (malha de aterramento)", "valor": null, "referencia": null},
+    {"chave": "restricoes_fisicas_avisos", "descricao": "Restrições físicas ou avisos que reduzam a probabilidade de presença de pessoas", "valor": null, "referencia": null}
+  ]
+}

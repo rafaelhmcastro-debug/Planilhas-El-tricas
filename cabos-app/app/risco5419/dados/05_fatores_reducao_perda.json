@@ -1,0 +1,53 @@
+{
+  "tabela": "fatores_reducao_perda",
+  "simbolo": "rt, rp, rf, rs, hz",
+  "descricao": "Fatores de redução de perda: rt (redução por tipo de piso/solo), rp (redução por provisões contra incêndio), rf (risco de incêndio/explosão conforme tipo de zona), rs (redução por blindagem/roteamento/isolamento de linhas), hz (fator de perigo especial, ex.: risco de pânico).",
+  "status": "CONFIRMADO_SIMBOLO_AGUARDA_VALOR",
+  "grupos": [
+    {
+      "grupo": "rt_tipo_piso_solo",
+      "entradas": [
+        {"chave": "agricola_concreto", "descricao": "Piso agrícola ou de concreto", "valor": null, "referencia": null},
+        {"chave": "marmore_ceramica", "descricao": "Piso de mármore ou cerâmica", "valor": null, "referencia": null},
+        {"chave": "cascalho_carpete_tapete", "descricao": "Piso de cascalho, carpete ou tapete", "valor": null, "referencia": null},
+        {"chave": "asfalto_linoleo_madeira", "descricao": "Piso de asfalto, linóleo ou madeira", "valor": null, "referencia": null}
+      ]
+    },
+    {
+      "grupo": "rp_provisoes_incendio",
+      "entradas": [
+        {"chave": "sem_provisoes", "descricao": "Sem provisões contra incêndio", "valor": null, "referencia": null},
+        {"chave": "extintores_hidrantes_manuais", "descricao": "Extintores, hidrantes manuais, alarme manual, rotas de fuga compartimentadas", "valor": null, "referencia": null},
+        {"chave": "deteccao_extincao_automaticas", "descricao": "Sistemas automáticos de detecção e extinção de incêndio", "valor": null, "referencia": null}
+      ]
+    },
+    {
+      "grupo": "rf_risco_incendio_por_zona",
+      "entradas": [
+        {"chave": "risco_explosao", "descricao": "Risco de explosão", "valor": null, "referencia": null},
+        {"chave": "risco_incendio_alto", "descricao": "Risco de incêndio alto", "valor": null, "referencia": null},
+        {"chave": "risco_incendio_ordinario", "descricao": "Risco de incêndio ordinário", "valor": null, "referencia": null},
+        {"chave": "risco_incendio_baixo", "descricao": "Risco de incêndio baixo", "valor": null, "referencia": null},
+        {"chave": "sem_risco_significativo", "descricao": "Sem risco significativo de incêndio", "valor": null, "referencia": null}
+      ]
+    },
+    {
+      "grupo": "hz_perigo_especial",
+      "entradas": [
+        {"chave": "sem_perigo_especial", "descricao": "Sem perigo especial", "valor": null, "referencia": null},
+        {"chave": "baixo_nivel_panico", "descricao": "Baixo nível de pânico (ex.: estrutura até 2 pavimentos)", "valor": null, "referencia": null},
+        {"chave": "medio_nivel_panico", "descricao": "Médio nível de pânico (ex.: estrutura para eventos culturais/esportivos com capacidade limitada)", "valor": null, "referencia": null},
+        {"chave": "dificuldade_evacuacao", "descricao": "Dificuldade de evacuação (ex.: pessoas com mobilidade reduzida)", "valor": null, "referencia": null},
+        {"chave": "alto_nivel_panico", "descricao": "Alto nível de pânico (ex.: grandes eventos, alta concentração de pessoas)", "valor": null, "referencia": null},
+        {"chave": "perigo_ambiental_alto", "descricao": "Perigo para o meio ambiente (contaminação)", "valor": null, "referencia": null}
+      ]
+    },
+    {
+      "grupo": "rs_reducao_linhas",
+      "entradas": [
+        {"chave": "sem_blindagem_sem_precaucao", "descricao": "Linha sem blindagem e sem outras precauções coordenadas de proteção contra tensões induzidas", "valor": null, "referencia": null},
+        {"chave": "blindada_ou_com_precaucao_coordenada", "descricao": "Linha blindada, roteada ou com outra precaução coordenada com a proteção do equipamento", "valor": null, "referencia": null}
+      ]
+    }
+  ]
+}

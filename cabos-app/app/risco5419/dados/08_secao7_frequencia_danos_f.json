@@ -1,0 +1,8 @@
+{
+  "tabela": "secao7_frequencia_danos_f",
+  "simbolo": "F (substitui R2 da edição 2015, conforme informado pelo engenheiro)",
+  "descricao": null,
+  "status": "ESTRUTURA_DESCONHECIDA_AGUARDA_ENGENHEIRO",
+  "observacao": "Não tenho nenhuma base confiável sobre o conteúdo da Seção 7 da edição 2026. Não inventei coeficientes nem estrutura de cálculo aqui. Antes de eu desenhar este arquivo e o módulo riscos.py (parte de F), preciso que o engenheiro descreva: quais grandezas de entrada a equação de F usa, se reutiliza N/P/L já calculados para R1/R3/R4 ou define seus próprios, qual(is) tabela(s) de coeficientes existem, e qual é o critério de comparação com limite(s) tolerável(is) — inclusive a distinção entre equipamentos críticos e não críticos mencionada no escopo.",
+  "entradas": []
+}

@@ -1,0 +1,46 @@
+{
+  "tabela": "fatores_localizacao_ambiente_linha",
+  "simbolo": "CD, CE, CI, CT (NOMES TENTATIVOS — ver status)",
+  "descricao": "Fatores de localização relativa da estrutura e de instalação/ambiente/transformador das linhas, usados no cálculo das áreas de exposição e do número de eventos perigosos (N).",
+  "status": "AGUARDA_CONFIRMACAO_SIMBOLO",
+  "observacao": "Nenhum destes símbolos foi confirmado pelo engenheiro. Usei a nomenclatura da edição 2015/IEC 62305-2 (CD = fator de localização da estrutura; CE = fator ambiental da linha; CI = fator de instalação da linha; CT = fator de transformador AT/BT na linha) apenas como placeholder estrutural. CONFIRMAR nomes, quantidade de fatores e categorias antes de preencher valores.",
+  "grupos": [
+    {
+      "grupo": "localizacao_estrutura",
+      "simbolo_tentativo": "CD",
+      "entradas": [
+        {"chave": "cercada_por_objetos_mais_altos", "descricao": "Estrutura cercada por objetos ou árvores mais altos", "valor": null, "referencia": null},
+        {"chave": "cercada_por_objetos_mesma_altura_menor", "descricao": "Estrutura cercada por objetos de mesma altura ou menores", "valor": null, "referencia": null},
+        {"chave": "isolada_sem_objetos_proximos", "descricao": "Estrutura isolada, sem outros objetos próximos", "valor": null, "referencia": null},
+        {"chave": "isolada_sobre_elevacao_montanha", "descricao": "Estrutura isolada no topo de uma colina/montanha", "valor": null, "referencia": null}
+      ]
+    },
+    {
+      "grupo": "ambiente_linha",
+      "simbolo_tentativo": "CE",
+      "entradas": [
+        {"chave": "rural", "descricao": "Ambiente rural", "valor": null, "referencia": null},
+        {"chave": "suburbano", "descricao": "Ambiente suburbano", "valor": null, "referencia": null},
+        {"chave": "urbano", "descricao": "Ambiente urbano", "valor": null, "referencia": null},
+        {"chave": "urbano_com_edificios_acima_20m", "descricao": "Ambiente urbano com edifícios acima de 20 m de altura", "valor": null, "referencia": null}
+      ]
+    },
+    {
+      "grupo": "instalacao_linha",
+      "simbolo_tentativo": "CI",
+      "entradas": [
+        {"chave": "aerea", "descricao": "Linha aérea", "valor": null, "referencia": null},
+        {"chave": "enterrada", "descricao": "Linha enterrada", "valor": null, "referencia": null},
+        {"chave": "enterrada_com_malha_aterramento_ligada", "descricao": "Linha enterrada com trecho ligado a malha de aterramento comum", "valor": null, "referencia": null}
+      ]
+    },
+    {
+      "grupo": "transformador_linha",
+      "simbolo_tentativo": "CT",
+      "entradas": [
+        {"chave": "sem_transformador", "descricao": "Linha sem transformador AT/BT entre o ponto de entrada e a estrutura", "valor": null, "referencia": null},
+        {"chave": "com_transformador_at_bt", "descricao": "Linha com transformador AT/BT", "valor": null, "referencia": null}
+      ]
+    }
+  ]
+}
