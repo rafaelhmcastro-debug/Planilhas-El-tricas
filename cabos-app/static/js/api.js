@@ -108,8 +108,23 @@ const Api = (() => {
     // Risco de descargas atmosféricas (NBR 5419-2)
     ngUfs: () => get("/api/risco5419/ng/ufs"),
     ngBuscarMunicipios: (uf, q) => get(`/api/risco5419/ng/municipios?${new URLSearchParams({ uf, q: q || "" })}`),
+    opcoesTabelaRisco: (tabela) => get(`/api/risco5419/tabelas/${tabela}`),
     listarAnalisesRisco: (pid) => get(`/api/projetos/${pid}/risco5419/analises`),
+    obterAnaliseRisco: (pid, id) => get(`/api/projetos/${pid}/risco5419/analises/${id}`),
     criarAnaliseRisco: (pid, a) => post(`/api/projetos/${pid}/risco5419/analises`, a),
     removerAnaliseRisco: (pid, id) => del(`/api/projetos/${pid}/risco5419/analises/${id}`),
+    obterEstruturaRisco: (pid, aid) => get(`/api/projetos/${pid}/risco5419/analises/${aid}/estrutura`),
+    salvarEstruturaRisco: (pid, aid, e) => put(`/api/projetos/${pid}/risco5419/analises/${aid}/estrutura`, e),
+    listarZonasRisco: (pid, aid) => get(`/api/projetos/${pid}/risco5419/analises/${aid}/zonas`),
+    criarZonaRisco: (pid, aid, z) => post(`/api/projetos/${pid}/risco5419/analises/${aid}/zonas`, z),
+    removerZonaRisco: (pid, aid, id) => del(`/api/projetos/${pid}/risco5419/analises/${aid}/zonas/${id}`),
+    listarLinhasRisco: (pid, aid) => get(`/api/projetos/${pid}/risco5419/analises/${aid}/linhas`),
+    criarLinhaRisco: (pid, aid, l) => post(`/api/projetos/${pid}/risco5419/analises/${aid}/linhas`, l),
+    removerLinhaRisco: (pid, aid, id) => del(`/api/projetos/${pid}/risco5419/analises/${aid}/linhas/${id}`),
+    obterMedidasRisco: (pid, aid) => get(`/api/projetos/${pid}/risco5419/analises/${aid}/medidas-protecao`),
+    salvarMedidasRisco: (pid, aid, m) => put(`/api/projetos/${pid}/risco5419/analises/${aid}/medidas-protecao`, m),
+    calcularRisco: (pid, aid) => post(`/api/projetos/${pid}/risco5419/analises/${aid}/calcular`),
+    obterResultadoRisco: (pid, aid) => get(`/api/projetos/${pid}/risco5419/analises/${aid}/resultado`),
+    obterMemoriaRisco: (pid, aid) => get(`/api/projetos/${pid}/risco5419/analises/${aid}/memoria-calculo`),
   };
 })();

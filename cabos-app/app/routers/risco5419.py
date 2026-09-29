@@ -28,6 +28,16 @@ def _get_analise(db, projeto_id, analise_id):
     return analise
 
 
+# ---------------- Opções de tabelas normativas (para selects do frontend) ----------------
+
+@router.get("/api/risco5419/tabelas/{tabela}")
+def opcoes_tabela(tabela: str):
+    try:
+        return tabelas.opcoes(tabela)
+    except tabelas.ValorNaoDisponivel as e:
+        raise HTTPException(404, str(e))
+
+
 # ---------------- Consulta de NG (Anexo F) ----------------
 
 @router.get("/api/risco5419/ng/ufs", response_model=list[str])
@@ -85,6 +95,14 @@ def remover_analise(projeto_id: int, analise_id: int, db: Session = Depends(get_
 
 
 # ---------------- Estrutura (1:1) ----------------
+
+@router.get("/api/projetos/{projeto_id}/risco5419/analises/{analise_id}/estrutura", response_model=schemas.EstruturaOut)
+def obter_estrutura(projeto_id: int, analise_id: int, db: Session = Depends(get_db)):
+    analise = _get_analise(db, projeto_id, analise_id)
+    if not analise.estrutura:
+        raise HTTPException(404, "Estrutura ainda não cadastrada.")
+    return analise.estrutura
+
 
 @router.put("/api/projetos/{projeto_id}/risco5419/analises/{analise_id}/estrutura", response_model=schemas.EstruturaOut)
 def salvar_estrutura(projeto_id: int, analise_id: int, payload: schemas.EstruturaIn, db: Session = Depends(get_db)):
@@ -196,6 +214,14 @@ def remover_linha(projeto_id: int, analise_id: int, linha_id: int, db: Session =
 
 
 # ---------------- Medidas de proteção (1:1) ----------------
+
+@router.get("/api/projetos/{projeto_id}/risco5419/analises/{analise_id}/medidas-protecao", response_model=schemas.MedidasProtecaoOut)
+def obter_medidas_protecao(projeto_id: int, analise_id: int, db: Session = Depends(get_db)):
+    analise = _get_analise(db, projeto_id, analise_id)
+    if not analise.medidas_protecao:
+        raise HTTPException(404, "Medidas de proteção ainda não cadastradas.")
+    return analise.medidas_protecao
+
 
 @router.put("/api/projetos/{projeto_id}/risco5419/analises/{analise_id}/medidas-protecao", response_model=schemas.MedidasProtecaoOut)
 def salvar_medidas_protecao(projeto_id: int, analise_id: int, payload: schemas.MedidasProtecaoIn, db: Session = Depends(get_db)):

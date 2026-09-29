@@ -119,6 +119,19 @@ def info_grupo(tabela: str, grupo: str, chave: str) -> dict:
     raise ValorNaoDisponivel(f'Chave "{chave}" não encontrada no grupo "{grupo}" de {tabela}.')
 
 
+def opcoes(tabela: str) -> list[dict]:
+    """Lista {chave, descricao, grupo} de uma tabela, para popular selects no frontend.
+    grupo vem preenchido só nas tabelas agrupadas (ex.: LT/LF/LO de C.2 e D.2)."""
+    dados = _carregar(tabela)
+    resultado = []
+    for entrada in dados.get("entradas", []):
+        resultado.append({"chave": entrada["chave"], "descricao": entrada["descricao"], "grupo": None})
+    for grupo in dados.get("grupos", []):
+        for entrada in grupo.get("entradas", []):
+            resultado.append({"chave": entrada["chave"], "descricao": entrada["descricao"], "grupo": grupo["grupo"]})
+    return resultado
+
+
 def limpar_cache():
     """Usado nos testes para forçar releitura dos arquivos JSON."""
     _cache.clear()
