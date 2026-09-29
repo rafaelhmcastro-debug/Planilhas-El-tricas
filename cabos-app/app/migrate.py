@@ -19,13 +19,32 @@ def _divergente(insp, tabela):
     )
 
 
+def _adicionar_colunas_faltantes(engine, insp, tabelas):
+    """No PostgreSQL, colunas novas opcionais (nullable, sem chave/índice) podem ser
+    adicionadas com ALTER TABLE ADD COLUMN sem recriar a tabela. Isso cobre o caso comum
+    de um campo novo no modelo que ainda não existe no banco de produção."""
+    with engine.begin() as conn:
+        for tabela in tabelas:
+            cols_db = {c["name"] for c in insp.get_columns(tabela.name)}
+            for coluna in tabela.columns:
+                if coluna.name in cols_db or not coluna.nullable or coluna.primary_key:
+                    continue
+                tipo = coluna.type.compile(dialect=engine.dialect)
+                print(f"Adicionando coluna ausente: {tabela.name}.{coluna.name} ({tipo})")
+                conn.execute(text(f'ALTER TABLE "{tabela.name}" ADD COLUMN "{coluna.name}" {tipo}'))
+
+
 def migrate(engine):
     insp = inspect(engine)
     existentes = set(insp.get_table_names())
-    divergentes = [
-        t for t in Base.metadata.sorted_tables
-        if t.name in existentes and _divergente(insp, t)
-    ]
+    tabelas_existentes = [t for t in Base.metadata.sorted_tables if t.name in existentes]
+
+    # No PostgreSQL, tenta primeiro o caminho aditivo (ADD COLUMN) antes de só avisar.
+    if engine.dialect.name != "sqlite":
+        _adicionar_colunas_faltantes(engine, insp, tabelas_existentes)
+        insp = inspect(engine)
+
+    divergentes = [t for t in tabelas_existentes if _divergente(insp, t)]
     if not divergentes:
         return
 
