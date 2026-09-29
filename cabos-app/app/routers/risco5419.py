@@ -1,15 +1,18 @@
 import json
 
 from fastapi import APIRouter, Depends, HTTPException
+from fastapi.responses import Response
 from sqlalchemy.orm import Session, joinedload
 
 from .. import models
 from ..database import get_db
-from ..risco5419 import ng, schemas, tabelas, riscos
+from ..risco5419 import ng, schemas, tabelas, riscos, exportacao_docx
 from ..risco5419.modelos import (
     AnaliseRisco, MunicipioNG, Estrutura, ZonaEstudo, LinhaEletrica, TrechoLinha,
     MedidasProtecao, ResultadoRisco,
 )
+
+DOCX_MEDIA = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 
 router = APIRouter(tags=["risco5419"])
 
@@ -295,6 +298,36 @@ def obter_resultado(projeto_id: int, analise_id: int, db: Session = Depends(get_
     if not analise.resultado:
         raise HTTPException(404, "Análise ainda não foi calculada.")
     return analise.resultado
+
+
+@router.get("/api/projetos/{projeto_id}/risco5419/analises/{analise_id}/pendencias-exportacao", response_model=list[str])
+def obter_pendencias_exportacao(projeto_id: int, analise_id: int, db: Session = Depends(get_db)):
+    analise = _get_analise(db, projeto_id, analise_id)
+    zonas = db.query(ZonaEstudo).filter(ZonaEstudo.analise_id == analise_id).all()
+    return exportacao_docx.validar_pendencias(analise, analise.estrutura, zonas, analise.medidas_protecao, analise.resultado)
+
+
+@router.get("/api/projetos/{projeto_id}/risco5419/analises/{analise_id}/exportar-docx")
+def exportar_docx(projeto_id: int, analise_id: int, db: Session = Depends(get_db)):
+    projeto = _get_projeto(db, projeto_id)
+    analise = _get_analise(db, projeto_id, analise_id)
+    zonas = db.query(ZonaEstudo).filter(ZonaEstudo.analise_id == analise_id).all()
+    linhas = (
+        db.query(LinhaEletrica).options(joinedload(LinhaEletrica.trechos))
+        .filter(LinhaEletrica.analise_id == analise_id).all()
+    )
+    try:
+        conteudo = exportacao_docx.gerar_memorial(
+            projeto, analise, analise.estrutura, zonas, linhas, analise.medidas_protecao, analise.resultado,
+        )
+    except ValueError as e:
+        raise HTTPException(422, str(e))
+
+    nome_arquivo = f"RL-EI-{projeto.numero_projeto}-{(projeto.revisao or 'Rev0').replace(' ', '')}-Memorial_Calculo_NBR5419-2.docx"
+    return Response(
+        content=conteudo, media_type=DOCX_MEDIA,
+        headers={"Content-Disposition": f'attachment; filename="{nome_arquivo}"'},
+    )
 
 
 @router.get("/api/projetos/{projeto_id}/risco5419/analises/{analise_id}/memoria-calculo")

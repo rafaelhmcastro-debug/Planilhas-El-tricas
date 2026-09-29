@@ -276,6 +276,7 @@ const TelaRisco5419 = (() => {
           <div class="campo"><label>Largura W (m) *</label><input name="largura_m" type="text" inputmode="decimal" required value="${v("largura_m", "") ?? ""}"></div>
           <div class="campo"><label>Altura H (m) *</label><input name="altura_m" type="text" inputmode="decimal" required value="${v("altura_m", "") ?? ""}"></div>
           <div class="campo"><label>Nº total de pessoas na estrutura (nt) *</label><input name="num_pessoas_total" type="text" inputmode="numeric" required value="${v("num_pessoas_total", "") ?? ""}"></div>
+          <div class="campo span2"><label>Localização (endereço/município — usado no memorial de cálculo)</label><input name="localizacao" value="${Util.esc(v("localizacao", "") ?? "")}"></div>
           <div class="campo span2"><label>Localização relativa da estrutura (CD — Tabela A.1)</label>
             <select name="fator_localizacao">${optionsHtml(op.fator_localizacao, null, v("fator_localizacao"))}</select>
           </div>
@@ -304,6 +305,7 @@ const TelaRisco5419 = (() => {
         comprimento_m: Util.paraNumero(obj.comprimento_m), largura_m: Util.paraNumero(obj.largura_m),
         altura_m: Util.paraNumero(obj.altura_m), num_pessoas_total: Math.round(Util.paraNumero(obj.num_pessoas_total)),
         fator_localizacao: obj.fator_localizacao, tipo_construcao: obj.tipo_construcao,
+        localizacao: obj.localizacao || null,
         risco_explosao: obj.risco_explosao, falha_sistema_interno_risco_vida: obj.falha_sistema_interno_risco_vida,
         sistema_critico: obj.sistema_critico,
       };
@@ -558,11 +560,14 @@ const TelaRisco5419 = (() => {
     const pid = State.getProjetoAtivo().id;
     let resultado = null;
     try { resultado = await Api.obterResultadoRisco(pid, analise.id); } catch (e) { /* ainda não calculado */ }
+    const pendencias = resultado ? await Api.pendenciasExportacaoRisco(pid, analise.id) : [];
 
     el.innerHTML = `
       <div class="toolbar"><button class="btn" id="btn-calcular">Calcular / Recalcular</button>
         ${resultado ? '<button class="btn secundario" id="btn-memoria">Ver memória de cálculo</button>' : ""}
+        ${resultado ? `<a class="btn secundario" id="btn-exportar-docx" href="${Api.urlExportarDocxRisco(pid, analise.id)}" ${pendencias.length ? 'style="pointer-events:none;opacity:.5" title="Resolva as pendências abaixo"' : ''}>Exportar memorial (.docx)</a>` : ""}
       </div>
+      ${pendencias.length ? `<div class="aviso-box">Pendências para exportar o memorial de cálculo:<ul>${pendencias.map((p) => `<li>${Util.esc(p)}</li>`).join("")}</ul></div>` : ""}
       <div id="resultado-conteudo">
         ${resultado ? renderResultadoHtml(resultado) : '<div class="vazio">Ainda não calculado. Cadastre estrutura, ao menos uma zona e as medidas de proteção, depois clique em Calcular.</div>'}
       </div>

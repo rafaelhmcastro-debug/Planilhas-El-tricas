@@ -75,6 +75,8 @@ class Estrutura(Base):
 
     num_pessoas_total = Column(Integer, nullable=False, default=1)  # nt
 
+    localizacao = Column(String, nullable=True)  # endereço/localização, para o memorial de cálculo (Seção 1)
+
     analise = relationship("AnaliseRisco", back_populates="estrutura")
 
 

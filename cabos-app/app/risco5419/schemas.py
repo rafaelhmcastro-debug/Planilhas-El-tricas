@@ -53,6 +53,7 @@ class EstruturaIn(BaseModel):
     altura_m: float = Field(gt=0)
     fator_localizacao: str
     tipo_construcao: str
+    localizacao: Optional[str] = None
     risco_explosao: bool = False
     falha_sistema_interno_risco_vida: bool = False
     sistema_critico: bool = False

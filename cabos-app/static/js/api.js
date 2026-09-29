@@ -126,5 +126,7 @@ const Api = (() => {
     calcularRisco: (pid, aid) => post(`/api/projetos/${pid}/risco5419/analises/${aid}/calcular`),
     obterResultadoRisco: (pid, aid) => get(`/api/projetos/${pid}/risco5419/analises/${aid}/resultado`),
     obterMemoriaRisco: (pid, aid) => get(`/api/projetos/${pid}/risco5419/analises/${aid}/memoria-calculo`),
+    pendenciasExportacaoRisco: (pid, aid) => get(`/api/projetos/${pid}/risco5419/analises/${aid}/pendencias-exportacao`),
+    urlExportarDocxRisco: (pid, aid) => `/api/projetos/${pid}/risco5419/analises/${aid}/exportar-docx`,
   };
 })();

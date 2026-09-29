@@ -44,7 +44,11 @@
       "Bash(pdftotext -layout /home/user/Planilhas-El-tricas/docs/normas/NBR5419-2_parte2a.pdf /tmp/claude-0/norma_2a.txt)",
       "Bash(pdftotext -layout /home/user/Planilhas-El-tricas/docs/normas/NBR5419-2_parte2b.pdf /tmp/claude-0/norma_2b.txt)",
       "Bash(pdfinfo /home/user/Planilhas-El-tricas/docs/normas/NBR5419-2_parte2a.pdf)",
-      "Bash(pdfinfo /home/user/Planilhas-El-tricas/docs/normas/NBR5419-2_parte2b.pdf)"
+      "Bash(pdfinfo /home/user/Planilhas-El-tricas/docs/normas/NBR5419-2_parte2b.pdf)",
+      "Bash(mkdir -p /home/user/Planilhas-El-tricas/docs/templates)",
+      "Bash(cp \"/root/.claude/uploads/b205adc0-b1bc-5caf-b2ff-2e0be5bf3633/2269e3a0-Modelo_Memorial_Calculo_NBR5419-2_Generico.docx\" /home/user/Planilhas-El-tricas/docs/templates/memorial_5419-2.docx)",
+      "Bash(/tmp/claude-0/venv/bin/pip install *)",
+      "Bash(/tmp/claude-0/venv/bin/python -c \"import docx; print\\('python-docx OK'\\)\")"
     ]
   }
 }
