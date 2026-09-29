@@ -1,0 +1,15 @@
+{
+  "tabela": "Tabela C.5 - Fator de redução rf em função do risco de incêndio ou explosão",
+  "simbolo": "rf",
+  "descricao": "Fator de redução da perda por danos físicos, dependendo do risco de incêndio/explosão da zona de estudo. Critérios de carga específica de incêndio: alto ≥800 MJ/m², normal 400-800 MJ/m², baixo <400 MJ/m² (C.3.4.1 a C.3.4.3).",
+  "entradas": [
+    {"chave": "explosao_zonas_0_20_solidos", "descricao": "Risco de explosão — Zonas 0, 20 e explosivos sólidos", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.5"},
+    {"chave": "explosao_zonas_1_21", "descricao": "Risco de explosão — Zonas 1, 21", "valor": 1e-1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.5"},
+    {"chave": "explosao_zonas_2_22", "descricao": "Risco de explosão — Zonas 2, 22", "valor": 1e-3, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.5"},
+    {"chave": "incendio_alto", "descricao": "Risco de incêndio alto", "valor": 1e-1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.5"},
+    {"chave": "incendio_normal", "descricao": "Risco de incêndio normal", "valor": 1e-2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.5"},
+    {"chave": "incendio_baixo", "descricao": "Risco de incêndio baixo", "valor": 1e-3, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.5"},
+    {"chave": "nenhum", "descricao": "Nenhum risco de explosão ou incêndio", "valor": 0.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.5"}
+  ],
+  "nota": "Em estruturas com risco de explosão, rf pode necessitar avaliação mais detalhada."
+}

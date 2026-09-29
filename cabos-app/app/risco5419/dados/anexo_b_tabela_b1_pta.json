@@ -1,0 +1,13 @@
+{
+  "tabela": "Tabela B.1 - Valores de probabilidade PTA",
+  "simbolo": "PTA",
+  "descricao": "Probabilidade de choque a seres vivos devido a tensões de toque e passo perigosas, por descarga atmosférica na estrutura (usada em PA = PTA × PB, Equação B.1). Se mais de uma medida for tomada, PTA é o produto dos valores correspondentes (B.2.2).",
+  "entradas": [
+    {"chave": "nenhuma_medida", "descricao": "Nenhuma medida de proteção", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.1"},
+    {"chave": "avisos_de_alerta", "descricao": "Avisos de alerta (usar após análise de viabilidade)", "valor": 1e-1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.1"},
+    {"chave": "isolacao_eletrica", "descricao": "Isolação elétrica das partes expostas nos condutores de descida (ex.: ≥3 mm de polietileno reticulado) — vale apenas para tensão de toque", "valor": 1e-2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.1"},
+    {"chave": "malha_equipotencializacao_solo", "descricao": "Malha de equipotencialização do solo por eletrodo de aterramento reticulado incorporado — vale apenas para tensão de passo", "valor": 1e-2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.1"},
+    {"chave": "estrutura_metalica_ou_concreto_armado_descida_natural", "descricao": "Estrutura metálica contínua ou de concreto armado atuando como subsistema de descida natural", "valor": 1e-3, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.1"},
+    {"chave": "restricoes_fisicas_fixas", "descricao": "Restrições físicas fixas (proteção contra tensão de toque e passo)", "valor": 0.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.1"}
+  ]
+}

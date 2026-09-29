@@ -1,0 +1,9 @@
+{
+  "tabela": "Tabela C.7 - Fator rS",
+  "simbolo": "rs",
+  "descricao": "Fator de aumento da perda de vida humana dependendo do tipo construtivo da estrutura, usado nas equações C.1/C.2 (LA, LU).",
+  "entradas": [
+    {"chave": "simples_madeira_alvenaria", "descricao": "Estrutura simples: madeira ou alvenaria simples", "valor": 2.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.7"},
+    {"chave": "robusta_metalica_concreto_armado", "descricao": "Estrutura robusta: metálica ou concreto armado", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.7"}
+  ]
+}

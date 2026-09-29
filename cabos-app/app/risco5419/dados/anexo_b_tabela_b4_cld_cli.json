@@ -1,0 +1,16 @@
+{
+  "tabela": "Tabela B.4 - Valores dos fatores CLD e CLI",
+  "simbolo": "CLD, CLI",
+  "descricao": "Fatores dependentes das condições de blindagem, aterramento e existência de interface isolante da linha elétrica externa. CLD usado em PC (B.2), PU (B.8), PV (B.9), PW (B.10). CLI usado em PZ (B.11). Para sistemas internos não blindados, usar CLD = 1 (B.4.4).",
+  "entradas": [
+    {"chave": "aerea_nao_blindada_sem_ligacao", "descricao": "Linha aérea não blindada — ligação equipotencial na entrada: nenhuma ou indefinida", "cld": 1.0, "cli": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.4"},
+    {"chave": "subterranea_nao_blindada_sem_ligacao", "descricao": "Linha subterrânea não blindada — ligação equipotencial na entrada: nenhuma ou indefinida", "cld": 1.0, "cli": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.4"},
+    {"chave": "energia_neutro_multiaterrado_sem_ligacao", "descricao": "Linha de energia com neutro multiaterrado — ligação equipotencial na entrada: nenhuma", "cld": 1.0, "cli": 0.2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.4"},
+    {"chave": "subterranea_blindada_sem_interligacao", "descricao": "Linha subterrânea blindada (energia ou sinal) — blindagem não interligada ao mesmo barramento de equipotencialização do equipamento", "cld": 1.0, "cli": 0.3, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.4"},
+    {"chave": "aerea_blindada_sem_interligacao", "descricao": "Linha aérea blindada (energia ou sinal) — blindagem não interligada ao mesmo barramento de equipotencialização do equipamento", "cld": 1.0, "cli": 0.1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.4"},
+    {"chave": "aerea_ou_subterranea_blindada_com_interligacao", "descricao": "Linha aérea ou subterrânea blindada (energia ou sinal) — blindagem interligada ao mesmo barramento de equipotencialização do equipamento", "cld": 1.0, "cli": 0.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.4"},
+    {"chave": "cabo_ou_duto_protecao_metalico_com_interligacao", "descricao": "Cabo de proteção contra descargas atmosféricas, ou cabeamento em duto de proteção, eletroduto metálico ou tubo metálico — interligado ao mesmo barramento de equipotencialização do equipamento", "cld": 0.0, "cli": 0.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.4"},
+    {"chave": "sem_linha_externa_ou_nao_metalica", "descricao": "Nenhuma linha elétrica externa, ou linha não metálica (ex.: fibra óptica) — sem conexão com linhas externas (sistema independente)", "cld": 0.0, "cli": 0.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.4"},
+    {"chave": "qualquer_tipo_com_interface_isolante", "descricao": "Qualquer tipo de linha — com interfaces isolantes de acordo com a ABNT NBR 5419-4 (ver nota (a) da tabela: CLD = 0 somente se a interface for protegida por DPS ou tiver Uw comprovadamente maior que a tensão prevista no ponto; caso contrário CLD = 1)", "cld": 0.0, "cli": 0.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.4, nota (a)"}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "tabela": "Tabela B.2 - Valores de probabilidade PB",
+  "simbolo": "PB",
+  "descricao": "Probabilidade de danos físicos por descarga atmosférica na estrutura, em função do nível de proteção (NP) do SPDA. Usada também em PA = PTA × PB (Equação B.1).",
+  "entradas": [
+    {"chave": "sem_spda", "descricao": "Estrutura não protegida por SPDA", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.2"},
+    {"chave": "spda_np_iv", "descricao": "Estrutura protegida por SPDA, NP IV", "valor": 0.2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.2"},
+    {"chave": "spda_np_iii", "descricao": "Estrutura protegida por SPDA, NP III", "valor": 0.1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.2"},
+    {"chave": "spda_np_ii", "descricao": "Estrutura protegida por SPDA, NP II", "valor": 0.05, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.2"},
+    {"chave": "spda_np_i", "descricao": "Estrutura protegida por SPDA, NP I", "valor": 0.02, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.2"},
+    {"chave": "captacao_np_i_com_descida_natural", "descricao": "Estrutura com subsistema de captação conforme SPDA NP I e estrutura metálica contínua ou de concreto armado atuando como subsistema de descida natural (ABNT NBR 5419-3:2025, 8.1.2-b)", "valor": 0.01, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.2"},
+    {"chave": "cobertura_metalica_captacao_natural_com_descida_natural", "descricao": "Estrutura com cobertura metálica atuando como subsistema de captação natural, com proteção das instalações expostas na cobertura contra descarga direta e centelhamento, e estrutura metálica contínua ou de concreto armado como subsistema de descida natural (ABNT NBR 5419-3:2025, 8.1.2-b)", "valor": 0.001, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.2"}
+  ]
+}

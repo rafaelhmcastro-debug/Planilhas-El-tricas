@@ -1,0 +1,12 @@
+{
+  "tabela": "Tabela B.3 - Valores de probabilidade PSPD",
+  "simbolo": "PSPD",
+  "descricao": "Probabilidade em função do NP para o qual os DPS coordenados foram projetados (ABNT NBR 5419-4). Usada em PC = PSPD × CLD (B.2), PM = PSPD × PMS (B.3), PW = PSPD × PLD × CLD (B.10) e PZ = PSPD × PLI × CLI (B.11).",
+  "entradas": [
+    {"chave": "nenhum_sistema_coordenado_dps", "descricao": "Nenhum sistema coordenado de DPS", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.3"},
+    {"chave": "np_iii_iv", "descricao": "DPS coordenado projetado para NP III-IV", "valor": 0.05, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.3"},
+    {"chave": "np_ii", "descricao": "DPS coordenado projetado para NP II", "valor": 0.02, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.3"},
+    {"chave": "np_i", "descricao": "DPS coordenado projetado para NP I", "valor": 0.01, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.3"},
+    {"chave": "melhor_que_np_i", "descricao": "DPS coordenado com características melhores de proteção do que as requeridas para NP I (maior corrente nominal IN, menor UP etc.). A norma dá apenas a faixa 0,005 a 0,001, sem uma tabela fechada — exige justificativa técnica específica do projeto (Nota 2 da Tabela B.3).", "valor": null, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.3, Nota 2", "faixa_norma": [0.001, 0.005], "observacao": "Preencher valor com justificativa técnica quando este caso se aplicar; não usar um padrão da faixa sem análise."}
+  ]
+}

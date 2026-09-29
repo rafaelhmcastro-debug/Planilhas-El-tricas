@@ -1,0 +1,11 @@
+{
+  "tabela": "Tabela B.6 - Valores da probabilidade PTU",
+  "simbolo": "PTU",
+  "descricao": "Probabilidade de choque a seres vivos por tensão de toque, por descarga atmosférica em linha elétrica conectada à estrutura. Usada em PU = PTU × PEB × PLD × CLD (Equação B.8). Se mais de uma medida for tomada, PTU é o produto dos valores.",
+  "entradas": [
+    {"chave": "nenhuma_medida", "descricao": "Nenhuma medida de proteção", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.6"},
+    {"chave": "avisos_visiveis_alerta", "descricao": "Avisos visíveis de alerta", "valor": 1e-1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.6"},
+    {"chave": "isolacao_eletrica", "descricao": "Isolação elétrica", "valor": 1e-2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.6"},
+    {"chave": "restricoes_fisicas", "descricao": "Restrições físicas", "valor": 0.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.6"}
+  ]
+}

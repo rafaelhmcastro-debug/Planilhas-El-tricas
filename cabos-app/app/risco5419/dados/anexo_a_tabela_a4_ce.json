@@ -1,0 +1,11 @@
+{
+  "tabela": "Tabela A.4 - Fator ambiental da linha elétrica CE",
+  "simbolo": "CE",
+  "descricao": "Fator ambiental do trecho de linha elétrica, usado em NL (A.7) e NI (A.9).",
+  "entradas": [
+    {"chave": "rural", "descricao": "Ambiente rural", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela A.4"},
+    {"chave": "suburbano", "descricao": "Ambiente suburbano", "valor": 0.5, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela A.4"},
+    {"chave": "urbano", "descricao": "Ambiente urbano", "valor": 0.1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela A.4"},
+    {"chave": "urbano_estruturas_acima_20m", "descricao": "Ambiente urbano com estruturas acima de 20 m de altura", "valor": 0.01, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela A.4"}
+  ]
+}

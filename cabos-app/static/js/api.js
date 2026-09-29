@@ -104,5 +104,12 @@ const Api = (() => {
 
     // Relatórios (URLs diretas para download)
     urlRelatorio: (pid, nome, params) => `/api/projetos/${pid}/relatorios/${nome}${params ? "?" + new URLSearchParams(params) : ""}`,
+
+    // Risco de descargas atmosféricas (NBR 5419-2)
+    ngUfs: () => get("/api/risco5419/ng/ufs"),
+    ngBuscarMunicipios: (uf, q) => get(`/api/risco5419/ng/municipios?${new URLSearchParams({ uf, q: q || "" })}`),
+    listarAnalisesRisco: (pid) => get(`/api/projetos/${pid}/risco5419/analises`),
+    criarAnaliseRisco: (pid, a) => post(`/api/projetos/${pid}/risco5419/analises`, a),
+    removerAnaliseRisco: (pid, id) => del(`/api/projetos/${pid}/risco5419/analises/${id}`),
   };
 })();

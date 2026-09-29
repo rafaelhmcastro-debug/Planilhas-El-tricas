@@ -1,0 +1,10 @@
+{
+  "tabela": "Tabela C.4 - Fator de redução rp em função das providências contra incêndio",
+  "simbolo": "rp",
+  "descricao": "Fator de redução da perda por danos físicos, dependendo das providências para reduzir consequências de incêndio. Se mais de uma providência for tomada, usar o menor valor aplicável (C.3.3). Em estruturas com risco de explosão, rp = 1 sempre (C.3.4).",
+  "entradas": [
+    {"chave": "nenhuma_ou_risco_explosao", "descricao": "Nenhuma providência, ou qualquer parte da estrutura/zona de estudo com risco de explosão", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.4"},
+    {"chave": "manual", "descricao": "Uma das seguintes: extintores, instalações fixas operadas manualmente, alarme manual, hidrantes, compartimentos à prova de fogo ou rotas de escape", "valor": 0.5, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.4"},
+    {"chave": "automatica", "descricao": "Uma das seguintes: instalações fixas operadas automaticamente (protegidas contra sobretensões) ou alarme automático (com pessoas capacitadas para combater incêndio no local)", "valor": 0.2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.4"}
+  ]
+}

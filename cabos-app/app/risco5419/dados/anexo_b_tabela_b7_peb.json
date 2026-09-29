@@ -1,0 +1,12 @@
+{
+  "tabela": "Tabela B.7 - Valor da probabilidade PEB",
+  "simbolo": "PEB",
+  "descricao": "Probabilidade em função do NP para o qual os DPS classe I (ligação equipotencial) foram projetados. Usada em PU = PTU × PEB × PLD × CLD (B.8) e PV = PEB × PLD × CLD (B.9).",
+  "entradas": [
+    {"chave": "sem_dps_classe_i", "descricao": "Sem DPS classe I", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.7"},
+    {"chave": "np_iii_iv", "descricao": "DPS classe I projetado para NP III-IV", "valor": 0.05, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.7"},
+    {"chave": "np_ii", "descricao": "DPS classe I projetado para NP II", "valor": 0.02, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.7"},
+    {"chave": "np_i", "descricao": "DPS classe I projetado para NP I", "valor": 0.01, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.7"},
+    {"chave": "melhor_que_np_i", "descricao": "DPS classe I com Iimp maior do que requerido para NP I. A norma dá apenas a faixa 0,005 a 0,001, sem tabela fechada — exige justificativa técnica (Nota 2).", "valor": null, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.7, Nota 2", "faixa_norma": [0.001, 0.005], "observacao": "Preencher com justificativa técnica quando aplicável; não usar padrão da faixa sem análise."}
+  ]
+}

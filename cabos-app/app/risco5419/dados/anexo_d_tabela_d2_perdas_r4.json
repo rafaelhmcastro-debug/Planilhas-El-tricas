@@ -1,0 +1,35 @@
+{
+  "tabela": "Tabela D.2 - Tipo de perda L4 - Valores médios típicos de LT, LF e LO",
+  "simbolo": "LT, LF, LO",
+  "descricao": "Valores relativos médios típicos de perda para R4 (perda de valor econômico, uso opcional/informativo), usados nas equações D.1-D.4. Note que os valores de LF e LO diferem dos usados em R1 (Tabela C.2) — são tabelas distintas.",
+  "grupos": [
+    {
+      "grupo": "LT",
+      "tipo_dano": "D1 - ferimento devido a choque (somente animais)",
+      "entradas": [
+        {"chave": "todos_tipos_somente_animais", "descricao": "Todos os tipos de estrutura em que somente animais estão presentes", "valor": 1e-2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela D.2"}
+      ]
+    },
+    {
+      "grupo": "LF",
+      "tipo_dano": "D2 - danos físicos",
+      "entradas": [
+        {"chave": "risco_explosao", "descricao": "Risco de explosão", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela D.2"},
+        {"chave": "hospital_industrial_museu_agricultura", "descricao": "Hospital, industrial, museu, agricultura", "valor": 0.5, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela D.2"},
+        {"chave": "hotel_escola_escritorio_igreja_entretenimento_comercial", "descricao": "Hotel, escola, escritório, igreja, entretenimento público, comercial", "valor": 0.2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela D.2"},
+        {"chave": "outros", "descricao": "Outros", "valor": 1e-1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela D.2"}
+      ]
+    },
+    {
+      "grupo": "LO",
+      "tipo_dano": "D3 - falha de sistemas internos",
+      "entradas": [
+        {"chave": "risco_explosao", "descricao": "Risco de explosão", "valor": 1e-1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela D.2"},
+        {"chave": "hospital_industrial_escritorio_hotel_comercial", "descricao": "Hospital, industrial, escritório, hotel, comercial", "valor": 1e-2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela D.2"},
+        {"chave": "museu_agricultura_escola_igreja_entretenimento", "descricao": "Museu, agricultura, escola, igreja, entretenimento público", "valor": 1e-3, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela D.2"},
+        {"chave": "outros", "descricao": "Outros", "valor": 1e-4, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela D.2"}
+      ]
+    }
+  ],
+  "nota": "Em estruturas com risco de explosão, LF e LO podem necessitar de avaliação mais detalhada."
+}

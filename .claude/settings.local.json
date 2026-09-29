@@ -35,7 +35,16 @@
       "PowerShell(Stop-Process -Name python -Force -ErrorAction SilentlyContinue)",
       "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\importar_planilha.py\")",
       "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\importar_planilha2.py\")",
-      "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\importar_planilha3.py\")"
+      "Bash(python \"C:\\\\Users\\\\RAFAEL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Rafael-Castro-Downloads-files\\\\565b9c46-3fb2-4f8c-9872-4d3b597fc755\\\\scratchpad\\\\importar_planilha3.py\")",
+      "Bash(mkdir -p /home/user/Planilhas-El-tricas/docs/normas)",
+      "Bash(cp \"/root/.claude/uploads/b205adc0-b1bc-5caf-b2ff-2e0be5bf3633/82fb2993-ABNTNBR5419-2_-_1a_parte.pdf\" /home/user/Planilhas-El-tricas/docs/normas/NBR5419-2.pdf)",
+      "Bash(python3 -c ' *)",
+      "Bash(cp \"/root/.claude/uploads/b205adc0-b1bc-5caf-b2ff-2e0be5bf3633/59ad835c-ABNTNBR5419-2_-_2a1_parte.pdf\" /home/user/Planilhas-El-tricas/docs/normas/NBR5419-2_parte2a.pdf)",
+      "Bash(cp \"/root/.claude/uploads/b205adc0-b1bc-5caf-b2ff-2e0be5bf3633/4991095f-ABNTNBR5419-2_-_2a2_parte.pdf\" /home/user/Planilhas-El-tricas/docs/normas/NBR5419-2_parte2b.pdf)",
+      "Bash(pdftotext -layout /home/user/Planilhas-El-tricas/docs/normas/NBR5419-2_parte2a.pdf /tmp/claude-0/norma_2a.txt)",
+      "Bash(pdftotext -layout /home/user/Planilhas-El-tricas/docs/normas/NBR5419-2_parte2b.pdf /tmp/claude-0/norma_2b.txt)",
+      "Bash(pdfinfo /home/user/Planilhas-El-tricas/docs/normas/NBR5419-2_parte2a.pdf)",
+      "Bash(pdfinfo /home/user/Planilhas-El-tricas/docs/normas/NBR5419-2_parte2b.pdf)"
     ]
   }
 }

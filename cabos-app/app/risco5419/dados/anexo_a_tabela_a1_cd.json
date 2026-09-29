@@ -1,0 +1,11 @@
+{
+  "tabela": "Tabela A.1 - Fator de localização da estrutura CD",
+  "simbolo": "CD",
+  "descricao": "Fator de localização relativa da estrutura, usado em ND (A.3) e no CDJ da estrutura adjacente (A.4).",
+  "entradas": [
+    {"chave": "cercada_objetos_mais_altos", "descricao": "Estrutura cercada por objetos significativamente mais altos", "valor": 0.25, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela A.1"},
+    {"chave": "cercada_objetos_mesma_altura_ou_mais_baixos", "descricao": "Estrutura cercada por objetos da mesma altura ou ligeiramente mais baixos", "valor": 0.5, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela A.1"},
+    {"chave": "isolada", "descricao": "Estrutura isolada: nenhum outro objeto nas vizinhanças, ou cercada por objetos significativamente mais baixos", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela A.1"},
+    {"chave": "isolada_topo_colina_monte", "descricao": "Estrutura isolada no topo de uma colina ou monte", "valor": 2.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela A.1"}
+  ]
+}

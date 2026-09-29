@@ -43,3 +43,6 @@ uploads/*
 *.tmp
 *.bak
 *.log
+
+# Cópias de normas técnicas (direitos autorais — não redistribuir)
+docs/normas/*.pdf

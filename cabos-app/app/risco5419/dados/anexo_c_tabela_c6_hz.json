@@ -1,0 +1,12 @@
+{
+  "tabela": "Tabela C.6 - Fator hz de aumento por perigo especial",
+  "simbolo": "hz",
+  "descricao": "Fator de aumento da perda por danos físicos (D2) na presença de perigo especial (pânico/dificuldade de evacuação).",
+  "entradas": [
+    {"chave": "sem_perigo_especial", "descricao": "Sem perigo especial", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.6"},
+    {"chave": "baixo_panico", "descricao": "Baixo nível de pânico (ex.: estrutura limitada a 2 andares e ≤100 pessoas)", "valor": 2.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.6"},
+    {"chave": "medio_panico", "descricao": "Médio nível de pânico (ex.: eventos culturais/esportivos com 100 a 1000 participantes)", "valor": 5.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.6"},
+    {"chave": "dificuldade_evacuacao", "descricao": "Dificuldade de evacuação (ex.: pessoas imobilizadas, hospitais)", "valor": 5.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.6"},
+    {"chave": "alto_panico", "descricao": "Alto nível de pânico (ex.: eventos culturais/esportivos com >1000 participantes)", "valor": 10.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.6"}
+  ]
+}
