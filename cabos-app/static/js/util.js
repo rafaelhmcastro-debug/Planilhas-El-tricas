@@ -17,10 +17,11 @@ const Util = (() => {
       el.style.cssText = "position:fixed;bottom:16px;right:16px;z-index:100;display:flex;flex-direction:column;gap:8px;";
       document.body.appendChild(el);
     }
-    const cores = { info: "#1f4e78", erro: "#c0392b", ok: "#2e7d32" };
+    const cores = { info: "#1E1B3A", erro: "#B3261E", ok: "#2E7D5B" };
     const item = document.createElement("div");
     item.textContent = msg;
-    item.style.cssText = `background:${cores[tipo] || cores.info};color:#fff;padding:10px 16px;border-radius:6px;box-shadow:0 4px 10px rgba(0,0,0,.2);font-size:13.5px;max-width:460px;`;
+    const borda = tipo === "info" || !cores[tipo] ? "border-left:4px solid #F28C38;" : "";
+    item.style.cssText = `background:${cores[tipo] || cores.info};color:#fff;padding:10px 16px;border-radius:0;box-shadow:0 4px 10px rgba(0,0,0,.2);font-size:13.5px;max-width:460px;${borda}`;
     el.appendChild(item);
     setTimeout(() => item.remove(), tipo === "erro" ? 7000 : 4500);
   }
