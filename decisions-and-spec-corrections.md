@@ -291,5 +291,39 @@ alteração.
 
 ---
 
+## 2026-11-03 — Fase 5 (empacotamento): três bugs reais corrigidos, nenhum de cálculo
+
+PyInstaller (`packaging/pyinstaller.spec`) e Inno Setup (`packaging/
+inno_setup.iss`) escritos; testados de verdade neste sandbox via um build
+Linux do mesmo `.spec` (mesma lógica de empacotamento — só a janela pywebview
+em si não pôde ser testada, por não haver GTK/Qt/Windows aqui). Rodar o
+binário gerado revelou três bugs que não apareceriam só lendo o código —
+nenhum deles muda fórmula ou regra de cálculo:
+
+1. `app/migracoes.py`, `app/seed.py` e `desktop_shell/main.py` resolviam
+   caminhos de arquivos empacotados (`alembic.ini`, `app/migrations/`,
+   `app/seed/*.json`, `static/`) via `Path(__file__)` — funciona em
+   desenvolvimento, quebra no executável empacotado (os módulos `.py` ficam
+   dentro do arquivo compilado do PyInstaller). Corrigido com
+   `database.pasta_recursos_empacotados()`, que usa `sys._MEIPASS` quando
+   congelado.
+2. `alembic.ini` tinha um comentário com acento; o Alembic lê esse arquivo
+   com `encoding="locale"` (decisão do próprio Alembic, não controlável pela
+   nossa `Config`) — quebra em qualquer ambiente sem locale UTF-8. Corrigido
+   deixando os comentários em ASCII.
+3. O logger raiz acabava com um handler do Alembic (instalado via
+   `fileConfig()` em `env.py`) sobrepondo o nosso handler rotativo
+   (requisito 7) depois de cada migração, e logs duplicados. Corrigido
+   instalando o handler rotativo depois das migrações, limpando handlers
+   existentes antes. Também corrigido: falha ao subir o servidor agora é
+   detectada rápido (thread morta), em vez de travar 30 s e abrir uma janela
+   fadada a não conectar.
+
+Ver `packaging/BUILD.md` para o que foi e o que não pôde ser verificado
+neste sandbox (a janela pywebview, o diálogo nativo de pasta, a instalação
+do WebView2 e o Inno Setup em si exigem Windows real).
+
+---
+
 *Toda entrada futura segue este formato: data, o que mudou, onde está na spec
 vs. no código, e se já foi confirmada ou ainda está pendente.*
