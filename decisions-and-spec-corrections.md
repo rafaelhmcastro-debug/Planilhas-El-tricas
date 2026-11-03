@@ -187,13 +187,17 @@ divergência que não pode voltar a aparecer sem passar por aqui de novo.
 
 ---
 
-## Itens ainda em aberto (fora das seis pendências D1–D6, já resolvidas)
+## 2026-11-03 — Decisões finais antes do início da Fase 1
 
-- **Login multiusuário** (`models_auth.py` e módulos relacionados, ~800
-  linhas): proposto na ADR 0001 remover para um app desktop de usuário único —
-  ainda sem confirmação do engenheiro.
-- **Formato do PDF da memória de cálculo** (reportlab vs. weasyprint): decisão
-  adiada para a Fase 4, conforme a própria ADR já registra.
+- **ADR 0001 aprovada como está** pelo engenheiro responsável.
+- **Login multiusuário — RESOLVIDO: removido.** `models_auth.py`,
+  `routers/auth.py`, `routers/admin.py` (~800 linhas: login, aprovação de
+  usuário, log de acesso) não entram no esquema de banco nem na Fase 2 do
+  porte. App desktop de usuário único.
+- **Formato do PDF da memória de cálculo** (reportlab vs. weasyprint): ainda em
+  aberto, decisão adiada para a Fase 4 — não bloqueia Fase 1.
+- **PE-E-601** (layout real da lista de cabos): ainda não recebido — não
+  bloqueia Fase 1–3, só o fechamento da Fase 4 para a aba de cabos.
 
 ---
 

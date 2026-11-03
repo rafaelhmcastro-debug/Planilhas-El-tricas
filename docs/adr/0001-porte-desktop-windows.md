@@ -165,12 +165,15 @@ desktop/
 | 8 | Caminhos com espaço/acento (`C:\Users\João\Documentos`) | `pathlib` + SQLite já lidam bem com Unicode; `--onedir` evita extração para `%TEMP%`, reduzindo a superfície desse risco |
 | 9 | Firewall do Windows perguntando ao abrir o programa | Bind estrito em `127.0.0.1` (nunca `0.0.0.0`) evita o prompt na grande maioria dos casos; porta escolhida dinamicamente (bind em porta 0) evita conflito com outros serviços locais |
 
-## 9. Fora do escopo desta ADR (decisões de produto, não técnicas)
+## 9. Decisões de produto confirmadas em 2026-11-03
 
-- Manter ou remover o login multiusuário (`models_auth.py`) — proposto remover,
-  ainda sem confirmação do engenheiro.
-- Formato final do PDF da memória de cálculo (reportlab vs. weasyprint) — decidir
-  na Fase 4.
+- **ADR aprovada como está** — stack, estrutura de pastas e esquema confirmados;
+  Fase 1 liberada para começar.
+- **Login multiusuário removido.** App de usuário único na própria máquina do
+  engenheiro não carrega `models_auth.py`/`routers/auth.py`/`routers/admin.py`
+  (login, aprovação de usuário, log de acesso) no porte para desktop.
+- Formato final do PDF da memória de cálculo (reportlab vs. weasyprint) —
+  decisão adiada para a Fase 4 (não bloqueia Fase 1).
 
 ---
 
