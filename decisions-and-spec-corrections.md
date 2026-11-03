@@ -223,5 +223,38 @@ divergência que não pode voltar a aparecer sem passar por aqui de novo.
 
 ---
 
+## 2026-11-03 — Fase 3 (interface): decisões de implementação, nenhuma de cálculo
+
+Nenhuma fórmula ou regra normativa mudou na Fase 3 — a camada de orquestração
+(`desktop/app/calculations.py`) só busca dados e chama o núcleo puro já
+testado na Fase 1 (`desktop/core/`); o teste de integração novo
+(`app/tests/test_integracao_api.py`) sobe a API de ponta a ponta e confere
+que os resultados batem com os mesmos casos de referência. As decisões abaixo
+são de produto/implementação, dentro do que a ADR 0001 já previa, mas registro
+aqui por completude:
+
+- **Tela "Sistema" nova em Configurações** (pasta de dados, backup,
+  restauração): não existe no app web (lá o banco mora no servidor; quem usa
+  nunca precisa escolher pasta nem tirar backup manual) — criada para cumprir
+  os requisitos 2 e 4, que a Fase 2 só tinha implementado no backend
+  (`database.py`, `backup.py`), sem tela nenhuma até agora.
+- **Troca de pasta de dados e restauração de backup exigem reiniciar o
+  programa.** Decisão de segurança: trocar o engine do SQLAlchemy em tempo de
+  execução, com conexões abertas, é risco real de corrupção que não compensa
+  evitar um restart. A pasta antiga nunca é apagada — só deixa de ser apontada
+  pelo ponteiro — e a restauração sempre guarda cópia de segurança do banco
+  atual antes de sobrescrever (requisito "nunca apagar dado do usuário em
+  silêncio").
+- **Catálogos em Configurações deixam de ter modo "somente leitura".** O app
+  web restringia edição de catálogo a `usuarioRole === 'admin'`; sem login,
+  esse conceito não existe mais — o engenheiro (único usuário) tem acesso
+  completo. Consequência direta da decisão já confirmada de remover o login,
+  não uma decisão nova.
+- **CORS restrito a `127.0.0.1`/`localhost`** (qualquer porta, via regex) em
+  vez do `allow_origins=["*"]` do app web — exigido pelo app rodar
+  inteiramente offline, sem exposição de rede.
+
+---
+
 *Toda entrada futura segue este formato: data, o que mudou, onde está na spec
 vs. no código, e se já foi confirmada ou ainda está pendente.*
