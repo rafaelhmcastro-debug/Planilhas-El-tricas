@@ -1,0 +1,7 @@
+# Dependências só para rodar os testes (não entram no executável empacotado).
+# httpx é exigido pelo TestClient do FastAPI/Starlette para os testes de
+# integração da API (app/tests/test_integracao_api.py); 0.28+ removeu o
+# parâmetro `app=` que o Starlette 0.35 (usado pelo FastAPI 0.109 — ver
+# requirements.txt) ainda depende internamente, por isso a versão travada
+# abaixo, mais antiga que a mais recente disponível.
+httpx==0.27.2

@@ -1,7 +1,14 @@
 # Dependências do porte desktop, com versões travadas (requisito "Dependências
-# com versões fixas"). Cresce a cada fase — hoje cobre só o necessário para o
-# núcleo de cálculo (Fase 1) e banco/migrações/backup (Fase 2). FastAPI,
-# pywebview, openpyxl, PyInstaller etc. entram nas Fases 3-5.
+# com versões fixas"). Cresce a cada fase. PyInstaller entra na Fase 5.
 
 sqlalchemy==2.0.25
 alembic==1.20.1
+
+# Fase 3 — API/orquestração (reaproveita os pins de cabos-app/requirements.txt
+# onde aplicável) e casca desktop.
+fastapi==0.109.0
+uvicorn==0.27.0
+pydantic==2.6.4
+python-multipart==0.0.7
+openpyxl==3.1.5
+pywebview==6.2.1

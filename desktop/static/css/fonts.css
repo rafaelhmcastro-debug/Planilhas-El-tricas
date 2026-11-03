@@ -1,0 +1,70 @@
+/* Barlow, Barlow Condensed e JetBrains Mono, vendorizadas localmente a partir
+   do Google Fonts (apenas o subconjunto "latin", que cobre português/ASCII)
+   para cumprir o requisito de app 100% offline (ADR 0001 §3) — substitui o
+   <link> para fonts.googleapis.com/fonts.gstatic.com usado na versão web. */
+
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/barlow-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/barlow-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/barlow-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/barlow-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/barlow-condensed-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/barlow-condensed-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/barlow-condensed-700.woff2') format('woff2');
+}
+/* Arquivo variável único (mesmo comportamento do CSS que o Google Fonts serve
+   para esta fonte: os dois pesos interpolam a partir do mesmo arquivo). */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/jetbrains-mono.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/jetbrains-mono.woff2') format('woff2');
+}

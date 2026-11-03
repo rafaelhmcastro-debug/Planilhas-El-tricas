@@ -91,3 +91,49 @@ def criar_engine(pasta_dados: Path | None = None, *, echo: bool = False):
 
 def criar_fabrica_sessao(engine):
     return sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+
+# ---------------------------------------------------------------------------
+# Sessão global usada pelos routers do FastAPI (desktop_shell/main.py chama
+# `inicializar()` uma vez na subida do app; os testes de unidade/integração
+# continuam usando `criar_engine`/`criar_fabrica_sessao` direto, sem passar
+# por aqui).
+# ---------------------------------------------------------------------------
+_engine = None
+_Sessao = None
+_pasta_dados_ativa: Path | None = None
+
+
+def inicializar(pasta_dados: Path | None = None):
+    """Cria o engine/fábrica de sessão globais a partir da pasta de dados
+    (resolvida automaticamente se `pasta_dados` não for informado). Guarda a
+    pasta efetivamente usada em `_pasta_dados_ativa` — rotas como as de
+    `routers/sistema.py` devem ler `pasta_dados_ativa()`, não chamar
+    `resolver_pasta_dados()` de novo, porque isso ignoraria um `pasta_dados`
+    explícito (o caso dos testes de integração, que usam uma pasta
+    temporária em vez da pasta real do sistema)."""
+    global _engine, _Sessao, _pasta_dados_ativa
+    _pasta_dados_ativa = pasta_dados if pasta_dados is not None else resolver_pasta_dados()
+    _engine = criar_engine(_pasta_dados_ativa)
+    _Sessao = criar_fabrica_sessao(_engine)
+    return _engine
+
+
+def pasta_dados_ativa() -> Path:
+    """Pasta de dados que o app FastAPI está efetivamente usando nesta
+    execução. Chama `inicializar()` (com a pasta padrão) se ainda não tiver
+    sido chamada — mesma rede de segurança de `get_db()`."""
+    if _pasta_dados_ativa is None:
+        inicializar()
+    return _pasta_dados_ativa
+
+
+def get_db():
+    """Dependency do FastAPI — mesmo formato de `cabos-app/app/database.py`."""
+    if _Sessao is None:
+        inicializar()
+    db = _Sessao()
+    try:
+        yield db
+    finally:
+        db.close()

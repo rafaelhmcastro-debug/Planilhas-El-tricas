@@ -149,6 +149,11 @@ class CatalogoCabo(Base):
     norma_referencia = Column(String, default="")
     fonte_datasheet = Column(String, default="")
 
+    @property
+    def area_secao_mm2(self):
+        import math
+        return math.pi * (self.diametro_externo_nominal_mm / 2) ** 2
+
 
 class Cabo(Base):
     __tablename__ = "cabos"
