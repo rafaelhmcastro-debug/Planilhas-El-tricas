@@ -10,6 +10,7 @@ const State = (() => {
     { id: "cabos", label: "Cabos", exigeProjeto: true },
     { id: "cargas", label: "Cargas e Demanda", exigeProjeto: true },
     { id: "relatorios", label: "Relatórios", exigeProjeto: true },
+    { id: "risco5419", label: "Risco Atmosférico (NBR 5419-2)", exigeProjeto: true },
     { id: "config", label: "Configurações/Normas", exigeProjeto: false },
   ];
 

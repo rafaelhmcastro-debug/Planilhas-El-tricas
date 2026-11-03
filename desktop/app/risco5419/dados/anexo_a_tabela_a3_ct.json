@@ -1,0 +1,9 @@
+{
+  "tabela": "Tabela A.3 - Fator do tipo de linha elétrica CT",
+  "simbolo": "CT",
+  "descricao": "Fator do tipo de linha elétrica, usado em NDJ (A.4), NL (A.7) e NI (A.9).",
+  "entradas": [
+    {"chave": "bt_ou_sinal", "descricao": "Linha elétrica de energia em BT ou sinal", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela A.3"},
+    {"chave": "at_com_transformador_at_bt", "descricao": "Linha elétrica de energia em AT, com transformador AT/BT com enrolamentos eletricamente separados (aplica-se a transformadores dentro da estrutura ou nos trechos fora dela)", "valor": 0.2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela A.3"}
+  ]
+}

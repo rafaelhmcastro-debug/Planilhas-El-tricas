@@ -1,0 +1,9 @@
+{
+  "tabela": "Seção 7.3.4 - Frequência tolerável FT",
+  "simbolo": "FT",
+  "descricao": "Frequência tolerável de danos F, para comparação com a frequência de danos calculada (Seção 7).",
+  "entradas": [
+    {"chave": "sistema_critico", "descricao": "Sistema crítico: falha pode afetar uma comunidade, causando perdas irreversíveis/de longa duração ou, por efeitos indiretos, danos físicos ou ameaça à vida. Valor máximo, não pode ser alterado exceto por autoridade com jurisdição.", "valor": 0.1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, §7.3.4", "unidade": "1/ano"},
+    {"chave": "sistema_nao_critico", "descricao": "Sistema não crítico. Valor meramente representativo.", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, §7.3.4", "unidade": "1/ano"}
+  ]
+}

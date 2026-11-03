@@ -1,0 +1,11 @@
+{
+  "tabela": "Tabela A.2 - Fator de instalação da linha elétrica CI",
+  "simbolo": "CI",
+  "descricao": "Fator de instalação do trecho de linha elétrica, usado em NL (A.7) e NI (A.9). Base: resistividade do solo ρ = 400 Ω·m.",
+  "entradas": [
+    {"chave": "aereo", "descricao": "Linha elétrica aérea", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela A.2"},
+    {"chave": "enterrado", "descricao": "Linha elétrica enterrada", "valor": 0.5, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela A.2"},
+    {"chave": "enterrado_dentro_malha_aterramento", "descricao": "Trecho enterrado e instalado, ao longo do comprimento LL, no interior dos limites de um eletrodo de aterramento em malha (ABNT NBR 5419-4:2025, 5.2)", "valor": 0.01, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela A.2"}
+  ],
+  "nota_resistividade_alta": "Para trecho enterrado com resistividade do solo ρ > 400 Ω·m, a Tabela A.2 não se aplica diretamente: usar AL = 0,6 × √ρ × LL no lugar da Equação A.8 (Tabela A.2, Nota 1)."
+}

@@ -12,3 +12,7 @@ pydantic==2.6.4
 python-multipart==0.0.7
 openpyxl==3.1.5
 pywebview==6.2.1
+
+# Módulo de risco NBR 5419-2 (entra só depois da Fase 5, como já definido)
+python-docx==1.1.2
+matplotlib==3.8.4

@@ -1,0 +1,11 @@
+{
+  "tabela": "Tabela B.9 - Valores da probabilidade PLI",
+  "simbolo": "PLI",
+  "descricao": "Probabilidade de falha de sistemas internos por descarga atmosférica próximo à linha elétrica conectada, em função do tipo de linha e da tensão suportável nominal de impulso UW (kV) dos equipamentos. Usada em PZ = PSPD × PLI × CLI (Equação B.11).",
+  "colunas_uw_kv": [1, 1.5, 2.5, 4, 6],
+  "entradas": [
+    {"chave": "linhas_energia", "descricao": "Linhas elétricas de energia", "valores_por_uw": [1, 0.6, 0.3, 0.16, 0.1], "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.9"},
+    {"chave": "linhas_sinal", "descricao": "Linhas elétricas de sinais", "valores_por_uw": [1, 0.5, 0.2, 0.08, 0.04], "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.9"}
+  ],
+  "nota": "Avaliações mais precisas de PLI: IEC/TR 62066 (linhas de energia) e ITU-T K.46 (linhas de sinal)."
+}

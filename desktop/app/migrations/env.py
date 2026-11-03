@@ -13,6 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from app import models  # noqa: E402
 from app.database import caminho_banco  # noqa: E402
+from app.risco5419 import modelos as models_risco5419  # noqa: E402,F401 — registra as tabelas do módulo de risco em Base.metadata
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

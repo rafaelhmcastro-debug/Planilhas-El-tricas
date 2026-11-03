@@ -1,0 +1,10 @@
+{
+  "tabela": "Tabela 4 - Valores típicos de risco tolerável RT",
+  "descricao": "Risco tolerável para comparação com R1 e R3. Para R4 não há valor normalizado; o Anexo D (D.1.2) cita um valor representativo, não obrigatório.",
+  "entradas": [
+    {"chave": "rt_r1", "descricao": "Risco tolerável para perda de vida humana ou ferimentos permanentes (R1)", "valor": 1e-5, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela 4", "unidade": "1/ano"},
+    {"chave": "rt_r3", "descricao": "Risco tolerável para perda de patrimônio cultural (R3)", "valor": 1e-4, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela 4", "unidade": "1/ano"},
+    {"chave": "rt_r4_representativo", "descricao": "Valor representativo (não normalizado, não obrigatório) para risco tolerável de perda de valor econômico R4. A autoridade com jurisdição local ou o próprio proprietário podem adotar outro valor; a norma não obriga o uso deste.", "valor": 1e-3, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Anexo D, D.1.2", "unidade": "1/ano"}
+  ],
+  "nota": "A autoridade com jurisdição local tem prioridade na determinação de RT (5.3). Estes valores são usados apenas na ausência dessa informação."
+}

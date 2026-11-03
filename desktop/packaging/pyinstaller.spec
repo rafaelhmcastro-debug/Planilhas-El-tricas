@@ -8,9 +8,10 @@ Build (Windows, com o venv do projeto ativado, a partir de `desktop/`):
     pyinstaller packaging/pyinstaller.spec --noconfirm
 
 Gera `dist/Calc 54/Calc 54.exe` + a pasta `_internal/` ao lado (dados
-empacotados: `static/`, `app/migrations/`, `app/seed/*.json`, `alembic.ini`
-— ver `app/database.pasta_recursos_empacotados()`, que lê `sys._MEIPASS`
-para achar esses arquivos no executável empacotado).
+empacotados: `static/`, `app/migrations/`, `app/seed/*.json`, `alembic.ini`,
+`app/risco5419/dados/*` e `app/risco5419/templates/*.docx` — ver
+`app/database.pasta_recursos_empacotados()`, que lê `sys._MEIPASS` para
+achar esses arquivos no executável empacotado).
 """
 from pathlib import Path
 
@@ -25,6 +26,8 @@ a = Analysis(
         (str(DESKTOP_DIR / "app" / "migrations"), "app/migrations"),
         (str(DESKTOP_DIR / "app" / "seed"), "app/seed"),
         (str(DESKTOP_DIR / "alembic.ini"), "."),
+        (str(DESKTOP_DIR / "app" / "risco5419" / "dados"), "app/risco5419/dados"),
+        (str(DESKTOP_DIR / "app" / "risco5419" / "templates"), "app/risco5419/templates"),
     ],
     hiddenimports=[
         # uvicorn escolhe implementação de loop/protocolo em tempo de

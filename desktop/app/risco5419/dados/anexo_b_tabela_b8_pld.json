@@ -1,0 +1,33 @@
+{
+  "tabela": "Tabela B.8 - Valores da probabilidade PLD",
+  "simbolo": "PLD",
+  "descricao": "Probabilidade de falha de sistemas internos por descarga atmosférica na linha elétrica conectada, em função da resistência RS da blindagem do cabo e da tensão suportável nominal de impulso UW do equipamento (kV). Usada em PU (B.8), PV (B.9) e PW (B.10). Tabela 2D: categoria de linha × UW.",
+  "colunas_uw_kv": [0.35, 0.5, 1, 1.5, 2.5, 4, 6],
+  "entradas": [
+    {
+      "chave": "nao_blindada_ou_blindagem_nao_interligada",
+      "descricao": "Linha elétrica aérea ou subterrânea, não blindada, ou com a blindagem não interligada à mesma referência de equipotencialização do equipamento",
+      "valores_por_uw": [1, 1, 1, 1, 1, 1, 1],
+      "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.8"
+    },
+    {
+      "chave": "blindada_rs_5_a_20",
+      "descricao": "Linha de energia ou sinal, blindada (aérea ou subterrânea), blindagem interligada à mesma referência de equipotencialização do equipamento, 5 Ω/km < RS ≤ 20 Ω/km",
+      "valores_por_uw": [1, 1, 1, 1, 0.95, 0.9, 0.8],
+      "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.8"
+    },
+    {
+      "chave": "blindada_rs_1_a_5",
+      "descricao": "Linha de energia ou sinal, blindada (aérea ou subterrânea), blindagem interligada à mesma referência de equipotencialização do equipamento, 1 Ω/km < RS ≤ 5 Ω/km",
+      "valores_por_uw": [1, 1, 0.9, 0.8, 0.6, 0.3, 0.1],
+      "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.8"
+    },
+    {
+      "chave": "blindada_rs_menor_1",
+      "descricao": "Linha de energia ou sinal, blindada (aérea ou subterrânea), blindagem interligada à mesma referência de equipotencialização do equipamento, RS ≤ 1 Ω/km",
+      "valores_por_uw": [1, 0.85, 0.6, 0.4, 0.2, 0.04, 0.02],
+      "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.8"
+    }
+  ],
+  "nota": "Para UW intermediário não listado, a norma não define interpolação — usar o valor da coluna imediatamente inferior (mais conservador) até confirmação do engenheiro sobre o critério de interpolação adotado no projeto."
+}

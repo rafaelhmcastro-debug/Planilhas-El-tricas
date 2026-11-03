@@ -1,0 +1,9 @@
+{
+  "tabela": "Tabela C.9 - Tipo de perda L3 - Valor médio típico de LF",
+  "simbolo": "LF",
+  "descricao": "Valor relativo médio típico de perda por danos físicos (D2) para R3 (perda de patrimônio cultural), usado na Equação C.7: LB = LV = rp × rf × LF × cz/ct.",
+  "entradas": [
+    {"chave": "museus_galerias", "descricao": "Museus, galerias", "valor": 1e-1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.9"}
+  ],
+  "nota": "A norma só lista explicitamente 'Museus, galerias' na Tabela C.9. Para outros tipos de patrimônio cultural, não há valor tabelado — exigir do projetista uma justificativa técnica específica em vez de reaproveitar este valor por padrão."
+}

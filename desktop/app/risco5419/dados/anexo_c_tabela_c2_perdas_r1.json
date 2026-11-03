@@ -1,0 +1,35 @@
+{
+  "tabela": "Tabela C.2 - Tipo de perda L1 - Valores médios típicos de LT, LF e LO",
+  "simbolo": "LT, LF, LO",
+  "descricao": "Valores relativos médios típicos de perda para R1 (perda de vida humana), usados nas equações C.1-C.4 (LA=LU=rt×LT×..., LB=LV=rp×rf×hz×LF×..., LC=LM=LW=LZ=LO×...). Valores referem-se ao atendimento contínuo de pessoas na estrutura (Nota 1 da tabela).",
+  "grupos": [
+    {
+      "grupo": "LT",
+      "tipo_dano": "D1 - ferimentos por choque elétrico",
+      "entradas": [
+        {"chave": "todos_os_tipos", "descricao": "Todos os tipos de estrutura", "valor": 1e-2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.2"}
+      ]
+    },
+    {
+      "grupo": "LF",
+      "tipo_dano": "D2 - danos físicos",
+      "entradas": [
+        {"chave": "risco_explosao", "descricao": "Risco de explosão", "valor": 1e-1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.2"},
+        {"chave": "hospital_hotel_escola_edificio_civico", "descricao": "Hospital, hotel, escola, edifício cívico", "valor": 1e-1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.2"},
+        {"chave": "entretenimento_igreja_museu", "descricao": "Entretenimento público, igreja, museu", "valor": 5e-2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.2"},
+        {"chave": "industrial_comercial", "descricao": "Industrial, comercial", "valor": 2e-2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.2"},
+        {"chave": "outros", "descricao": "Outros", "valor": 1e-2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.2"}
+      ]
+    },
+    {
+      "grupo": "LO",
+      "tipo_dano": "D3 - falhas de sistemas internos",
+      "entradas": [
+        {"chave": "risco_explosao", "descricao": "Risco de explosão", "valor": 1e-1, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.2"},
+        {"chave": "uti_bloco_cirurgico_hospital", "descricao": "Unidade de terapia intensiva e bloco cirúrgico de hospital", "valor": 1e-2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.2"},
+        {"chave": "outras_partes_hospital", "descricao": "Outras partes de hospital", "valor": 1e-3, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.2"}
+      ]
+    }
+  ],
+  "nota_estrutura_com_explosao": "Em estruturas com risco de explosão, LF e LO podem necessitar de avaliação mais detalhada (Nota 2 da tabela)."
+}

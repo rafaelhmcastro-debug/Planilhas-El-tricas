@@ -1,0 +1,13 @@
+{
+  "tabela": "Tabela B.5 - Valor do fator KS3",
+  "simbolo": "KS3",
+  "descricao": "Fator dependendo da fiação interna, usado em PMS = (KS1 × KS2 × KS3 × KS4)² (Equação B.4). Valores referentes a um circuito de 100 m; para circuitos menores, podem ser reduzidos proporcionalmente.",
+  "entradas": [
+    {"chave": "nao_blindado_sem_preocupacao_roteamento", "descricao": "Cabo não blindado — sem preocupação no roteamento para evitar laços (condutores com roteamentos diferentes, espaço vivo-PE ≥0,5 m, laço da ordem de 50 m² em grandes estruturas)", "valor": 1.0, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.5"},
+    {"chave": "nao_blindado_evita_grandes_lacos", "descricao": "Cabo não blindado — preocupação no roteamento para evitar grandes laços (condutores de mesmo conduto, espaço vivo-PE ≤0,25 m, ou laços de ~25 m² em estruturas pequenas)", "valor": 0.5, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.5"},
+    {"chave": "nao_blindado_evita_lacos_medios", "descricao": "Cabo não blindado — preocupação no roteamento para evitar laços médios (condutores de mesmo conduto, espaço vivo-PE ≤0,1 m, ou laços de ~10 m² em estruturas pequenas)", "valor": 0.2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.5"},
+    {"chave": "nao_blindado_evita_pequenos_lacos", "descricao": "Cabo não blindado — preocupação no roteamento para evitar pequenos laços (condutores de mesmo cabo, espaço vivo-PE ≤0,005 m, laços de ~0,5 m²)", "valor": 0.01, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.5"},
+    {"chave": "blindado_ou_em_conduto_metalico", "descricao": "Cabos blindados ou cabos instalados em condutos metálicos (blindagem/conduto eletricamente contínuo, interligado a elementos de equipotencialização em ambas as extremidades)", "valor": 0.0001, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela B.5"}
+  ],
+  "nota": "Valores para circuito de 100 m de comprimento; para circuitos menores podem ser reduzidos proporcionalmente (nota 'e' da tabela)."
+}

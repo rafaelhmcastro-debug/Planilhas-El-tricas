@@ -5,3 +5,9 @@
 # requirements.txt) ainda depende internamente, por isso a versão travada
 # abaixo, mais antiga que a mais recente disponível.
 httpx==0.27.2
+
+# lxml já é dependência de runtime transitiva de python-docx (requirements.txt),
+# mas app/risco5419/tests/test_exportacao_docx.py importa `lxml.etree`
+# diretamente para inspecionar o .docx gerado — pinado aqui à parte porque é
+# usado explicitamente pelo teste, não só internamente pelo python-docx.
+lxml==6.1.3

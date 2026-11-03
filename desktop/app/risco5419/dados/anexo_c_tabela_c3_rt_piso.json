@@ -1,0 +1,12 @@
+{
+  "tabela": "Tabela C.3 - Fator de redução rt em função do tipo de superfície do solo ou piso",
+  "simbolo": "rt",
+  "descricao": "Fator de redução da perda de vida humana (e de animais, no Anexo D), dependendo da resistência de contato do piso. Medida entre eletrodo de 400 cm² comprimido a 500 N e um ponto no infinito.",
+  "entradas": [
+    {"chave": "terra_concreto", "descricao": "Terra, concreto (resistência de contato ≤1 kΩ)", "valor": 1e-2, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.3"},
+    {"chave": "marmore_ceramica", "descricao": "Mármore, cerâmica (resistência de contato 1-10 kΩ)", "valor": 1e-3, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.3"},
+    {"chave": "brita_tapete_carpete", "descricao": "Brita, tapete, carpete (resistência de contato 10-100 kΩ)", "valor": 1e-4, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.3"},
+    {"chave": "asfalto_linoleo_madeira", "descricao": "Asfalto, linóleo, madeira (resistência de contato ≥100 kΩ)", "valor": 1e-5, "referencia": "Projeto de Revisão ABNT NBR 5419-2, JUL/2025, Tabela C.3"}
+  ],
+  "nota": "Uma camada isolante (ex.: asfalto de 5 cm) geralmente reduz o perigo a nível tolerável, mas cuidado se ficar úmida ou coberta por água."
+}
