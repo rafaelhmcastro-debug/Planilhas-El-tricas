@@ -163,19 +163,22 @@ divergência que não pode voltar a aparecer sem passar por aqui de novo.
     principais)` | `POTÊNCIA UNITÁRIA` (subcolunas `kW` e `kVA`) | `DIMENSÕES
     (m)` | `PESO UNITÁRIO kg` | `FOLHAS DE DADOS` | `DIAGRAMA ELÉTRICO` |
     `FORNECEDOR` | `OBSERVAÇÃO`.
-  - **Achados que a Fase 4 precisa tratar, não a Fase 0:**
+  - **Achados que a Fase 4 precisava tratar:**
     1. O layout real **não tem** tensão, fases, cosφ, FD, corrente nominal nem
        potência de demanda — nossa `exportar_equipamentos()` atual tem essas
        colunas a mais (20 colunas no total); não é uma contradição, é um
-       relatório mais analítico que o PE-G-622 oficial pede. Decisão de Fase 4:
-       gerar a aba no formato PE-G-622 estrito (10 colunas, cabeçalho
-       completo) como exportação própria, mantendo a exportação atual
-       (mais rica) como relatório interno/analítico separado — **a confirmar**.
+       relatório mais analítico que o PE-G-622 oficial pede. **RESOLVIDO
+       (2026-11-03):** o engenheiro confirmou manter só a exportação analítica
+       atual — não gerar uma aba separada no formato PE-G-622 estrito (10
+       colunas + cabeçalho formal). A especificação real também não liga o
+       PE-G-622 à "Lista de Equipamentos" por nome (diferente da lista de
+       cabos, que a spec liga explicitamente ao PE-E-601) — então isso não é
+       uma lacuna, é a exportação já pedida.
     2. O layout real tem `TAG` **e** `NOME` como colunas separadas; nosso
        `models.Equipamento` só tem `tag` + `descricao` (sem campo `nome`
-       próprio). Precisa decidir, na Fase 4 (ou já na Fase 2 se o engenheiro
-       preferir mudar o esquema), se `NOME` vem de um novo campo ou é derivado
-       de `descricao`/`tipo_carga`.
+       próprio). **Sem efeito prático após a decisão do item 1** — como não
+       haverá export no formato estrito do PE-G-622, não é preciso decidir
+       sobre um campo `NOME` separado.
     3. Confirma meu achado anterior sobre a lista de cabos (PE-E-601): o
        conjunto de colunas citado na seção 9 da spec já é compatível com o que
        `exportar_cabos()` gera hoje, mais colunas analíticas extras — mesmo
@@ -192,9 +195,8 @@ divergência que não pode voltar a aparecer sem passar por aqui de novo.
   não exige layout novo nem bloco de cabeçalho da contratada** — o formato que
   a Fase 4 deve reproduzir no app desktop é exatamente o que já existe em
   `excel_export.py`. Isso não contradiz os achados do PE-G-622 (item 1 acima,
-  ainda "a confirmar"): ficam como duas questões distintas — se será preciso
-  também um export estrito em formato PE-G-622 para a lista de equipamentos,
-  decisão que continua pendente para a Fase 4.
+  agora resolvido): eram duas questões distintas, e as duas chegaram à mesma
+  conclusão — manter só a exportação analítica atual, sem layout novo.
   **Não versionei os 4 arquivos recebidos no repositório** (diferente do que
   fiz com o PE-G-622): eles têm dado de projeto específico preenchido (nº
   0010-26-0003, "CASAS DE BOMBAS", tags de equipamento) em vez de texto de
@@ -213,8 +215,14 @@ divergência que não pode voltar a aparecer sem passar por aqui de novo.
   `routers/auth.py`, `routers/admin.py` (~800 linhas: login, aprovação de
   usuário, log de acesso) não entram no esquema de banco nem na Fase 2 do
   porte. App desktop de usuário único.
-- **Formato do PDF da memória de cálculo** (reportlab vs. weasyprint): ainda em
-  aberto, decisão adiada para a Fase 4 — não bloqueia Fase 1.
+- **Formato do PDF da memória de cálculo** — **RESOLVIDO (2026-11-03): não se
+  aplica.** A especificação real (`especificacao_software_cabos.md`) é
+  explícita: "Toda exportação de dados (listas e memória de cálculo) gerada
+  em formato Excel (.xlsx)" — PDF não é um entregável pedido em lugar nenhum
+  da spec; a menção a PDF na ADR vinha só do pedido inicial, genérico, de
+  antes da spec real ter sido recebida. Confirmado pelo engenheiro: só Excel,
+  como já está implementado desde a Fase 3. Nenhum código de PDF será
+  escrito.
 - **PE-E-601** (layout real da lista de cabos): RESOLVIDO em 2026-11-03 (ver
   D6 acima) — usa o formato já existente em `excel_export.py`, sem bloco de
   cabeçalho formal.
@@ -253,6 +261,33 @@ aqui por completude:
 - **CORS restrito a `127.0.0.1`/`localhost`** (qualquer porta, via regex) em
   vez do `allow_origins=["*"]` do app web — exigido pelo app rodar
   inteiramente offline, sem exposição de rede.
+
+---
+
+## 2026-11-03 — Fase 4 (exportações): fechada sem código novo
+
+Antes de escrever qualquer coisa, revisei a especificação real contra o que
+a Fase 3 já tinha entregado (os 5 relatórios em Excel, portados junto com os
+routers) e encontrei que os dois itens pendentes de exportação já estavam, na
+prática, resolvidos ou sem efeito — confirmados com o engenheiro em
+2026-11-03:
+
+- **PDF:** resolvido como "não se aplica" (ver atualização acima na seção de
+  decisões de 2026-11-03 antes da Fase 1). Confirmado — só Excel, nenhum
+  código de PDF foi escrito.
+- **Formato estrito do PE-G-622** para a lista de equipamentos (10 colunas +
+  cabeçalho formal): confirmado **manter só a exportação analítica atual**
+  (20 colunas), sem criar uma segunda aba/arquivo no formato estrito. Como
+  consequência direta, a pergunta sobre um campo `NOME` separado de
+  `descricao` (item 2 do achado do PE-G-622, acima) também deixa de ter
+  efeito prático — não é preciso decidir, porque não há export que precise
+  dele.
+
+Resultado: a Fase 4 não teve nenhuma linha de código nova — toda a
+exportação exigida pela especificação (5 relatórios em Excel, incluindo
+exportar um cabo específico da memória de cálculo) já tinha sido entregue na
+Fase 3, ao portar `excel_export.py` e `routers/relatorios.py` quase sem
+alteração.
 
 ---
 

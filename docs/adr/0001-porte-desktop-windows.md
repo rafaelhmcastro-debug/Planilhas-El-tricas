@@ -23,7 +23,7 @@
 | Empacotamento | **PyInstaller**, modo `--onedir` | Ver §3 |
 | Instalador | **Inno Setup** | Ver §3 |
 | Export Excel | `openpyxl` (já em uso) | Já não depende de Office instalado |
-| Export PDF da memória de cálculo | `reportlab` ou `weasyprint` — **a decidir na Fase 4**, não bloqueia Fase 0 | Nenhum dos dois exige Office; weasyprint tem dependência nativa (GTK/Pango no Windows) mais pesada — avaliar quando chegar na Fase 4 |
+| Export PDF da memória de cálculo | **Não se aplica** — resolvido na Fase 4: a spec real só pede Excel (`.xlsx`) para toda exportação, PDF nunca foi um entregável pedido | Confirmado pelo engenheiro em 2026-11-03; ver `decisions-and-spec-corrections.md` |
 | Dependências | `requirements.txt` com versões travadas (`==`), herdando os pins já usados em `cabos-app/requirements.txt` onde aplicável | Requisito explícito; evita builds não reprodutíveis |
 
 ## 2. pywebview vs. PySide6 — comparação pedida no item 3
@@ -172,8 +172,8 @@ desktop/
 - **Login multiusuário removido.** App de usuário único na própria máquina do
   engenheiro não carrega `models_auth.py`/`routers/auth.py`/`routers/admin.py`
   (login, aprovação de usuário, log de acesso) no porte para desktop.
-- Formato final do PDF da memória de cálculo (reportlab vs. weasyprint) —
-  decisão adiada para a Fase 4 (não bloqueia Fase 1).
+- Formato final do PDF da memória de cálculo — **resolvido na Fase 4: não se
+  aplica**, a spec real só pede Excel (ver `decisions-and-spec-corrections.md`).
 
 ---
 
