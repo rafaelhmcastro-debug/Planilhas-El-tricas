@@ -231,6 +231,155 @@ def _linhas_memoria_para_tabela(memoria_passos):
 
 
 # --------------------------------------------------------------------------
+# Item 8.1 — Dados de Entrada (Sigla | Significado | Denominação | Valor assumido)
+#
+# Cada linha reflete uma opção normativa (dados/*.json) ou um valor numérico
+# informado pelo engenheiro REALMENTE usado nesta análise — nunca a lista
+# completa de opções disponíveis de cada sigla, e nunca uma sigla que a
+# análise não usa (ex.: R4/Anexo D, não implementado; estrutura adjacente,
+# não modelada — 6.4.1 permite desprezar NDJ). Os pares (tabela, chave) abaixo
+# espelham exatamente as chamadas que riscos.py faz para calcular R1/R3/F;
+# nada aqui influencia o cálculo, que já rodou antes deste módulo ser chamado.
+# --------------------------------------------------------------------------
+
+# Significados por grupo (LT/LF/LO) — dados/*.json guarda só um "descricao" por
+# tabela inteira, não por grupo; o texto abaixo vem da planilha de referência
+# (coluna "Significado"), que distingue os três.
+_SIGNIFICADO_GRUPO = {
+    ("anexo_c_tabela_c2_perdas_r1", "LT"): "Número relativo médio típico de vítimas feridas por choque elétrico (D1)",
+    ("anexo_c_tabela_c2_perdas_r1", "LF"): "Número relativo médio típico de vítimas por dano físico (D2)",
+    ("anexo_c_tabela_c2_perdas_r1", "LO"): "Número relativo médio típico de vítimas por falha de sistemas internos (D3)",
+}
+
+
+def _linha(sigla, significado, info, contexto=None, valor_extra=None, denominacao_extra=None):
+    valor = valor_extra if valor_extra is not None else info["valor"]
+    denom = denominacao_extra if denominacao_extra is not None else info["descricao"]
+    return {
+        "sigla": sigla, "significado": significado, "denominacao": denom,
+        "valor": valor, "referencia": info.get("referencia") or "", "contexto": contexto or "",
+    }
+
+
+def _linha_entrada_livre(sigla, significado, valor, referencia, contexto=None):
+    return {
+        "sigla": sigla, "significado": significado, "denominacao": "Valor informado pelo engenheiro para o projeto",
+        "valor": valor, "referencia": referencia, "contexto": contexto or "",
+    }
+
+
+def _dados_entrada_usados(analise, estrutura, zonas, linhas_eletricas, medidas, resultado):
+    """Monta as linhas do item 8.1 a partir dos mesmos campos (chave selecionada
+    ou número informado) que riscos.py já usa para calcular — nunca a lista
+    completa de opções de cada sigla."""
+    linhas = []
+
+    linhas.append(_linha_entrada_livre("NG", "Densidade de descargas atmosféricas para a terra",
+                                        f"{analise.ng_valor:g} raios/km²·ano", analise.ng_referencia))
+
+    cd_cab = tabelas.cabecalho("anexo_a_tabela_a1_cd")
+    linhas.append(_linha("CD", cd_cab["descricao"], tabelas.info("anexo_a_tabela_a1_cd", estrutura.fator_localizacao)))
+    rs_cab = tabelas.cabecalho("anexo_c_tabela_c7_rs")
+    linhas.append(_linha("rs", rs_cab["descricao"], tabelas.info("anexo_c_tabela_c7_rs", estrutura.tipo_construcao)))
+    linhas.append(_linha_entrada_livre("nt", "Número total de pessoas na estrutura", estrutura.num_pessoas_total, ""))
+
+    # ---- Medidas de proteção (nível da análise) ----
+    pb_cab = tabelas.cabecalho("anexo_b_tabela_b2_pb")
+    linhas.append(_linha("PB", pb_cab["descricao"], tabelas.info("anexo_b_tabela_b2_pb", medidas.classe_spda)))
+
+    pta_cab = tabelas.cabecalho("anexo_b_tabela_b1_pta")
+    for chave in json.loads(medidas.medidas_pta_json or "[]"):
+        linhas.append(_linha("PTA", pta_cab["descricao"], tabelas.info("anexo_b_tabela_b1_pta", chave)))
+
+    pspd_cab = tabelas.cabecalho("anexo_b_tabela_b3_pspd")
+    linhas.append(_linha("PSPD", pspd_cab["descricao"], tabelas.info("anexo_b_tabela_b3_pspd", medidas.dps_coordenado)))
+    peb_cab = tabelas.cabecalho("anexo_b_tabela_b7_peb")
+    linhas.append(_linha("PEB", peb_cab["descricao"], tabelas.info("anexo_b_tabela_b7_peb", medidas.dps_classe_i)))
+    ptu_cab = tabelas.cabecalho("anexo_b_tabela_b6_ptu")
+    linhas.append(_linha("PTU", ptu_cab["descricao"], tabelas.info("anexo_b_tabela_b6_ptu", medidas.medida_ptu)))
+    ks3_cab = tabelas.cabecalho("anexo_b_tabela_b5_ks3")
+    linhas.append(_linha("KS3", ks3_cab["descricao"], tabelas.info("anexo_b_tabela_b5_ks3", medidas.fiacao_interna)))
+
+    if medidas.largura_malha_externa_m is not None:
+        linhas.append(_linha_entrada_livre("wm1", "Largura da malha para KS1", f"{medidas.largura_malha_externa_m:g} m", ""))
+    if medidas.largura_malha_interna_m is not None:
+        linhas.append(_linha_entrada_livre("wm2", "Largura da malha para KS2", f"{medidas.largura_malha_interna_m:g} m", ""))
+    linhas.append(_linha_entrada_livre("UW", "Tensão suportável nominal de impulso do sistema interno",
+                                        f"{medidas.tensao_suportavel_sistema_interno_kv:g} kV", ""))
+
+    # ---- Zonas de estudo ----
+    lt_info = tabelas.info_grupo("anexo_c_tabela_c2_perdas_r1", "LT", "todos_os_tipos")
+    linhas.append(_linha("LT", _SIGNIFICADO_GRUPO[("anexo_c_tabela_c2_perdas_r1", "LT")], lt_info))
+
+    rt_cab = tabelas.cabecalho("anexo_c_tabela_c3_rt_piso")
+    rp_cab = tabelas.cabecalho("anexo_c_tabela_c4_rp")
+    rf_cab = tabelas.cabecalho("anexo_c_tabela_c5_rf")
+    hz_cab = tabelas.cabecalho("anexo_c_tabela_c6_hz")
+    for zona in zonas:
+        ctx = f'Zona "{zona.nome}"'
+        linhas.append(_linha("rt", rt_cab["descricao"], tabelas.info("anexo_c_tabela_c3_rt_piso", zona.tipo_piso), ctx))
+        linhas.append(_linha("rp", rp_cab["descricao"], tabelas.info("anexo_c_tabela_c4_rp", zona.providencias_incendio), ctx))
+        linhas.append(_linha("rf", rf_cab["descricao"], tabelas.info("anexo_c_tabela_c5_rf", zona.risco_incendio), ctx))
+        linhas.append(_linha("hz", hz_cab["descricao"], tabelas.info("anexo_c_tabela_c6_hz", zona.perigo_especial), ctx))
+        linhas.append(_linha("LF", _SIGNIFICADO_GRUPO[("anexo_c_tabela_c2_perdas_r1", "LF")],
+                              tabelas.info_grupo("anexo_c_tabela_c2_perdas_r1", "LF", zona.categoria_dano_fisico_lf), ctx))
+        linhas.append(_linha("LO", _SIGNIFICADO_GRUPO[("anexo_c_tabela_c2_perdas_r1", "LO")],
+                              tabelas.info_grupo("anexo_c_tabela_c2_perdas_r1", "LO", zona.categoria_falha_sistema_lo), ctx))
+        linhas.append(_linha_entrada_livre("nz", "Número de pessoas na zona de estudo", zona.num_pessoas_zona, "", ctx))
+        linhas.append(_linha_entrada_livre("tz", "Tempo de presença de pessoas na zona de estudo",
+                                            f"{zona.tempo_pessoas_horas_ano:g} h/ano", "", ctx))
+        if resultado.r3 is not None and zona.valor_patrimonio_cultural:
+            linhas.append(_linha_entrada_livre("cz", "Valor do patrimônio cultural na zona",
+                                                f"{zona.valor_patrimonio_cultural:g}", "", ctx))
+
+    # ---- R3 (só se a análise computou perda de patrimônio cultural) ----
+    if resultado.r3 is not None:
+        ct_total = sum(z.valor_patrimonio_cultural for z in zonas if z.valor_patrimonio_cultural)
+        linhas.append(_linha_entrada_livre("ct", "Valor total da edificação e conteúdo da estrutura (soma das zonas)",
+                                            f"{ct_total:g}", ""))
+        lf_r3_info = tabelas.info("anexo_c_tabela_c9_perdas_r3", "museus_galerias")
+        lf_r3_cab = tabelas.cabecalho("anexo_c_tabela_c9_perdas_r3")
+        linhas.append(_linha("LF", lf_r3_cab["descricao"], lf_r3_info))
+
+    # ---- Linhas elétricas e trechos ----
+    ci_cab = tabelas.cabecalho("anexo_a_tabela_a2_ci")
+    ce_cab = tabelas.cabecalho("anexo_a_tabela_a4_ce")
+    ct_cab = tabelas.cabecalho("anexo_a_tabela_a3_ct")
+    cld_cli_cab = tabelas.cabecalho("anexo_b_tabela_b4_cld_cli")
+    pld_cab = tabelas.cabecalho("anexo_b_tabela_b8_pld")
+    pli_cab = tabelas.cabecalho("anexo_b_tabela_b9_pli")
+    for linha_eletrica in linhas_eletricas:
+        ctx_linha = f'Linha "{linha_eletrica.tag}"'
+        ct_chave = "at_com_transformador_at_bt" if linha_eletrica.tem_transformador_at_bt else "bt_ou_sinal"
+        linhas.append(_linha("CT", ct_cab["descricao"], tabelas.info("anexo_a_tabela_a3_ct", ct_chave), ctx_linha))
+        linhas.append(_linha_entrada_livre("UW", "Tensão suportável nominal de impulso do equipamento conectado",
+                                            f"{linha_eletrica.tensao_suportavel_kv:g} kV", "", ctx_linha))
+        pli_chave = "linhas_energia" if linha_eletrica.tipo == "energia" else "linhas_sinal"
+        pli_valor = tabelas.valor_por_uw("anexo_b_tabela_b9_pli", pli_chave, linha_eletrica.tensao_suportavel_kv)
+        pli_info = tabelas.info("anexo_b_tabela_b9_pli", pli_chave)
+        linhas.append(_linha("PLI", pli_cab["descricao"], pli_info, ctx_linha, valor_extra=pli_valor,
+                              denominacao_extra=f"{pli_info['descricao']} (UW = {linha_eletrica.tensao_suportavel_kv:g} kV)"))
+
+        for trecho in linha_eletrica.trechos:
+            ctx = f'{ctx_linha} — trecho {trecho.ordem + 1}' if len(linha_eletrica.trechos) > 1 else ctx_linha
+            linhas.append(_linha("CI", ci_cab["descricao"], tabelas.info("anexo_a_tabela_a2_ci", trecho.tipo_instalacao), ctx))
+            linhas.append(_linha("CE", ce_cab["descricao"], tabelas.info("anexo_a_tabela_a4_ce", trecho.ambiente), ctx))
+            linhas.append(_linha_entrada_livre("LL", "Comprimento do trecho da linha elétrica",
+                                                f"{trecho.comprimento_m:g} m", "", ctx))
+
+            cld_cli_info = tabelas.info("anexo_b_tabela_b4_cld_cli", trecho.categoria_blindagem)
+            linhas.append(_linha("CLD", cld_cli_cab["descricao"], cld_cli_info, ctx, valor_extra=cld_cli_info["cld"]))
+            linhas.append(_linha("CLI", cld_cli_cab["descricao"], cld_cli_info, ctx, valor_extra=cld_cli_info["cli"]))
+
+            pld_valor = tabelas.valor_por_uw("anexo_b_tabela_b8_pld", trecho.categoria_pld, linha_eletrica.tensao_suportavel_kv)
+            pld_info = tabelas.info("anexo_b_tabela_b8_pld", trecho.categoria_pld)
+            linhas.append(_linha("PLD", pld_cab["descricao"], pld_info, ctx, valor_extra=pld_valor,
+                                  denominacao_extra=f"{pld_info['descricao']} (UW = {linha_eletrica.tensao_suportavel_kv:g} kV)"))
+
+    return linhas
+
+
+# --------------------------------------------------------------------------
 # Orquestração principal
 # --------------------------------------------------------------------------
 
@@ -287,7 +436,7 @@ def gerar_memorial(projeto, analise, estrutura, zonas, linhas, medidas, resultad
     _gerar_secao_5(doc, zonas, resultado)
 
     # ---- Seção 6 (MEMORIAL DE CÁLCULO DOS VALORES) ----
-    _gerar_secao_6(doc, memoria)
+    _gerar_secao_6(doc, analise, estrutura, zonas, linhas, medidas, resultado, memoria)
 
     # ---- Seção 7 (SISTEMA DE PROTEÇÃO) — genérico a partir da classe de SPDA considerada ----
     _gerar_secao_7(doc, medidas)
@@ -356,7 +505,7 @@ def _gerar_secao_5(doc, zonas, resultado):
         p = _paragrafo_apos(ancora, doc, texto_conclusao, style="Normal"); ancora = p._p
 
 
-def _gerar_secao_6(doc, memoria_passos):
+def _gerar_secao_6(doc, analise, estrutura, zonas, linhas_eletricas, medidas, resultado, memoria_passos):
     inicio = _encontrar_paragrafo(doc, "ZONA Z1", estilo="Heading 2")
     fim = _encontrar_paragrafo(doc, "Sistema de Proteção", estilo="Título I_VALE_")
     estilo_tabela = doc.tables[3].style  # "Tabela 40" do modelo
@@ -364,6 +513,32 @@ def _gerar_secao_6(doc, memoria_passos):
     ancora = inicio._p.getprevious()
     _remover_intervalo(inicio._p, fim._p)
 
+    # ---- 8.1 Dados de Entrada: sigla/significado/denominação/valor efetivamente usados ----
+    p = _paragrafo_apos(ancora, doc, "Dados de Entrada", style="Heading 2"); ancora = p._p
+    p = _paragrafo_apos(
+        ancora, doc,
+        "Apresenta-se a seguir cada sigla normativa (ABNT NBR 5419-2, Anexos A, B e C) e cada valor "
+        "informado pelo engenheiro efetivamente utilizados no cálculo desta análise — somente a opção "
+        "selecionada para cada sigla, não as demais opções disponíveis na norma.",
+        style="Normal",
+    )
+    ancora = p._p
+
+    dados_entrada = _dados_entrada_usados(analise, estrutura, zonas, linhas_eletricas, medidas, resultado)
+    t_entrada = _tabela_apos(ancora, doc, linhas=1, colunas=5, style=estilo_tabela)
+    ancora = t_entrada._tbl
+    for j, texto in enumerate(["Sigla", "Significado", "Denominação", "Valor assumido", "Contexto"]):
+        t_entrada.cell(0, j).text = texto
+    for linha_dados in dados_entrada:
+        linha = t_entrada.add_row()
+        linha.cells[0].text = linha_dados["sigla"]
+        linha.cells[1].text = linha_dados["significado"] or ""
+        linha.cells[2].text = linha_dados["denominacao"] or ""
+        valor = linha_dados["valor"]
+        linha.cells[3].text = f"{valor:g}" if isinstance(valor, (int, float)) else str(valor)
+        linha.cells[4].text = linha_dados["contexto"] or ""
+
+    # ---- 8.2 Memória de Cálculo Consolidada (inalterada: etapas, fórmulas e resultados) ----
     p = _paragrafo_apos(ancora, doc, "Memória de Cálculo Consolidada", style="Heading 2"); ancora = p._p
     p = _paragrafo_apos(ancora, doc, "Tabela 40 - Etapas de Cálculo, Fórmulas e Valores Assumidos", style="Normal"); ancora = p._p
 

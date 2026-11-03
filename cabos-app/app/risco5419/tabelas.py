@@ -119,6 +119,14 @@ def info_grupo(tabela: str, grupo: str, chave: str) -> dict:
     raise ValorNaoDisponivel(f'Chave "{chave}" não encontrada no grupo "{grupo}" de {tabela}.')
 
 
+def cabecalho(tabela: str) -> dict:
+    """{simbolo, descricao, tabela} no nível da tabela inteira — usado para o
+    "Significado" do item de Dados de Entrada do memorial (grupos como LT/LF/LO
+    têm um significado próprio por grupo, tratado à parte por quem chama)."""
+    dados = _carregar(tabela)
+    return {"simbolo": dados.get("simbolo"), "descricao": dados.get("descricao"), "tabela": dados.get("tabela")}
+
+
 def opcoes(tabela: str) -> list[dict]:
     """Lista {chave, descricao, grupo} de uma tabela, para popular selects no frontend.
     grupo vem preenchido só nas tabelas agrupadas (ex.: LT/LF/LO de C.2 e D.2)."""
