@@ -189,14 +189,17 @@ Todas as seis já têm decisão do engenheiro — detalhe completo em
   Fase 2 só cobre o `.db`.
 - **D4** (datasheets Prysmian) — resolvida: usar `seed_data.py` como está.
 - **D5** (edição NBR 5410) — resolvida: usar as tabelas já seedadas.
-- **D6** (PE-G-622/PE-E-601) — **parcial:** PE-G-622 recebido como exemplo
-  (`docs/referencias/PE-G-622_Lista_Equipamentos_Rev_3.xls`), estrutura real
-  documentada; PE-E-601 ainda não recebido (não bloqueia Fase 1–3, só o
-  fechamento da Fase 4 para a aba de cabos).
+- **D6** (PE-G-622/PE-E-601) — **resolvida (2026-11-03):** PE-G-622 recebido
+  como exemplo (`docs/referencias/PE-G-622_Lista_Equipamentos_Rev_3.xls`),
+  estrutura real documentada; PE-E-601 confirmado pelo engenheiro usando o
+  formato já existente em `cabos-app/app/excel_export.py` (4 planilhas-modelo
+  conferidas campo a campo, não versionadas por conterem dado de projeto
+  específico — ver `decisions-and-spec-corrections.md`).
+- **Nome do programa** — resolvida (2026-11-03): `Calc 54`
+  (`desktop/app/database.py`, constante `NOME_PROGRAMA`).
 
-**Nenhuma pendência bloqueia mais o início da Fase 1.** Restam só os dois itens
-da seção 9 (login multiusuário, formato do PDF) e o PE-E-601, nenhum dos quais
-impede começar a portar o núcleo de cálculo.
+**Nenhuma pendência bloqueia mais o início da Fase 1.** Resta só o item da
+seção 9 sobre o formato do PDF, que não impede a Fase 3.
 
 Esta ADR fica parada aqui para aprovação explícita antes de eu começar a
 escrever código de porte, conforme pedido.
