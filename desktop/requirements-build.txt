@@ -1,0 +1,3 @@
+# Dependência só para gerar o executável (não entra no app nem nos testes).
+# Ver packaging/BUILD.md para o passo a passo completo.
+pyinstaller==6.22.3

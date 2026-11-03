@@ -18,6 +18,7 @@ caminhos com espaço/acento de qualquer forma (requisito não funcional), e
 """
 import json
 import os
+import sys
 from pathlib import Path
 
 from sqlalchemy import create_engine
@@ -25,6 +26,22 @@ from sqlalchemy.orm import sessionmaker
 
 NOME_PROGRAMA = "Calc 54"
 NOME_ARQUIVO_BANCO = "dados.db"
+
+
+def pasta_recursos_empacotados() -> Path:
+    """Pasta de onde ler arquivos empacotados junto com o código — migrações
+    (`app/migrations/`), seed (`app/seed/*.json`), `alembic.ini`, `static/` —
+    nunca confundir com `resolver_pasta_dados()` (a pasta de DADOS DO
+    USUÁRIO, em outro lugar). Em desenvolvimento é a pasta `desktop/`;
+    empacotado com PyInstaller, é `sys._MEIPASS` — a pasta onde o PyInstaller
+    extrai os arquivos de dados, definida tanto em `--onefile` quanto em
+    `--onedir` (ver `packaging/pyinstaller.spec`). Usar `__file__` direto
+    para isso (como o código fazia antes da Fase 5) quebra no executável
+    empacotado: os módulos `.py` ficam dentro do arquivo compilado do
+    PyInstaller, não como arquivo solto no caminho que `__file__` indicaria."""
+    if getattr(sys, "frozen", False):
+        return Path(sys._MEIPASS)
+    return Path(__file__).resolve().parents[1]
 
 
 def _base_appdata() -> Path:

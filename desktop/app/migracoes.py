@@ -14,7 +14,9 @@ from pathlib import Path
 from alembic import command
 from alembic.config import Config
 
-DESKTOP_DIR = Path(__file__).resolve().parents[1]
+from . import database
+
+DESKTOP_DIR = database.pasta_recursos_empacotados()
 ALEMBIC_INI = DESKTOP_DIR / "alembic.ini"
 MIGRATIONS_DIR = DESKTOP_DIR / "app" / "migrations"
 

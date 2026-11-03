@@ -6,13 +6,12 @@ literais Python inline, seguindo o padrão já consolidado em
 `cabos-app/app/risco5419/dados/*.json`.
 """
 import json
-from pathlib import Path
 
 from sqlalchemy.orm import Session
 
-from . import models
+from . import database, models
 
-SEED_DIR = Path(__file__).parent / "seed"
+SEED_DIR = database.pasta_recursos_empacotados() / "app" / "seed"
 
 _TABELAS = [
     ("tab_capacidade_conducao", models.TabCapacidadeConducao),

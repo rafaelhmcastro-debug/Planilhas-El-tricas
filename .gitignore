@@ -46,3 +46,8 @@ uploads/*
 
 # Cópias de normas técnicas (direitos autorais — não redistribuir)
 docs/normas/*.pdf
+
+# Porte desktop — redistribuíveis grandes/binários da Microsoft, baixados a
+# cada build (ver desktop/packaging/redist/README.md), e saída do instalador
+desktop/packaging/redist/*.exe
+dist_instalador/
