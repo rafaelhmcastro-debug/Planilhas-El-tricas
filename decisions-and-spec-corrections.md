@@ -64,97 +64,136 @@ Idem acima — conferidas contra spec + código, **já consistentes**:
 
 ---
 
-## 2026-11-03 — Divergências novas encontradas ao ler spec + código (Fase 0)
+## 2026-11-03 — Divergências novas: resolvidas pelo engenheiro
 
-**Pendentes de confirmação do engenheiro antes da Fase 1.** Não decidi nenhuma
-delas sozinho; a coluna "proposta" é só o que pareceu mais natural para o porte,
-não uma decisão já tomada.
+Todas as seis pendências abaixo (D1–D6) foram decididas pelo engenheiro
+responsável no mesmo dia em que foram levantadas. Deixo o histórico completo
+(o que a spec dizia, o que o código faz) porque é exatamente o tipo de
+divergência que não pode voltar a aparecer sem passar por aqui de novo.
 
-### D1. Potência do equipamento: campo único + unidade, não dois campos separados
-- **Spec (§4.2):** dois campos, `potencia_ativa_kw` (decimal) e
-  `potencia_aparente_kva` (decimal), um dos dois opcional conforme o outro é
-  informado.
+### D1. Potência do equipamento — RESOLVIDO: mantém campo único + unidade
+- **Spec (§4.2):** dois campos, `potencia_ativa_kw` e `potencia_aparente_kva`.
 - **Código atual:** um único campo `potencia_valor` (float) + `potencia_unidade`
-  (enum `kW`/`W`/`CV`/`HP`/`kVA`) — ver `models.Equipamento`,
-  `schemas.UNIDADES_POTENCIA`. `calculations.FATOR_UNIDADE_KW` converte CV/HP/W
-  para kW antes de aplicar a regra 1 da spec.
-- **Por quê isso é uma mudança real, não só nome diferente:** a spec supõe que o
-  usuário pode informar P **ou** S diretamente; o código supõe que o usuário
-  sempre informa um valor + uma unidade (que pode ser `kVA`, aí sim equivalente
-  a informar S diretamente), e adiciona CV/HP como unidades de entrada que a
-  spec não previa.
-- **Pendência:** confirmar que o campo único + unidade (com CV/HP) é o
-  comportamento desejado para o core do Windows, ou se deveria voltar aos dois
-  campos separados da spec.
+  (enum `kW`/`W`/`CV`/`HP`/`kVA`) — `models.Equipamento`,
+  `schemas.UNIDADES_POTENCIA`, `calculations.FATOR_UNIDADE_KW`.
+- **Decisão (2026-11-03):** manter o código como está — campo único + unidade,
+  incluindo CV/HP. A spec fica desatualizada neste ponto; **não alterar** o
+  cadastro para voltar a dois campos separados.
+- **Nota para a Fase 4:** o layout real do PE-G-622 (ver D6) tem duas
+  sub-colunas separadas, "kW" e "kVA", dentro de "POTÊNCIA UNITÁRIA" — a
+  exportação precisa converter `potencia_valor`+`potencia_unidade` para essas
+  duas colunas no momento de gerar a planilha (ex.: unidade `kVA` preenche a
+  coluna kVA; kW/W/CV/HP convertidos preenchem a coluna kW). Isso é só um
+  detalhe de exportação, não reabre o cadastro.
 
-### D2. Hierarquia painel → painel a montante (não está na spec)
-- **Spec (§4.6):** um único nível — equipamentos se agrupam direto em um
-  painel/transformador; não há campo nem regra para um painel alimentar outro.
+### D2. Hierarquia painel → painel a montante — RESOLVIDO: regra confirmada
+- **Spec (§4.6):** um único nível, sem campo nem regra para painel alimentar
+  painel.
 - **Código atual:** `PainelTransformador.painel_alimentador_tag` + recursão em
-  `recalcular_paineis_projeto()` propaga demanda de painéis a jusante para o
-  painel a montante, "até o painel TOP" (comentário no próprio código).
-- **Pendência:** essa hierarquia multinível é claramente um requisito real do
-  projeto (TOP → quadros → subquadros), mas não está descrita em nenhuma regra
-  da spec. Preciso que o engenheiro confirme a regra por escrito (como ela deve
-  aparecer na seção 5 da spec) antes de portar o core, para não "inventar" a
-  regra 11-bis a partir só do código.
+  `recalcular_paineis_projeto()`.
+- **Decisão (2026-11-03), regra definitiva (vira regra 11-bis da spec na
+  próxima revisão dela):** o usuário cadastra o **painel TOP** como o ponto
+  mais a montante da instalação (sem `painel_alimentador_tag`, ou vazio). Todo
+  painel/transformador a jusante informa, no seu próprio cadastro, a TAG do
+  painel que o alimenta (`painel_alimentador_tag`). A demanda de cada painel é
+  a soma das cargas diretas (equipamentos com essa TAG) **mais** a demanda já
+  calculada de cada painel filho (que o aponta como alimentador), aplicando o
+  fator de diversidade do próprio painel sobre essa soma — propagação
+  recursiva jusante→montante até chegar ao TOP. **Confirma exatamente o
+  comportamento já implementado em `calculations.recalcular_paineis_projeto()`
+  — nenhuma mudança de código necessária, só documentar.**
 
-### D3. Folha de dados / diagrama elétrico: referência em texto, não anexo de arquivo
-- **Spec (§4.2):** `folha_dados_path` e `diagrama_eletrico_path` — caminho de um
-  arquivo anexado.
-- **Código atual:** `folha_dados_numero` e `diagrama_eletrico_numero` — texto
-  livre (número do documento), sem upload nem armazenamento de arquivo. Não há
-  nenhum endpoint de upload para equipamento em nenhum router (conferido com
-  grep em `app/routers/*.py`) — existe uma pasta `uploads/` em
-  `app/main.py`, mas ela não é usada por este módulo.
-- **Pendência:** confirmar se o Windows precisa de anexo de arquivo de verdade
-  (PDF do datasheet/diagrama guardado junto do projeto) ou se o campo-texto
-  (nº do documento, remetendo a um arquivo externo) é suficiente — isso muda o
-  esquema de banco e exige lógica de backup de anexos (requisito 4 da versão
-  Windows: "Backup e restauração por arquivo .zip contendo o banco **e os
-  anexos**").
+### D3. Folha de dados / diagrama elétrico — RESOLVIDO: mantém campo-texto
+- **Spec (§4.2):** `folha_dados_path`/`diagrama_eletrico_path` (anexo de
+  arquivo).
+- **Código atual:** `folha_dados_numero`/`diagrama_eletrico_numero` (texto
+  livre, sem upload).
+- **Decisão (2026-11-03):** manter campo-texto (nº do documento), **sem**
+  implementar upload/armazenamento de arquivo para estes dois campos. A spec
+  fica desatualizada neste ponto.
+- **Consequência para o requisito 4 da versão Windows** ("Backup e restauração
+  por arquivo .zip contendo o banco e os anexos"): como não há nenhum ponto do
+  sistema hoje que armazene arquivo de usuário (confirmado por grep em
+  `app/routers/*.py` — nenhum endpoint de upload em lugar nenhum, nem para
+  equipamento nem para catálogo), o backup `.zip` da Fase 2, por ora, só
+  precisa cobrir o banco `.db`. Se um ponto de anexo real surgir depois, o
+  formato do backup é revisado então — não precisa prever uma pasta `anexos/`
+  vazia desde já.
 
-### D4. Catálogo de cabos (Prysmian): dados de referência, não datasheet real
-- **Spec (§4.7):** "Tabela alimentada a partir das folhas de dados (datasheets)
-  dos fabricantes... os PDFs da Prysmian já levantados."
-- **Código atual:** `seed_data.py` marca explicitamente, no próprio comentário,
-  `fonte_datasheet = "SEED - valores de referência; substituir pelo datasheet
-  real"` para toda a tabela de cabos, e os diâmetros/pesos em
-  `DIAM_UNIPOLAR`/`DIAM_MULTIPOLAR`/`PESO_UNIPOLAR` têm o comentário "valores de
-  referência a substituir pelo datasheet real" — ou seja, **nunca foram
-  conferidos contra os PDFs reais da Prysmian**, apesar do que a spec afirma.
-- **Pendência:** os datasheets reais da Prysmian (Multiplex, Afumex Green
-  1kV/750V, Sintenax Flex/CTL/CTL BFC Flex) precisam ser fornecidos antes da
-  Fase 1 fechar os testes de aceite — não vou portar os valores de seed como se
-  fossem definitivos.
+### D4. Catálogo de cabos (Prysmian) — RESOLVIDO: usar `seed_data.py` como fonte
+- **Spec (§4.7):** dados extraídos dos datasheets reais da Prysmian.
+- **Código atual:** `seed_data.py` rotula os valores como "SEED - valores de
+  referência; substituir pelo datasheet real".
+- **Decisão (2026-11-03):** usar os dados de `seed_data.py` como estão —
+  **não** bloquear a Fase 1 esperando os PDFs reais da Prysmian. O comentário
+  "substituir pelo datasheet real" deixa de valer como pendência bloqueante;
+  continua valendo como nota de proveniência (são valores de referência, não
+  extraídos de datasheet, mas aprovados para uso).
 
-### D5. Tabelas de capacidade de condução: também marcadas como "a conferir"
-- `seed_data.py` (docstring do módulo): "As tabelas de capacidade de condução
-  (NBR 5410, tabelas 36 a 39) também devem ser conferidas com a edição vigente
-  da norma." Isso cobre `tab_capacidade_conducao`, `tab_fator_temperatura`,
-  `tab_fator_agrupamento`, `tab_resistividade_condutor` — todas com valores
-  plausíveis (batem com a NBR 5410 que conheço), mas sem confirmação formal de
-  edição/data registrada no código.
-- **Pendência:** confirmar a edição da NBR 5410 usada como referência (a spec
-  não data isso) antes de tratar essas tabelas como caso de aceite na Fase 1.
+### D5. Tabelas de capacidade de condução (NBR 5410) — RESOLVIDO: usar as atuais
+- `seed_data.py`: "As tabelas de capacidade de condução (NBR 5410, tabelas 36 a
+  39) também devem ser conferidas com a edição vigente da norma."
+- **Decisão (2026-11-03):** usar as tabelas já seedadas
+  (`tab_capacidade_conducao`, `tab_fator_temperatura`, `tab_fator_agrupamento`,
+  `tab_resistividade_condutor`) como estão — **não** bloquear a Fase 1
+  esperando confirmação de edição da norma.
 
-### D6. PE-G-622 / PE-E-601: layouts reais não estão no repositório
-- Spec §8 e §9 citam os dois códigos de documento da empresa como referência de
-  layout de exportação. Nenhum arquivo `PE-G-622` ou `PE-E-601` está no
-  repositório nem foi anexado até agora.
-- O único ponto em que a spec dá colunas concretas é na seção 9 (prompt),
-  para a lista de cabos: "Item/Identificação/Tensão/Nº Cabos/Nº
-  Condutores/Seção/Isolamento/De/Para/Percurso/Observação". A exportação atual
-  (`excel_export.exportar_cabos()`) usa essas colunas na mesma ordem, mais
-  extras (Configuração, Construção, Cabo do catálogo, Distância, Ib, Queda de
-  tensão, Método, Seção sugerida) — um superconjunto plausível, não uma
-  contradição.
-- Para a lista de equipamentos (PE-G-622) não há nem esse mínimo: a spec não
-  lista colunas, só diz "layout já usado pela empresa".
-- **Pendência:** preciso dos arquivos/modelos reais de PE-G-622 e PE-E-601
-  (mesmo que só o cabeçalho de colunas, numeração e campos fixos como
-  logotipo/rodapé) antes da Fase 4 (exportações) — não vou supor o layout a
-  partir só do que já existe.
+### D6. PE-G-622 / PE-E-601 — RESOLVIDO (parcial): PE-G-622 recebido como exemplo
+- **Arquivo recebido:** `PE-G-622_Lista_Equipamentos_Rev_3.xls` (autor original
+  CVRD/Vale, formato Excel 97-2003), salvo em
+  `docs/referencias/PE-G-622_Lista_Equipamentos_Rev_3.xls`. **Assumi que é um
+  modelo em branco (sem dado de projeto real preenchido — só texto de
+  placeholder como "XXXXXXX", "X0000(-00)", "LL-NNNNLL-L-NNNNN") e por isso
+  seguro para versionar no repositório; não encontrei marca de classificação/
+  restrição preenchida na planilha. Sinalizando essa suposição aqui — corrija
+  se o arquivo não puder ficar no repositório.**
+- **Estrutura confirmada (aba "Elétrica", a relevante para este sistema; há
+  também "F. Rosto" e "Mecânica", fora do nosso escopo):**
+  - **Bloco de cabeçalho do documento** (linhas 0–9, todas com mesclagem de
+    células): logomarca da contratada, classificação, nº do programa/projeto
+    genérico, fase do projeto, nome da área/subárea, **Nº VALE** (nº do projeto
+    do cliente, formato `LL-NNNNLL-L-NNNNN` — diferente do nosso
+    `9999-99-9999`), **Nº (CONTRATADA)** (nosso próprio nº de projeto), página,
+    revisão, tipo de documento.
+  - **Bloco de revisões** (igual ao já usado no memorial da NBR 5419-2 gerado
+    neste mesmo projeto): Rev. / TE (A-PRELIMINAR ... H-CANCELADO) / Descrição
+    / Por / Ver. / Apr. / Aut. / Data.
+  - **Colunas de dados** (linhas 12–14, 10 colunas lógicas, bem mais enxuto que
+    nossa exportação atual): `TAG` | `NOME` | `DESCRIÇÃO (características
+    principais)` | `POTÊNCIA UNITÁRIA` (subcolunas `kW` e `kVA`) | `DIMENSÕES
+    (m)` | `PESO UNITÁRIO kg` | `FOLHAS DE DADOS` | `DIAGRAMA ELÉTRICO` |
+    `FORNECEDOR` | `OBSERVAÇÃO`.
+  - **Achados que a Fase 4 precisa tratar, não a Fase 0:**
+    1. O layout real **não tem** tensão, fases, cosφ, FD, corrente nominal nem
+       potência de demanda — nossa `exportar_equipamentos()` atual tem essas
+       colunas a mais (20 colunas no total); não é uma contradição, é um
+       relatório mais analítico que o PE-G-622 oficial pede. Decisão de Fase 4:
+       gerar a aba no formato PE-G-622 estrito (10 colunas, cabeçalho
+       completo) como exportação própria, mantendo a exportação atual
+       (mais rica) como relatório interno/analítico separado — **a confirmar**.
+    2. O layout real tem `TAG` **e** `NOME` como colunas separadas; nosso
+       `models.Equipamento` só tem `tag` + `descricao` (sem campo `nome`
+       próprio). Precisa decidir, na Fase 4 (ou já na Fase 2 se o engenheiro
+       preferir mudar o esquema), se `NOME` vem de um novo campo ou é derivado
+       de `descricao`/`tipo_carga`.
+    3. Confirma meu achado anterior sobre a lista de cabos (PE-E-601): o
+       conjunto de colunas citado na seção 9 da spec já é compatível com o que
+       `exportar_cabos()` gera hoje, mais colunas analíticas extras — mesmo
+       padrão do PE-G-622.
+- **Ainda pendente:** o layout real do **PE-E-601** (lista de cabos) não foi
+  recebido — só o texto da seção 9 da spec, que já citei acima como
+  compatível. Não bloqueia Fase 0–3; bloqueia só o fechamento da Fase 4 para a
+  aba de cabos.
+
+---
+
+## Itens ainda em aberto (fora das seis pendências D1–D6, já resolvidas)
+
+- **Login multiusuário** (`models_auth.py` e módulos relacionados, ~800
+  linhas): proposto na ADR 0001 remover para um app desktop de usuário único —
+  ainda sem confirmação do engenheiro.
+- **Formato do PDF da memória de cálculo** (reportlab vs. weasyprint): decisão
+  adiada para a Fase 4, conforme a própria ADR já registra.
 
 ---
 

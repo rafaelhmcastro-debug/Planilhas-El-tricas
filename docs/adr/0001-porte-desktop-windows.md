@@ -158,28 +158,42 @@ desktop/
 | 1 | WebView2 ausente em Windows 10 limpo/offline | Empacotar o runtime (Evergreen Standalone ou Fixed Version) no instalador; testar em VM limpa com rede desligada |
 | 2 | PyInstaller + imports dinâmicos (FastAPI/SQLAlchemy/Alembic/openpyxl) | `hiddenimports` explícitos; teste de empacotamento de fumaça já ao fim da Fase 1, não só na Fase 5 |
 | 3 | SmartScreen/antivírus sinalizando o instalador | `--onedir` reduz heurística de falso positivo; avaliar custo de certificado de assinatura de código (fora do escopo de preço desta ADR) |
-| 4 | Dados de catálogo de cabos (Prysmian) e tabelas NBR 5410 marcados no próprio código como "valor de referência, substituir pelo datasheet real" (D4/D5) | Bloqueia os casos de aceite da Fase 1 até os datasheets reais e a edição da NBR 5410 serem confirmados — não vou tratar como definitivo |
-| 5 | Hierarquia painel→painel a montante não está escrita na especificação (D2) | Confirmar a regra por escrito antes de portar — é cálculo, não UI |
+| 4 | ~~Dados de catálogo de cabos (Prysmian) e tabelas NBR 5410 marcados como "referência, substituir pelo datasheet real" (D4/D5)~~ | **Resolvido 2026-11-03:** engenheiro confirmou usar `seed_data.py` como está; não bloqueia mais a Fase 1 |
+| 5 | ~~Hierarquia painel→painel a montante não está escrita na especificação (D2)~~ | **Resolvido 2026-11-03:** regra confirmada por escrito em `decisions-and-spec-corrections.md` — painel TOP cadastrado pelo usuário, demanda propaga jusante→montante; comportamento já implementado em `calculations.recalcular_paineis_projeto()`, sem mudança de código |
 | 6 | Extrair `core/` de `calculations.py` é refatoração, não cópia — risco de mudar comportamento sem perceber | Mitigado pelo próprio plano da Fase 1: casos de referência fornecidos e conferidos à mão antes de virarem teste de aceite |
-| 7 | Requisito de anexo de arquivo real (backup "com anexos") depende de D3 não resolvido | Resolver D3 antes de fechar o esquema da Fase 2, não depois |
+| 7 | ~~Requisito de anexo de arquivo real (backup "com anexos") depende de D3~~ | **Resolvido 2026-11-03:** engenheiro confirmou manter campo-texto, sem upload; backup da Fase 2 só precisa cobrir o `.db`, não uma pasta de anexos |
 | 8 | Caminhos com espaço/acento (`C:\Users\João\Documentos`) | `pathlib` + SQLite já lidam bem com Unicode; `--onedir` evita extração para `%TEMP%`, reduzindo a superfície desse risco |
 | 9 | Firewall do Windows perguntando ao abrir o programa | Bind estrito em `127.0.0.1` (nunca `0.0.0.0`) evita o prompt na grande maioria dos casos; porta escolhida dinamicamente (bind em porta 0) evita conflito com outros serviços locais |
 
 ## 9. Fora do escopo desta ADR (decisões de produto, não técnicas)
 
 - Manter ou remover o login multiusuário (`models_auth.py`) — proposto remover,
-  mas não decidido aqui.
+  ainda sem confirmação do engenheiro.
 - Formato final do PDF da memória de cálculo (reportlab vs. weasyprint) — decidir
   na Fase 4.
-- Anexo de arquivo real vs. campo-texto para folha de dados/diagrama elétrico
-  (D3) — decidir antes da Fase 2.
 
 ---
 
-**Pendências que bloqueiam a Fase 1** (listadas também em
-`decisions-and-spec-corrections.md`, seção "Divergências novas"): D1 (campo de
-potência), D2 (hierarquia de painéis), D3 (anexos), D4 (datasheets Prysmian
-reais), D5 (edição da NBR 5410), D6 (layouts PE-G-622/PE-E-601 reais).
+## 10. Status das pendências D1–D6 (atualizado 2026-11-03)
 
-Esta ADR fica parada aqui para aprovação, conforme pedido — nenhum código de
-porte foi escrito.
+Todas as seis já têm decisão do engenheiro — detalhe completo em
+`decisions-and-spec-corrections.md`:
+
+- **D1** (campo de potência) — resolvida: mantém campo único + unidade.
+- **D2** (hierarquia de painéis) — resolvida: regra do painel TOP confirmada
+  por escrito; sem mudança de código.
+- **D3** (anexos) — resolvida: mantém campo-texto, sem upload; backup da
+  Fase 2 só cobre o `.db`.
+- **D4** (datasheets Prysmian) — resolvida: usar `seed_data.py` como está.
+- **D5** (edição NBR 5410) — resolvida: usar as tabelas já seedadas.
+- **D6** (PE-G-622/PE-E-601) — **parcial:** PE-G-622 recebido como exemplo
+  (`docs/referencias/PE-G-622_Lista_Equipamentos_Rev_3.xls`), estrutura real
+  documentada; PE-E-601 ainda não recebido (não bloqueia Fase 1–3, só o
+  fechamento da Fase 4 para a aba de cabos).
+
+**Nenhuma pendência bloqueia mais o início da Fase 1.** Restam só os dois itens
+da seção 9 (login multiusuário, formato do PDF) e o PE-E-601, nenhum dos quais
+impede começar a portar o núcleo de cálculo.
+
+Esta ADR fica parada aqui para aprovação explícita antes de eu começar a
+escrever código de porte, conforme pedido.
