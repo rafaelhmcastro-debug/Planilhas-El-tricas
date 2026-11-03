@@ -1,0 +1,14 @@
+[
+  {
+    "num_cabos": "1",
+    "taxa_max_pct": 53.0
+  },
+  {
+    "num_cabos": "2",
+    "taxa_max_pct": 31.0
+  },
+  {
+    "num_cabos": "3+",
+    "taxa_max_pct": 40.0
+  }
+]

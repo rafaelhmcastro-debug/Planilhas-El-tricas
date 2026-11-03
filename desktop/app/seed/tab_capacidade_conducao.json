@@ -1,0 +1,3698 @@
+[
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 7.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 9.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 11.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 14.5
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 19.5
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 26.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 34.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 46.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 61.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 80.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 99.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 119.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 151.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 182.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 210.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 240.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 273.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 321.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 367.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 438.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 502.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 578.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 669.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 767.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 7.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 9.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 11.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 14.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 18.5
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 25.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 32.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 43.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 57.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 75.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 92.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 110.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 139.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 167.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 192.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 219.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 248.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 291.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 334.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 398.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 456.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 526.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 609.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 698.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 9.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 11.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 14.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 17.5
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 24.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 32.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 41.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 57.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 76.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 101.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 125.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 151.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 192.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 232.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 269.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 309.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 353.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 415.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 477.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 571.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 656.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 758.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 881.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 1012.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 9.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 11.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 13.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 16.5
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 23.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 30.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 38.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 52.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 69.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 90.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 111.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 133.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 168.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 201.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 232.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 265.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 300.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 351.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 401.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 477.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 545.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 626.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 723.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 827.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 10.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 13.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 15.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 19.5
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 27.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 36.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 46.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 63.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 85.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 112.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 138.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 168.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 213.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 258.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 299.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 344.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 392.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 461.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 530.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 634.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 729.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 843.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 978.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 1125.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 12.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 15.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 18.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 22.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 29.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 38.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 47.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 63.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 81.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 104.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 125.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 148.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 183.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 216.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 246.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 278.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 312.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 361.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 408.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 478.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 540.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 614.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 700.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 792.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 11.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 14.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 17.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 22.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 30.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 40.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 51.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 70.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 94.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 119.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 148.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 180.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 232.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 282.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 328.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 379.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 434.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 514.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 593.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 715.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 826.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 958.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 1118.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 1292.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 0.5,
+    "capacidade_a": 9.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 0.75,
+    "capacidade_a": 12.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1.0,
+    "capacidade_a": 14.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1.5,
+    "capacidade_a": 18.5
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 2.5,
+    "capacidade_a": 25.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 4.0,
+    "capacidade_a": 34.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 6.0,
+    "capacidade_a": 43.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 10.0,
+    "capacidade_a": 60.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 16.0,
+    "capacidade_a": 80.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 25.0,
+    "capacidade_a": 101.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 35.0,
+    "capacidade_a": 126.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 50.0,
+    "capacidade_a": 153.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 70.0,
+    "capacidade_a": 196.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 95.0,
+    "capacidade_a": 238.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 120.0,
+    "capacidade_a": 276.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 150.0,
+    "capacidade_a": 319.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 185.0,
+    "capacidade_a": 364.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 240.0,
+    "capacidade_a": 430.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 300.0,
+    "capacidade_a": 497.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 400.0,
+    "capacidade_a": 597.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 500.0,
+    "capacidade_a": 689.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 630.0,
+    "capacidade_a": 798.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 800.0,
+    "capacidade_a": 930.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 1073.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 11.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 14.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 17.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 22.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 31.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 41.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 53.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 73.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 99.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 131.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 162.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 196.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 251.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 304.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 352.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 406.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 463.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 546.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 629.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 754.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 868.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 1005.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 1169.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 1346.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 0.5,
+    "capacidade_a": 8.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 0.75,
+    "capacidade_a": 9.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1.0,
+    "capacidade_a": 11.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1.5,
+    "capacidade_a": 11.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 2.5,
+    "capacidade_a": 13.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 4.0,
+    "capacidade_a": 14.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 6.0,
+    "capacidade_a": 17.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 10.0,
+    "capacidade_a": 18.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 16.0,
+    "capacidade_a": 24.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 25.0,
+    "capacidade_a": 25.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 35.0,
+    "capacidade_a": 33.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 50.0,
+    "capacidade_a": 34.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 70.0,
+    "capacidade_a": 43.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 95.0,
+    "capacidade_a": 45.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 120.0,
+    "capacidade_a": 60.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 150.0,
+    "capacidade_a": 63.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 185.0,
+    "capacidade_a": 82.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 240.0,
+    "capacidade_a": 85.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 300.0,
+    "capacidade_a": 110.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 400.0,
+    "capacidade_a": 114.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 500.0,
+    "capacidade_a": 137.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 630.0,
+    "capacidade_a": 143.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 800.0,
+    "capacidade_a": 167.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 174.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 0.5,
+    "capacidade_a": 12.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 0.75,
+    "capacidade_a": 10.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1.0,
+    "capacidade_a": 16.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1.5,
+    "capacidade_a": 13.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 2.5,
+    "capacidade_a": 19.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 4.0,
+    "capacidade_a": 16.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 6.0,
+    "capacidade_a": 24.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 10.0,
+    "capacidade_a": 21.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 16.0,
+    "capacidade_a": 34.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 25.0,
+    "capacidade_a": 29.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 35.0,
+    "capacidade_a": 45.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 50.0,
+    "capacidade_a": 39.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 70.0,
+    "capacidade_a": 59.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 95.0,
+    "capacidade_a": 51.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 120.0,
+    "capacidade_a": 81.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 150.0,
+    "capacidade_a": 71.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 185.0,
+    "capacidade_a": 110.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 240.0,
+    "capacidade_a": 97.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 300.0,
+    "capacidade_a": 146.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 400.0,
+    "capacidade_a": 130.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 500.0,
+    "capacidade_a": 181.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 630.0,
+    "capacidade_a": 162.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 800.0,
+    "capacidade_a": 219.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 197.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 10.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 12.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 15.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 19.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 26.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 35.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 45.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 61.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 81.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 106.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 131.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 158.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 200.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 241.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 278.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 318.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 362.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 424.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 486.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 579.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 664.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 765.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 885.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 1014.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 10.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 12.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 14.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 18.5
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 25.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 33.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 42.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 57.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 76.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 99.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 121.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 145.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 183.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 220.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 253.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 290.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 329.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 386.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 442.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 527.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 604.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 696.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 805.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "A2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 923.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 12.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 15.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 18.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 23.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 31.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 42.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 54.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 75.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 100.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 133.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 164.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 198.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 253.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 306.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 354.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 407.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 464.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 546.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 628.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 751.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 864.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 998.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 1158.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B1",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 1332.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 11.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 15.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 17.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 22.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 30.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 40.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 51.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 69.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 91.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 119.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 146.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 175.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 221.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 265.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 305.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 349.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 395.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 462.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 529.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 628.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 718.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 825.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 952.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "B2",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 1088.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 12.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 16.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 19.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 24.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 33.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 45.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 58.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 80.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 107.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 138.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 171.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 209.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 269.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 328.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 382.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 441.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 506.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 599.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 693.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 835.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 966.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 1122.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 1311.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "C",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 1515.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 14.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 18.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 21.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 26.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 34.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 44.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 56.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 73.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 95.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 121.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 146.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 173.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 213.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 252.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 287.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 324.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 363.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 419.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 474.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 555.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 627.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 711.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 811.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "D",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 916.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 13.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 17.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 21.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 26.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 36.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 49.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 63.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 86.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 115.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 149.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 185.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 225.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 289.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 352.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 410.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 473.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 542.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 641.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 741.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 892.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 1030.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 1196.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 1396.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 1613.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 0.5,
+    "capacidade_a": 12.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 0.75,
+    "capacidade_a": 15.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1.0,
+    "capacidade_a": 18.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1.5,
+    "capacidade_a": 23.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 2.5,
+    "capacidade_a": 32.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 4.0,
+    "capacidade_a": 42.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 6.0,
+    "capacidade_a": 54.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 10.0,
+    "capacidade_a": 75.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 16.0,
+    "capacidade_a": 100.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 25.0,
+    "capacidade_a": 127.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 35.0,
+    "capacidade_a": 158.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 50.0,
+    "capacidade_a": 192.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 70.0,
+    "capacidade_a": 246.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 95.0,
+    "capacidade_a": 298.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 120.0,
+    "capacidade_a": 346.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 150.0,
+    "capacidade_a": 399.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 185.0,
+    "capacidade_a": 456.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 240.0,
+    "capacidade_a": 538.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 300.0,
+    "capacidade_a": 621.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 400.0,
+    "capacidade_a": 745.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 500.0,
+    "capacidade_a": 859.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 630.0,
+    "capacidade_a": 995.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 800.0,
+    "capacidade_a": 1159.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "E",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 1336.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.5,
+    "capacidade_a": 13.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 0.75,
+    "capacidade_a": 17.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.0,
+    "capacidade_a": 21.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1.5,
+    "capacidade_a": 27.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 2.5,
+    "capacidade_a": 37.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 4.0,
+    "capacidade_a": 50.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 6.0,
+    "capacidade_a": 65.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 10.0,
+    "capacidade_a": 90.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 16.0,
+    "capacidade_a": 121.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 25.0,
+    "capacidade_a": 161.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 35.0,
+    "capacidade_a": 200.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 50.0,
+    "capacidade_a": 242.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 70.0,
+    "capacidade_a": 310.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 95.0,
+    "capacidade_a": 377.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 120.0,
+    "capacidade_a": 437.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 150.0,
+    "capacidade_a": 504.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 185.0,
+    "capacidade_a": 575.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 240.0,
+    "capacidade_a": 679.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 300.0,
+    "capacidade_a": 783.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 400.0,
+    "capacidade_a": 940.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 500.0,
+    "capacidade_a": 1083.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 630.0,
+    "capacidade_a": 1254.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 800.0,
+    "capacidade_a": 1460.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 2,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 1683.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 0.5,
+    "capacidade_a": 10.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 0.75,
+    "capacidade_a": 10.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1.0,
+    "capacidade_a": 13.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1.5,
+    "capacidade_a": 14.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 2.5,
+    "capacidade_a": 16.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 4.0,
+    "capacidade_a": 17.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 6.0,
+    "capacidade_a": 21.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 10.0,
+    "capacidade_a": 22.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 16.0,
+    "capacidade_a": 29.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 25.0,
+    "capacidade_a": 30.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 35.0,
+    "capacidade_a": 40.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 50.0,
+    "capacidade_a": 42.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 70.0,
+    "capacidade_a": 53.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 95.0,
+    "capacidade_a": 55.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 120.0,
+    "capacidade_a": 74.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 150.0,
+    "capacidade_a": 77.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 185.0,
+    "capacidade_a": 101.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 240.0,
+    "capacidade_a": 105.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 300.0,
+    "capacidade_a": 135.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 400.0,
+    "capacidade_a": 141.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 500.0,
+    "capacidade_a": 169.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 630.0,
+    "capacidade_a": 176.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 800.0,
+    "capacidade_a": 207.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "F",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 216.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 0.5,
+    "capacidade_a": 15.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 0.75,
+    "capacidade_a": 12.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1.0,
+    "capacidade_a": 19.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1.5,
+    "capacidade_a": 16.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 2.5,
+    "capacidade_a": 23.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 4.0,
+    "capacidade_a": 19.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 6.0,
+    "capacidade_a": 30.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 10.0,
+    "capacidade_a": 25.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 16.0,
+    "capacidade_a": 41.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 25.0,
+    "capacidade_a": 35.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 35.0,
+    "capacidade_a": 56.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 50.0,
+    "capacidade_a": 48.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 70.0,
+    "capacidade_a": 73.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 95.0,
+    "capacidade_a": 63.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 120.0,
+    "capacidade_a": 101.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 150.0,
+    "capacidade_a": 88.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 185.0,
+    "capacidade_a": 137.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 240.0,
+    "capacidade_a": 120.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 300.0,
+    "capacidade_a": 182.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 400.0,
+    "capacidade_a": 161.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 500.0,
+    "capacidade_a": 226.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 630.0,
+    "capacidade_a": 201.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 800.0,
+    "capacidade_a": 275.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "metodo_instalacao": "G",
+    "num_condutores_carregados": 3,
+    "secao_mm2": 1000.0,
+    "capacidade_a": 246.0
+  }
+]

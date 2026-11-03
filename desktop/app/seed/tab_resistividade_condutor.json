@@ -1,0 +1,74 @@
+[
+  {
+    "secao_mm2": 1.5,
+    "resistencia_ohm_km": 12.1
+  },
+  {
+    "secao_mm2": 2.5,
+    "resistencia_ohm_km": 7.41
+  },
+  {
+    "secao_mm2": 4.0,
+    "resistencia_ohm_km": 4.61
+  },
+  {
+    "secao_mm2": 6.0,
+    "resistencia_ohm_km": 3.08
+  },
+  {
+    "secao_mm2": 10.0,
+    "resistencia_ohm_km": 1.83
+  },
+  {
+    "secao_mm2": 16.0,
+    "resistencia_ohm_km": 1.15
+  },
+  {
+    "secao_mm2": 25.0,
+    "resistencia_ohm_km": 0.727
+  },
+  {
+    "secao_mm2": 35.0,
+    "resistencia_ohm_km": 0.524
+  },
+  {
+    "secao_mm2": 50.0,
+    "resistencia_ohm_km": 0.387
+  },
+  {
+    "secao_mm2": 70.0,
+    "resistencia_ohm_km": 0.268
+  },
+  {
+    "secao_mm2": 95.0,
+    "resistencia_ohm_km": 0.193
+  },
+  {
+    "secao_mm2": 120.0,
+    "resistencia_ohm_km": 0.153
+  },
+  {
+    "secao_mm2": 150.0,
+    "resistencia_ohm_km": 0.124
+  },
+  {
+    "secao_mm2": 185.0,
+    "resistencia_ohm_km": 0.0991
+  },
+  {
+    "secao_mm2": 240.0,
+    "resistencia_ohm_km": 0.0754
+  },
+  {
+    "secao_mm2": 300.0,
+    "resistencia_ohm_km": 0.0601
+  },
+  {
+    "secao_mm2": 400.0,
+    "resistencia_ohm_km": 0.047
+  },
+  {
+    "secao_mm2": 500.0,
+    "resistencia_ohm_km": 0.0366
+  }
+]

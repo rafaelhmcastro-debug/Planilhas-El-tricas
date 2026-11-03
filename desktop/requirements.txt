@@ -1,0 +1,7 @@
+# Dependências do porte desktop, com versões travadas (requisito "Dependências
+# com versões fixas"). Cresce a cada fase — hoje cobre só o necessário para o
+# núcleo de cálculo (Fase 1) e banco/migrações/backup (Fase 2). FastAPI,
+# pywebview, openpyxl, PyInstaller etc. entram nas Fases 3-5.
+
+sqlalchemy==2.0.25
+alembic==1.20.1

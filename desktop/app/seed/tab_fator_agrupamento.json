@@ -1,0 +1,50 @@
+[
+  {
+    "num_circuitos": 1,
+    "fator": 1.0
+  },
+  {
+    "num_circuitos": 2,
+    "fator": 0.8
+  },
+  {
+    "num_circuitos": 3,
+    "fator": 0.7
+  },
+  {
+    "num_circuitos": 4,
+    "fator": 0.65
+  },
+  {
+    "num_circuitos": 5,
+    "fator": 0.6
+  },
+  {
+    "num_circuitos": 6,
+    "fator": 0.57
+  },
+  {
+    "num_circuitos": 7,
+    "fator": 0.54
+  },
+  {
+    "num_circuitos": 8,
+    "fator": 0.52
+  },
+  {
+    "num_circuitos": 9,
+    "fator": 0.5
+  },
+  {
+    "num_circuitos": 12,
+    "fator": 0.45
+  },
+  {
+    "num_circuitos": 16,
+    "fator": 0.41
+  },
+  {
+    "num_circuitos": 20,
+    "fator": 0.38
+  }
+]

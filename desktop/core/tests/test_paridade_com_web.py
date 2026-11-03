@@ -7,22 +7,46 @@ os casos de teste".
 
 Sem pytest — roda com `python -m unittest`, como o resto do projeto.
 """
+import importlib.util
 import sys
 import unittest
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
-sys.path.insert(0, str(REPO_ROOT / "cabos-app"))
-sys.path.insert(0, str(REPO_ROOT / "desktop"))
+
+# cabos-app/app/ e desktop/app/ são dois pacotes DIFERENTES que, por
+# coincidência, têm o mesmo nome de topo ("app"). Rodar os dois no mesmo
+# processo via import normal (sys.path com as duas pastas) é ambíguo: o
+# `sys.modules["app"]` fica travado em qualquer um que for importado
+# primeiro, inclusive por OUTRO arquivo de teste rodando antes deste na mesma
+# sessão do `unittest discover`. Para não depender de ordem de import, o app
+# web é carregado aqui sob um nome próprio ("app_web"), isolado do pacote
+# "app" do desktop.
+
+
+def _carregar_pacote_sob_alias(alias: str, caminho_pacote: Path):
+    spec = importlib.util.spec_from_file_location(
+        alias, caminho_pacote / "__init__.py", submodule_search_locations=[str(caminho_pacote)],
+    )
+    modulo = importlib.util.module_from_spec(spec)
+    sys.modules[alias] = modulo
+    spec.loader.exec_module(modulo)
+    return modulo
+
+
+_carregar_pacote_sob_alias("app_web", REPO_ROOT / "cabos-app" / "app")
 
 from sqlalchemy import create_engine  # noqa: E402
 from sqlalchemy.orm import sessionmaker  # noqa: E402
 
-from app.database import Base  # noqa: E402
-from app import models  # noqa: E402
-from app import calculations  # noqa: E402
-from app import seed_data  # noqa: E402
+from app_web import database as database_web  # noqa: E402
+from app_web import models  # noqa: E402
+from app_web import calculations  # noqa: E402
+from app_web import seed_data  # noqa: E402
 
+Base = database_web.Base
+
+sys.path.insert(0, str(REPO_ROOT / "desktop"))
 from core import cabos as core_cabos  # noqa: E402
 from core import equipamentos as core_equip  # noqa: E402
 from core import infraestrutura as core_infra  # noqa: E402

@@ -1,0 +1,132 @@
+[
+  {
+    "isolacao_grupo": "PVC",
+    "temperatura_c": 10.0,
+    "fator": 1.22
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "temperatura_c": 15.0,
+    "fator": 1.17
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "temperatura_c": 20.0,
+    "fator": 1.12
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "temperatura_c": 25.0,
+    "fator": 1.06
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "temperatura_c": 30.0,
+    "fator": 1.0
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "temperatura_c": 35.0,
+    "fator": 0.94
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "temperatura_c": 40.0,
+    "fator": 0.87
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "temperatura_c": 45.0,
+    "fator": 0.79
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "temperatura_c": 50.0,
+    "fator": 0.71
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "temperatura_c": 55.0,
+    "fator": 0.61
+  },
+  {
+    "isolacao_grupo": "PVC",
+    "temperatura_c": 60.0,
+    "fator": 0.5
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 10.0,
+    "fator": 1.15
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 15.0,
+    "fator": 1.12
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 20.0,
+    "fator": 1.08
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 25.0,
+    "fator": 1.04
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 30.0,
+    "fator": 1.0
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 35.0,
+    "fator": 0.96
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 40.0,
+    "fator": 0.91
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 45.0,
+    "fator": 0.87
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 50.0,
+    "fator": 0.82
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 55.0,
+    "fator": 0.76
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 60.0,
+    "fator": 0.71
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 65.0,
+    "fator": 0.65
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 70.0,
+    "fator": 0.58
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 75.0,
+    "fator": 0.5
+  },
+  {
+    "isolacao_grupo": "EPR_XLPE",
+    "temperatura_c": 80.0,
+    "fator": 0.41
+  }
+]
