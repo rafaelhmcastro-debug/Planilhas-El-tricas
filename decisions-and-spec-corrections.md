@@ -138,7 +138,7 @@ divergência que não pode voltar a aparecer sem passar por aqui de novo.
   `tab_resistividade_condutor`) como estão — **não** bloquear a Fase 1
   esperando confirmação de edição da norma.
 
-### D6. PE-G-622 / PE-E-601 — RESOLVIDO (parcial): PE-G-622 recebido como exemplo
+### D6. PE-G-622 / PE-E-601 — RESOLVIDO: ambos recebidos como exemplo
 - **Arquivo recebido:** `PE-G-622_Lista_Equipamentos_Rev_3.xls` (autor original
   CVRD/Vale, formato Excel 97-2003), salvo em
   `docs/referencias/PE-G-622_Lista_Equipamentos_Rev_3.xls`. **Assumi que é um
@@ -180,10 +180,29 @@ divergência que não pode voltar a aparecer sem passar por aqui de novo.
        conjunto de colunas citado na seção 9 da spec já é compatível com o que
        `exportar_cabos()` gera hoje, mais colunas analíticas extras — mesmo
        padrão do PE-G-622.
-- **Ainda pendente:** o layout real do **PE-E-601** (lista de cabos) não foi
-  recebido — só o texto da seção 9 da spec, que já citei acima como
-  compatível. Não bloqueia Fase 0–3; bloqueia só o fechamento da Fase 4 para a
-  aba de cabos.
+- **Atualização (2026-11-03) — PE-E-601 RESOLVIDO:** o engenheiro enviou 4
+  planilhas reais como modelo ("o layout PE-E601 usa os modelos em anexos"):
+  `Lista_Cabos_0010-26-0003.xlsx`, `Lista_Eletrodutos_Bandejas_0010-26-0003.xlsx`,
+  `Lista_Equipamentos_0010-26-0003.xlsx`, `Memoria_Calculo_0010-26-0003_1.xlsx`.
+  Conferindo campo a campo: **os cabeçalhos de coluna das 4 planilhas são
+  idênticos, na mesma ordem, aos que `cabos-app/app/excel_export.py` já gera
+  hoje** (`exportar_cabos`, `exportar_infraestrutura`, `exportar_equipamentos`,
+  `exportar_memoria_calculo`) — são exports reais do próprio app web, sem o
+  bloco de cabeçalho/revisão formal visto no PE-G-622. Conclusão: **PE-E-601
+  não exige layout novo nem bloco de cabeçalho da contratada** — o formato que
+  a Fase 4 deve reproduzir no app desktop é exatamente o que já existe em
+  `excel_export.py`. Isso não contradiz os achados do PE-G-622 (item 1 acima,
+  ainda "a confirmar"): ficam como duas questões distintas — se será preciso
+  também um export estrito em formato PE-G-622 para a lista de equipamentos,
+  decisão que continua pendente para a Fase 4.
+  **Não versionei os 4 arquivos recebidos no repositório** (diferente do que
+  fiz com o PE-G-622): eles têm dado de projeto específico preenchido (nº
+  0010-26-0003, "CASAS DE BOMBAS", tags de equipamento) em vez de texto de
+  placeholder em branco; mesmo parecendo dado de teste, preferi não assumir
+  que é seguro publicar no git sem confirmar. A informação estrutural que
+  importa (cabeçalhos de coluna, ausência de bloco formal) já está registrada
+  aqui por extenso. Avise se quiser que eu guarde os arquivos originais no
+  repo mesmo assim.
 
 ---
 
@@ -196,8 +215,11 @@ divergência que não pode voltar a aparecer sem passar por aqui de novo.
   porte. App desktop de usuário único.
 - **Formato do PDF da memória de cálculo** (reportlab vs. weasyprint): ainda em
   aberto, decisão adiada para a Fase 4 — não bloqueia Fase 1.
-- **PE-E-601** (layout real da lista de cabos): ainda não recebido — não
-  bloqueia Fase 1–3, só o fechamento da Fase 4 para a aba de cabos.
+- **PE-E-601** (layout real da lista de cabos): RESOLVIDO em 2026-11-03 (ver
+  D6 acima) — usa o formato já existente em `excel_export.py`, sem bloco de
+  cabeçalho formal.
+- **Nome do programa:** RESOLVIDO em 2026-11-03 — `Calc 54` (atualizado em
+  `desktop/app/database.py`, constante `NOME_PROGRAMA`).
 
 ---
 

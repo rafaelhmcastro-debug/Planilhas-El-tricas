@@ -11,9 +11,10 @@ Fora do Windows (dev/teste neste repositório), cai para ~/.config e
 ~/.local/share, só para o pacote funcionar nos testes; em produção (Windows
 10/11) sempre usa LOCALAPPDATA/APPDATA.
 
-NOME_PROGRAMA é só um nome de pasta provisório — a confirmar o nome oficial
-do programa com o engenheiro antes da Fase 5 (instalador); trocar aqui não
-afeta nada mais no código.
+NOME_PROGRAMA = "Calc 54" (nome oficial confirmado pelo engenheiro em
+2026-11-03). Tem espaço de propósito — o programa precisa funcionar em
+caminhos com espaço/acento de qualquer forma (requisito não funcional), e
+é o mesmo nome usado na janela e no instalador.
 """
 import json
 import os
@@ -22,7 +23,7 @@ from pathlib import Path
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-NOME_PROGRAMA = "PlanilhasEletricas"  # provisório — confirmar nome oficial antes da Fase 5
+NOME_PROGRAMA = "Calc 54"
 NOME_ARQUIVO_BANCO = "dados.db"
 
 
