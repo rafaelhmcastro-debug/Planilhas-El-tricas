@@ -325,5 +325,26 @@ do WebView2 e o Inno Setup em si exigem Windows real).
 
 ---
 
+## 2026-11-03 — Módulo de risco NBR 5419-2: portado, nenhuma divergência nova
+
+Porte de `cabos-app/app/risco5419/` para `desktop/app/risco5419/`, conforme
+já definido desde o início do porte ("entra só depois da Fase 5"). Nenhuma
+fórmula ou regra de cálculo mudou — os 32 testes originais do módulo
+(`test_motor.py`, `test_exportacao_docx.py`) passam sem alteração nenhuma no
+código-fonte deles, e dois testes de integração novos
+(`app/tests/test_integracao_risco5419.py`) refazem via HTTP o caso de
+referência de `TestRiscosCasoResolvido`, batendo com os mesmos valores de
+R1 e F.
+
+Único ponto novo (implementação, não cálculo): `app/main.py` semeia a
+tabela de municípios (Anexo F, NG) a partir do CSV só se ainda estiver
+vazia — mesmo padrão de `seed.py` para catálogos/tabelas normativas, nunca
+sobrescrevendo uma reimportação que o engenheiro já tenha feito.
+
+Com isso, as cinco fases do porte desktop e o módulo de risco (a única
+pendência que ficou para depois da Fase 5) estão todos entregues.
+
+---
+
 *Toda entrada futura segue este formato: data, o que mudou, onde está na spec
 vs. no código, e se já foi confirmada ou ainda está pendente.*
