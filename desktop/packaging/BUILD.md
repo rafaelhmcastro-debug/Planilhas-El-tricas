@@ -28,13 +28,19 @@ real antes do primeiro uso em produção.
 ```powershell
 cd desktop
 py -3.11 -m venv .venv
-.venv\Scripts\activate
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
 python --version
 ```
-Confirme que apareceu `Python 3.11.x` antes de seguir — se aparecer outra
-versão, `py -3.11` não achou o Python 3.11 instalado (reinstale-o marcando
-"Add python.exe to PATH", ou rode o comando acima substituindo `py -3.11`
-pelo caminho completo do `python.exe` do 3.11).
+- `Set-ExecutionPolicy -Scope Process` libera rodar o script de ativação só
+  nesta janela do PowerShell (volta ao normal ao fechá-la) — necessário em
+  várias instalações do Windows, onde isso vem bloqueado por padrão.
+- Use `.\.venv\Scripts\Activate.ps1` (com `.\` na frente e a extensão
+  `.ps1`), não `.venv\Scripts\activate` — sem o `.\` o PowerShell não
+  resolve o caminho como script e dá erro de "módulo não encontrado".
+- Confirme que `python --version` mostrou `Python 3.11.x` antes de seguir —
+  se mostrou outra versão, `py -3.11` não achou o Python 3.11 instalado
+  (reinstale-o marcando "Add python.exe to PATH").
 
 ```powershell
 pip install -r requirements.txt
@@ -52,11 +58,16 @@ Gera `desktop\dist\Calc 54\Calc 54.exe` + a pasta `_internal\` ao lado
 `alembic.ini`).
 
 **Teste manual obrigatório aqui, antes de seguir para o instalador:**
-rode `dist\Calc 54\Calc 54.exe` diretamente (clique duplo ou
-`.\dist\"Calc 54"\"Calc 54.exe"`). A janela do Calc 54 deve abrir e o app
-deve funcionar normalmente. Se não abrir, **não** compile o instalador —
-volte e investigue o log em `%LOCALAPPDATA%\Calc 54\logs\calc54.log`
-primeiro.
+rode `dist\Calc 54\Calc 54.exe` diretamente — pelo Explorer (clique duplo)
+ou pelo PowerShell com:
+```powershell
+& ".\dist\Calc 54\Calc 54.exe"
+```
+(o `&` + o caminho inteiro entre aspas é a forma correta no PowerShell de
+rodar um executável cujo caminho tem espaço). A janela do Calc 54 deve
+abrir e o app deve funcionar normalmente. Se não abrir, **não** compile o
+instalador — volte e investigue o log em
+`%LOCALAPPDATA%\Calc 54\logs\calc54.log` primeiro.
 
 ## 4. Baixar o WebView2 Runtime (Standalone Installer)
 
