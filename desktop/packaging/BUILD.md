@@ -8,7 +8,18 @@ real antes do primeiro uso em produção.
 
 ## 1. Pré-requisitos (máquina Windows 10/11, 64 bits)
 
-- Python 3.11 (mesma versão usada no desenvolvimento) instalado.
+- **Python 3.11** (mesma versão usada no desenvolvimento) instalado —
+  https://www.python.org/downloads/release/python-3119/, marcando "Add
+  python.exe to PATH" no instalador.
+  **Importante:** se a máquina já tiver outra versão de Python (ex.: 3.13,
+  3.14) como padrão, o comando `python -m venv` abaixo vai criar o venv com
+  essa outra versão, não com o 3.11 — e aí o `matplotlib==3.8.4` (travado
+  na mesma versão do app web) não vai achar wheel pronta pra ela, tentando
+  compilar `numpy` do zero (exige Visual Studio Build Tools, que a máquina
+  provavelmente não tem) e falhando. Por isso o passo 2 usa `py -3.11`
+  (o "Python Launcher for Windows", instalado junto com qualquer Python
+  oficial), que escolhe a versão certa mesmo com várias instaladas — não
+  `python` sozinho.
 - [Inno Setup 6](https://jrsoftware.org/isdl.php) instalado (fornece o
   `ISCC.exe` usado no passo 4).
 
@@ -16,8 +27,16 @@ real antes do primeiro uso em produção.
 
 ```powershell
 cd desktop
-python -m venv .venv
+py -3.11 -m venv .venv
 .venv\Scripts\activate
+python --version
+```
+Confirme que apareceu `Python 3.11.x` antes de seguir — se aparecer outra
+versão, `py -3.11` não achou o Python 3.11 instalado (reinstale-o marcando
+"Add python.exe to PATH", ou rode o comando acima substituindo `py -3.11`
+pelo caminho completo do `python.exe` do 3.11).
+
+```powershell
 pip install -r requirements.txt
 ```
 
