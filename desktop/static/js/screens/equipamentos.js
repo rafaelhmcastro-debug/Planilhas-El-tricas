@@ -1,4 +1,5 @@
 const TelaEquipamentos = (() => {
+  const TIPO_CARGA_PAINEL = "painel/quadro";
   let cache = [];
   let paineisCache = [];
 
@@ -53,7 +54,7 @@ const TelaEquipamentos = (() => {
       <td><strong>${Util.esc(e.tag)}</strong></td>
       <td>${Util.esc(e.descricao || "-")}</td>
       <td>${Util.esc(e.tipo_carga || "-")}</td>
-      <td>${Util.fmt(e.potencia_valor)} ${Util.esc(e.potencia_unidade)}</td>
+      <td>${e.potencia_valor === null || e.potencia_valor === undefined ? "-" : `${Util.fmt(e.potencia_valor)} ${Util.esc(e.potencia_unidade)}`}</td>
       <td>${Util.fmt(e.rendimento)}</td>
       <td class="num">${Util.fmt(e.potencia_ativa_calc_kw)}</td>
       <td class="num">${Util.fmt(e.potencia_reativa_calc_kvar)}</td>
@@ -86,24 +87,29 @@ const TelaEquipamentos = (() => {
           <div class="campo span2"><label>Descrição</label><input name="descricao" value="${Util.esc(v("descricao"))}"></div>
           <div class="campo">
             <label>Tipo de carga</label>
-            <select name="tipo_carga">
+            <select name="tipo_carga" id="campo-tipo-carga">
               ${["motor", "iluminação", "tomada", "climatização", "aquecimento", "painel/quadro", "outro"].map((t) => `<option ${v("tipo_carga", "motor") === t ? "selected" : ""}>${t}</option>`).join("")}
             </select>
           </div>
-          <div class="campo">
+          <div class="campo info-box" data-nota-painel style="display:none">
+            Equipamento tipo "painel/quadro": P, Q, S e In são calculados automaticamente pela soma das cargas
+            alimentadas por ele (ver TAG dele em "Alimentado pelo painel/transformador" de outros equipamentos, e a
+            tela "Cargas e Demanda"). Potência, rendimento e fator de potência não se aplicam e são ignorados.
+          </div>
+          <div class="campo" data-oculta-se-painel>
             <label>Potência *</label>
             <div class="linha">
-              <input name="potencia_valor" type="text" inputmode="decimal" required value="${v("potencia_valor", "") ?? ""}" placeholder="ex.: 30">
+              <input name="potencia_valor" type="text" inputmode="decimal" value="${v("potencia_valor", "") ?? ""}" placeholder="ex.: 30">
               <select name="potencia_unidade">${unidades.map((u) => `<option ${v("potencia_unidade", "kW") === u ? "selected" : ""}>${u}</option>`).join("")}</select>
             </div>
             <small class="ajuda">kW/W/CV/HP = potência nominal (no eixo, para motores); kVA = potência aparente absorvida.</small>
           </div>
-          <div class="campo">
+          <div class="campo" data-oculta-se-painel>
             <label>Rendimento η (0–1)</label>
             <input name="rendimento" type="text" inputmode="decimal" value="${v("rendimento", 1.0)}">
             <small class="ajuda">P elétrica = P nominal / η. Use 1,0 se não se aplica.</small>
           </div>
-          <div class="campo"><label>Fator de potência cos φ</label><input name="fator_potencia" type="text" inputmode="decimal" value="${v("fator_potencia", 0.92)}"></div>
+          <div class="campo" data-oculta-se-painel><label>Fator de potência cos φ</label><input name="fator_potencia" type="text" inputmode="decimal" value="${v("fator_potencia", 0.92)}"></div>
           <div class="campo"><label>Tensão do circuito (V) *</label><input name="tensao_v" type="text" inputmode="decimal" required value="${v("tensao_v", 380)}"></div>
           <div class="campo">
             <label>Nº de fases</label>
@@ -151,12 +157,24 @@ const TelaEquipamentos = (() => {
         </div>
       </form>
     `, (root) => {
+      const ehTipoPainel = () => root.querySelector("#campo-tipo-carga").value === TIPO_CARGA_PAINEL;
+      const aplicarVisibilidadePotencia = () => {
+        const painel = ehTipoPainel();
+        root.querySelectorAll("[data-oculta-se-painel]").forEach((campo) => {
+          campo.style.display = painel ? "none" : "";
+          campo.querySelectorAll("input, select").forEach((c) => (c.disabled = painel));
+        });
+        root.querySelector("[data-nota-painel]").style.display = painel ? "" : "none";
+      };
+      aplicarVisibilidadePotencia();
+      root.querySelector("#campo-tipo-carga").addEventListener("change", aplicarVisibilidadePotencia);
+
       root.querySelector("#form-equip").addEventListener("submit", async (ev) => {
         ev.preventDefault();
         const obj = Util.formToObj(ev.target);
         ["potencia_valor", "rendimento", "tensao_v", "fator_potencia", "fator_demanda", "peso_kg"].forEach((c) => obj[c] = Util.paraNumero(obj[c]));
         obj.num_fases = Number(obj.num_fases);
-        if (obj.potencia_valor === null) { Util.toast("Informe a potência.", "erro"); return; }
+        if (obj.tipo_carga !== TIPO_CARGA_PAINEL && obj.potencia_valor === null) { Util.toast("Informe a potência.", "erro"); return; }
         try {
           const equip = editando ? await Api.atualizarEquipamento(pid, e.id, obj) : await Api.criarEquipamento(pid, obj);
           Util.fecharModal();

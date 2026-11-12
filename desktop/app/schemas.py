@@ -1,12 +1,13 @@
 import re
 from datetime import datetime
 from typing import Optional, List
-from pydantic import BaseModel, ConfigDict, field_validator
+from pydantic import BaseModel, ConfigDict, field_validator, model_validator
 
 NUMERO_PROJETO_RE = re.compile(r"^\d{4}-\d{2}-\d{4}$")
 
 UNIDADES_POTENCIA = ("kW", "W", "CV", "HP", "kVA")
 METODOS_INSTALACAO = ("A1", "A2", "B1", "B2", "C", "D", "E", "F", "G")
+TIPO_CARGA_PAINEL = "painel/quadro"
 
 
 class ProjetoBase(BaseModel):
@@ -38,7 +39,7 @@ class EquipamentoBase(BaseModel):
     tag: str
     descricao: Optional[str] = ""
     tipo_carga: Optional[str] = ""
-    potencia_valor: float
+    potencia_valor: Optional[float] = None
     potencia_unidade: str = "kW"
     rendimento: float = 1.0
     tensao_v: float
@@ -75,6 +76,16 @@ class EquipamentoBase(BaseModel):
         if v is None or v <= 0 or v > 1:
             raise ValueError("Valor deve estar entre 0 (exclusivo) e 1")
         return v
+
+    @model_validator(mode="after")
+    def valida_potencia_obrigatoria_exceto_painel(self):
+        # Requisito 1: para um equipamento tipo "painel/quadro", P/Q instaladas
+        # vêm da soma das cargas que ele alimenta (core/paineis.py), não de uma
+        # potência nominal digitada — por isso só é obrigatória para os demais
+        # tipos de carga.
+        if self.tipo_carga != TIPO_CARGA_PAINEL and self.potencia_valor is None:
+            raise ValueError("Informe a potência (obrigatória para este tipo de carga).")
+        return self
 
 
 class EquipamentoCreate(EquipamentoBase):

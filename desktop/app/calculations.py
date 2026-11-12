@@ -19,7 +19,7 @@ from typing import Optional
 
 from sqlalchemy.orm import Session
 
-from . import models
+from . import models, schemas
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from core import cabos as core_cabos  # noqa: E402
@@ -103,27 +103,62 @@ def recalcular_paineis_projeto(db: Session, projeto_id: int):
     paineis = db.query(models.PainelTransformador).filter(models.PainelTransformador.projeto_id == projeto_id).all()
     equipamentos = db.query(models.Equipamento).filter(models.Equipamento.projeto_id == projeto_id).all()
 
-    entradas_paineis = [
-        core_paineis.EntradaPainel(
-            tag=p.tag, painel_alimentador_tag=p.painel_alimentador_tag or "",
-            fator_diversidade=p.fator_diversidade if p.fator_diversidade is not None else 1.0,
-            tensao_v=p.tensao_v, num_fases=p.num_fases or 3,
-        )
-        for p in paineis
-    ]
-    entradas_equipamentos = [
-        core_paineis.EntradaEquipamentoPainel(
-            painel_transformador_tag=e.painel_transformador_tag or "",
-            potencia_ativa_calc_kw=e.potencia_ativa_calc_kw,
-            potencia_reativa_calc_kvar=e.potencia_reativa_calc_kvar,
-            potencia_demanda_kw=e.potencia_demanda_kw,
-            potencia_demanda_reativa_kvar=e.potencia_demanda_reativa_kvar,
-            corrente_nominal_a=e.corrente_nominal_a,
-        )
-        for e in equipamentos
-    ]
+    def _montar_entradas():
+        entradas_paineis = [
+            core_paineis.EntradaPainel(
+                tag=p.tag, painel_alimentador_tag=p.painel_alimentador_tag or "",
+                fator_diversidade=p.fator_diversidade if p.fator_diversidade is not None else 1.0,
+                tensao_v=p.tensao_v, num_fases=p.num_fases or 3,
+            )
+            for p in paineis
+        ]
+        entradas_equipamentos = [
+            core_paineis.EntradaEquipamentoPainel(
+                painel_transformador_tag=e.painel_transformador_tag or "",
+                potencia_ativa_calc_kw=e.potencia_ativa_calc_kw,
+                potencia_reativa_calc_kvar=e.potencia_reativa_calc_kvar,
+                potencia_demanda_kw=e.potencia_demanda_kw,
+                potencia_demanda_reativa_kvar=e.potencia_demanda_reativa_kvar,
+                corrente_nominal_a=e.corrente_nominal_a,
+            )
+            for e in equipamentos
+        ]
+        return entradas_paineis, entradas_equipamentos
 
-    resultados = core_paineis.calcular_paineis(entradas_paineis, entradas_equipamentos)
+    resultados = core_paineis.calcular_paineis(*_montar_entradas())
+
+    # Requisito 1 (potência opcional para painéis): um equipamento tipo
+    # "painel/quadro" tem P/Q sempre sincronizadas com o agregado do painel de
+    # MESMA TAG (soma das cargas a jusante dele, já calculada acima — inclui
+    # subpainéis, recursivamente) — mesmo que o usuário tenha digitado uma
+    # potência (ela é ignorada; a tela avisa disso). Refeito aqui, a cada
+    # recálculo de painéis do projeto — e não só quando o próprio equipamento
+    # é salvo — porque o agregado de QUALQUER painel pode mudar por uma edição
+    # em outro lugar (ex.: uma carga nova sob "0D-3302-402"), e sem isso o
+    # equipamento "0D-3302-402" ficaria com valores desatualizados.
+    sincronizou = False
+    for e in equipamentos:
+        if e.tipo_carga != schemas.TIPO_CARGA_PAINEL:
+            continue
+        r = resultados.get(e.tag or "")
+        novo = core_equipamentos.calcular_equipamento_tipo_painel(
+            potencia_ativa_kw=r.potencia_instalada_kw if r else 0.0,
+            potencia_reativa_kvar=r.potencia_reativa_instalada_kvar if r else 0.0,
+            tensao_v=e.tensao_v, num_fases=e.num_fases or 3,
+            fator_demanda=e.fator_demanda if e.fator_demanda is not None else 1.0,
+        )
+        e.potencia_nominal_kw = novo.potencia_nominal_kw
+        e.potencia_ativa_calc_kw = novo.potencia_ativa_calc_kw
+        e.potencia_aparente_calc_kva = novo.potencia_aparente_calc_kva
+        e.potencia_reativa_calc_kvar = novo.potencia_reativa_calc_kvar
+        e.corrente_nominal_a = novo.corrente_nominal_a
+        e.potencia_demanda_kw = novo.potencia_demanda_kw
+        e.potencia_demanda_reativa_kvar = novo.potencia_demanda_reativa_kvar
+        sincronizou = True
+
+    if sincronizou:
+        db.flush()
+        resultados = core_paineis.calcular_paineis(*_montar_entradas())
 
     for p in paineis:
         r = resultados.get(p.tag)

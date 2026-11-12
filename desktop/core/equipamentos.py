@@ -73,3 +73,32 @@ def calcular_equipamento(entrada: EntradaEquipamento) -> ResultadoEquipamento:
         potencia_demanda_kw=p_el * fd,
         potencia_demanda_reativa_kvar=q * fd,
     )
+
+
+def calcular_equipamento_tipo_painel(
+    potencia_ativa_kw: float, potencia_reativa_kvar: float,
+    tensao_v: float, num_fases: int, fator_demanda: float = 1.0,
+) -> ResultadoEquipamento:
+    """Requisito 1 (potência opcional para equipamentos tipo "painel/quadro"):
+    quando o equipamento representa um painel/quadro (ex.: um CCM que também
+    aparece como carga direta de um painel a montante), P e Q não vêm de uma
+    potência nominal digitada — vêm da soma das cargas diretamente alimentadas
+    por ele, já agregada por `core/paineis.calcular_paineis()` (que também
+    inclui subpainéis dele, recursivamente). Rendimento e fator de potência
+    não se aplicam aqui: a potência agregada já é elétrica (não há "potência
+    no eixo" de uma carga única para converter). S e In derivam de P/Q; Pd/Qd
+    aplicam o fator de demanda do próprio equipamento (conceito independente
+    do fator de diversidade do painel que ele espelha)."""
+    s = math.sqrt(potencia_ativa_kw ** 2 + potencia_reativa_kvar ** 2)
+    corrente = corrente_por_aparente(s, tensao_v, num_fases)
+    fd = fator_demanda if fator_demanda is not None else 1.0
+
+    return ResultadoEquipamento(
+        potencia_nominal_kw=None,
+        potencia_ativa_calc_kw=potencia_ativa_kw,
+        potencia_aparente_calc_kva=s,
+        potencia_reativa_calc_kvar=potencia_reativa_kvar,
+        corrente_nominal_a=corrente,
+        potencia_demanda_kw=potencia_ativa_kw * fd,
+        potencia_demanda_reativa_kvar=potencia_reativa_kvar * fd,
+    )

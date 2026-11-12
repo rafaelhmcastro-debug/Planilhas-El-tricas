@@ -59,6 +59,39 @@ class TestEquipamentoCasoResolvido(unittest.TestCase):
         self.assertIsNone(r.corrente_nominal_a)
 
 
+class TestEquipamentoTipoPainel(unittest.TestCase):
+    """Requisito 1 (potência opcional para equipamentos tipo "painel/quadro"):
+    P/Q vêm de uma soma já agregada (não de uma potência nominal digitada) —
+    P=80 kW, Q=40 kvar, 380 V trifásico, FD=0,8:
+    S = √(80² + 40²) = 89,442719 kVA
+    I = S×1000/(√3×380) = 135,928871 A
+    Pd = P×FD = 64 kW ; Qd = Q×FD = 32 kvar
+    """
+
+    def test_deriva_s_e_in_da_soma_agregada_sem_rendimento_nem_cosfi(self):
+        r = core_equip.calcular_equipamento_tipo_painel(
+            potencia_ativa_kw=80.0, potencia_reativa_kvar=40.0,
+            tensao_v=380, num_fases=3, fator_demanda=0.8,
+        )
+        s_esperado = math.sqrt(80.0 ** 2 + 40.0 ** 2)
+        self.assertIsNone(r.potencia_nominal_kw)
+        self.assertAlmostEqual(r.potencia_ativa_calc_kw, 80.0, places=6)
+        self.assertAlmostEqual(r.potencia_reativa_calc_kvar, 40.0, places=6)
+        self.assertAlmostEqual(r.potencia_aparente_calc_kva, s_esperado, places=6)
+        self.assertAlmostEqual(r.corrente_nominal_a, corrente_por_aparente(s_esperado, 380, 3), places=6)
+        self.assertAlmostEqual(r.potencia_demanda_kw, 64.0, places=6)
+        self.assertAlmostEqual(r.potencia_demanda_reativa_kvar, 32.0, places=6)
+
+    def test_sem_cargas_a_jusante_resulta_em_zero_nao_em_erro(self):
+        # S=0 → `corrente_por_aparente` devolve None (mesma convenção do
+        # resto do núcleo para "não há corrente a calcular", não 0.0).
+        r = core_equip.calcular_equipamento_tipo_painel(
+            potencia_ativa_kw=0.0, potencia_reativa_kvar=0.0, tensao_v=380, num_fases=3,
+        )
+        self.assertEqual(r.potencia_ativa_calc_kw, 0.0)
+        self.assertIsNone(r.corrente_nominal_a)
+
+
 class TestCorrentePorAparente(unittest.TestCase):
     def test_trifasico(self):
         # I = S×1000/(√3×V) — 100 kVA a 380 V trifásico
