@@ -41,6 +41,14 @@ a = Analysis(
         "uvicorn.loops.auto",
         "uvicorn.loops.asyncio",
         "email_validator",
+        # app/migrations/env.py é carregado dinamicamente pelo Alembic
+        # (lê o arquivo do disco e executa, não é um "import" normal) — a
+        # análise estática do PyInstaller não enxerga os imports de DENTRO
+        # dele. Hoje esse módulo acaba entrando "de carona" via outras
+        # dependências do app, mas isso não é garantido (achado testando um
+        # build mínimo isolado, só com o necessário pra rodar migração) —
+        # declarado explicitamente para não depender de sorte.
+        "logging.config",
     ],
     hookspath=[],
     hooksconfig={},

@@ -107,6 +107,15 @@ def main() -> None:
         _aguardar_servidor(porta, thread, erro)
         _instalar_log_rotativo(pasta_dados)
 
+        # Requisito 3 (download de relatórios): o pywebview CANCELA qualquer
+        # download silenciosamente por padrão (ALLOW_DOWNLOADS=False em ambos
+        # os backends, WebView2 e GTK — confirmado lendo
+        # webview/platforms/edgechromium.py e gtk.py) — sem essa linha,
+        # clicar em "Baixar Excel"/"Baixar Word"/backup.zip não dá erro
+        # nenhum, simplesmente não faz nada. Precisa ser setado antes de
+        # create_window/start.
+        webview.settings["ALLOW_DOWNLOADS"] = True
+
         webview.create_window(
             "Calc 54", f"http://127.0.0.1:{porta}/", js_api=Bridge(),
             width=1280, height=800, min_size=(900, 600),
