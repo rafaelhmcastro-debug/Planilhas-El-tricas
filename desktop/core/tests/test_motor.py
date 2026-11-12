@@ -16,6 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from core import equipamentos as core_equip  # noqa: E402
+from core import paineis as core_paineis  # noqa: E402
 from core import tabelas_normativas as core_tab  # noqa: E402
 from core.eletrica import corrente_por_aparente  # noqa: E402
 
@@ -90,6 +91,59 @@ class TestEquipamentoTipoPainel(unittest.TestCase):
         )
         self.assertEqual(r.potencia_ativa_calc_kw, 0.0)
         self.assertIsNone(r.corrente_nominal_a)
+
+
+class TestPaineisSemContagemDuplicada(unittest.TestCase):
+    """Requisito 2 (cargas duplicadas): reproduz a estrutura do bug relatado —
+    um painel TOP alimentado por 3 cargas diretas, sendo que uma delas ("SUB")
+    tem a MESMA tag de um painel cadastrado a jusante do próprio TOP (porque
+    "SUB" também tem cargas próprias por baixo dele). Antes da correção,
+    `calcular_paineis` somava a contribuição de "SUB" duas vezes no TOP: uma
+    como carga direta (equip_por_painel) e outra como painel filho (filhos) —
+    exatamente o padrão do CCM-TOP relatado (loads aparecendo em dobro)."""
+
+    def test_carga_que_e_tambem_painel_filho_nao_e_somada_duas_vezes(self):
+        paineis = [
+            core_paineis.EntradaPainel(tag="TOP", painel_alimentador_tag="", fator_diversidade=1.0),
+            core_paineis.EntradaPainel(tag="SUB", painel_alimentador_tag="TOP", fator_diversidade=1.0),
+        ]
+        equipamentos = [
+            core_paineis.EntradaEquipamentoPainel(
+                tag="A", painel_transformador_tag="TOP",
+                potencia_ativa_calc_kw=50.0, potencia_reativa_calc_kvar=20.0,
+                potencia_demanda_kw=50.0, potencia_demanda_reativa_kvar=20.0, corrente_nominal_a=10.0,
+            ),
+            # "SUB" aparece aqui como carga direta de TOP (já sincronizada com
+            # o agregado do painel "SUB" — ver Requisito 1) e TAMBÉM como
+            # painel filho de TOP, abaixo — é exatamente o caso que não pode
+            # ser somado duas vezes.
+            core_paineis.EntradaEquipamentoPainel(
+                tag="SUB", painel_transformador_tag="TOP",
+                potencia_ativa_calc_kw=9.2, potencia_reativa_calc_kvar=5.0,
+                potencia_demanda_kw=9.2, potencia_demanda_reativa_kvar=5.0, corrente_nominal_a=14.0,
+            ),
+            core_paineis.EntradaEquipamentoPainel(
+                tag="C", painel_transformador_tag="TOP",
+                potencia_ativa_calc_kw=30.0, potencia_reativa_calc_kvar=10.0,
+                potencia_demanda_kw=30.0, potencia_demanda_reativa_kvar=10.0, corrente_nominal_a=6.0,
+            ),
+            core_paineis.EntradaEquipamentoPainel(
+                tag="SUB-CARGA1", painel_transformador_tag="SUB",
+                potencia_ativa_calc_kw=9.2, potencia_reativa_calc_kvar=5.0,
+                potencia_demanda_kw=9.2, potencia_demanda_reativa_kvar=5.0, corrente_nominal_a=14.0,
+            ),
+        ]
+        resultados = core_paineis.calcular_paineis(paineis, equipamentos)
+
+        # SUB: só a carga própria dele (SUB-CARGA1) — nada do que TOP recebe.
+        self.assertAlmostEqual(resultados["SUB"].potencia_instalada_kw, 9.2, places=6)
+        self.assertAlmostEqual(resultados["SUB"].potencia_reativa_instalada_kvar, 5.0, places=6)
+
+        # TOP: A + C + (agregado de SUB) = 50 + 30 + 9,2 = 89,2 — NÃO
+        # 50 + 9,2 + 30 + 9,2 = 98,4, que seria o resultado com o bug (carga
+        # "SUB" contada como direta E como contribuição do painel filho).
+        self.assertAlmostEqual(resultados["TOP"].potencia_instalada_kw, 89.2, places=6)
+        self.assertAlmostEqual(resultados["TOP"].potencia_reativa_instalada_kvar, 35.0, places=6)
 
 
 class TestCorrentePorAparente(unittest.TestCase):

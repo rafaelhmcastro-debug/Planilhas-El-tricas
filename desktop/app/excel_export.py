@@ -180,6 +180,13 @@ def exportar_cargas_demanda(db: Session, projeto: models.Projeto) -> bytes:
         ind = "    " * nivel
         escreve([nivel, f"{ind}{p.tag}", f"Painel {p.tipo}", p.tipo, p.tensao_v, f"{p.num_fases or 3}F", None, None, None,
                  None, None, None, None, None, p.painel_alimentador_tag or "TOP"], fill=PAINEL_FILL, bold=True)
+        # Requisito 2 (cargas duplicadas): um painel filho pode ter a MESMA
+        # tag de um equipamento alimentado diretamente por este mesmo pai
+        # (ex.: "0D-3302-402" é equipamento e painel a jusante dele mesmo) —
+        # a linha "Contribuição do painel X" abaixo é só um espelho da linha
+        # direta desse equipamento; mostrar as duas infla a leitura da
+        # planilha (mesmo bug relatado na tela "Cargas e Demanda").
+        tags_diretas = {e.tag for e in por_painel.get(p.tag, [])}
         sp = sq = spd = sqd = si = 0.0
         for e in por_painel.get(p.tag, []):
             escreve([nivel + 1, f"{ind}    {e.tag}", e.descricao, e.tipo_carga, e.tensao_v,
@@ -199,6 +206,8 @@ def exportar_cargas_demanda(db: Session, projeto: models.Projeto) -> bytes:
             if f.tag in visitados:
                 continue
             painel_bloco(f, nivel + 1, visitados | {f.tag})
+            if f.tag in tags_diretas:
+                continue
             escreve([nivel + 1, f"{ind}    Contribuição do painel {f.tag} em {p.tag}", None, None, None, None,
                      _r(f.potencia_instalada_kw), _r(f.potencia_reativa_instalada_kvar), f.fator_diversidade,
                      _r(f.demanda_total_kw), _r(f.demanda_reativa_kvar), _r(f.demanda_aparente_kva),

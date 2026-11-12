@@ -44,6 +44,16 @@ const TelaCargas = (() => {
     const p = no.painel;
     const outros = paineisCache.filter((x) => x.id !== p.id);
     const ehTop = !p.painel_alimentador_tag;
+    // Requisito 2 (cargas duplicadas): um painel filho pode ter a MESMA tag de
+    // um equipamento alimentado diretamente por este mesmo painel (ex.: a
+    // carga "0D-3302-402" é, ao mesmo tempo, um equipamento aqui e um painel
+    // a jusante dele mesmo, com cargas próprias). A linha "a jusante" desse
+    // caso é só um espelho da linha direta — mostrar as duas infla a leitura
+    // visual da tabela (bug reportado: carga aparecendo duas vezes). O
+    // TOTAL do painel já não soma essa carga duas vezes (core/paineis.py);
+    // aqui é só a lista de linhas que evita repetir a mesma carga.
+    const tagsDiretas = new Set(no.equipamentos.map((e) => e.tag));
+    const filhosParaListar = no.filhos.filter((f) => !tagsDiretas.has(f.painel.tag));
     return `
       <div class="toolbar">
         <h3 style="margin:0">${nivel > 0 ? "↳ " : ""}${Util.esc(p.tag)} ${ehTop ? '<span class="badge info">TOP</span>' : ""} <span class="badge info">${Util.esc(p.tipo)}</span></h3>
@@ -83,7 +93,7 @@ const TelaCargas = (() => {
               <td class="num">${Util.fmt(e.potencia_ativa_calc_kw)}</td><td class="num">${Util.fmt(e.potencia_reativa_calc_kvar)}</td>
               <td class="num">${Util.fmt(e.potencia_aparente_calc_kva)}</td><td class="num">${Util.fmt(e.corrente_nominal_a)}</td>
               <td class="num">${Util.fmt(e.fator_demanda)}</td><td class="num">${Util.fmt(e.potencia_demanda_kw)}</td></tr>`).join("")}
-            ${no.filhos.map((f) => `<tr class="subtotal"><td>↳ ${Util.esc(f.painel.tag)}</td><td>painel a jusante (${Util.esc(f.painel.tipo)})</td><td>${f.painel.num_fases || 3}F</td>
+            ${filhosParaListar.map((f) => `<tr class="subtotal"><td>↳ ${Util.esc(f.painel.tag)}</td><td>painel a jusante (${Util.esc(f.painel.tipo)})</td><td>${f.painel.num_fases || 3}F</td>
               <td class="num">${Util.fmt(f.painel.potencia_instalada_kw)}</td><td class="num">${Util.fmt(f.painel.potencia_reativa_instalada_kvar)}</td>
               <td class="num">${Util.fmt(f.painel.demanda_aparente_kva)}</td><td class="num">${Util.fmt(f.painel.corrente_total_a)}</td>
               <td class="num">${Util.fmt(f.painel.fator_diversidade)}</td><td class="num">${Util.fmt(f.painel.demanda_total_kw)}</td></tr>`).join("")}

@@ -33,6 +33,7 @@ class EntradaPainel:
 class EntradaEquipamentoPainel:
     """Só os campos do equipamento que entram na soma do painel."""
     painel_transformador_tag: str
+    tag: str = ""
     potencia_ativa_calc_kw: float | None = None
     potencia_reativa_calc_kvar: float | None = None
     potencia_demanda_kw: float | None = None
@@ -95,8 +96,23 @@ def calcular_paineis(
             return ResultadoPainel(tag=p.tag, ciclo_detectado=True)
         em_progresso.add(p.tag)
 
+        # Requisito 2 (cargas duplicadas): um equipamento tipo "painel/quadro"
+        # pode ter a MESMA tag de um PainelTransformador cadastrado como filho
+        # deste mesmo pai (ex.: a carga "0D-3302-402" é, ao mesmo tempo, um
+        # equipamento com painel_transformador_tag="CCM-TOP" E um painel com
+        # painel_alimentador_tag="CCM-TOP", para poder ter cargas próprias a
+        # jusante dele). Sem este filtro, a contribuição dessa carga entrava
+        # DUAS vezes na soma do pai: uma via equip_por_painel (carga direta) e
+        # outra via filhos (agregado recursivo do painel) — bug reportado
+        # (CCM-TOP somando ~190,90 kW em vez de ~95 kW). A agregação do painel
+        # filho já é a fonte única e correta (inclui, inclusive, os
+        # subpainéis dele) — a carga direta correspondente é descartada aqui.
+        tags_filhos_do_pai = {f.tag for f in filhos.get(p.tag, [])}
+
         p_inst = q_inst = pd = qd = i_inst = 0.0
         for e in equip_por_painel.get(p.tag, []):
+            if e.tag and e.tag in tags_filhos_do_pai:
+                continue
             p_inst += e.potencia_ativa_calc_kw or 0
             q_inst += e.potencia_reativa_calc_kvar or 0
             pd += e.potencia_demanda_kw or 0

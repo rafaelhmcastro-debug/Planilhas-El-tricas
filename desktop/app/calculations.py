@@ -114,6 +114,7 @@ def recalcular_paineis_projeto(db: Session, projeto_id: int):
         ]
         entradas_equipamentos = [
             core_paineis.EntradaEquipamentoPainel(
+                tag=e.tag or "",
                 painel_transformador_tag=e.painel_transformador_tag or "",
                 potencia_ativa_calc_kw=e.potencia_ativa_calc_kw,
                 potencia_reativa_calc_kvar=e.potencia_reativa_calc_kvar,
