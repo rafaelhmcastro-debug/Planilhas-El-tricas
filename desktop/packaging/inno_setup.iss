@@ -35,6 +35,7 @@ Compression=lzma2
 SolidCompression=yes
 WizardStyle=modern
 UninstallDisplayIcon={app}\{#AppExeName}
+SetupIconFile=calc54.ico
 ; Unicode nativo do Inno Setup 6+ — caminho com espaço/acento (requisito não
 ; funcional) funciona sem configuração extra.
 

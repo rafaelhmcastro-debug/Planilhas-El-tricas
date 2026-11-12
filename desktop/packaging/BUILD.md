@@ -69,6 +69,15 @@ abrir e o app deve funcionar normalmente. Se não abrir, **não** compile o
 instalador — volte e investigue o log em
 `%LOCALAPPDATA%\Calc 54\logs\calc54.log` primeiro.
 
+**Conferir o ícone do .exe:** o Windows Explorer cacheia ícones por
+caminho/nome de arquivo — depois de um rebuild, o ícone antigo pode continuar
+aparecendo mesmo com o `.ico` certo embutido no `.exe` novo. Se isso
+acontecer, renomeie o `.exe` uma vez (ou mova a pasta `dist\Calc 54` para um
+caminho novo) e veja se o ícone novo aparece; ou limpe o cache de ícones do
+Explorer (`ie4uinit.exe -show` ou reiniciar o `explorer.exe`) antes de
+conferir. O ícone usado é `packaging\calc54.ico` (gerado a partir do logo já
+usado pelo próprio app em `static\img\logo-planilhas.svg`).
+
 ## 4. Baixar o WebView2 Runtime (Standalone Installer)
 
 Siga `packaging/redist/README.md` — baixe o arquivo e salve como

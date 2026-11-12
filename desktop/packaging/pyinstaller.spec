@@ -75,7 +75,14 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=None,  # TODO Fase 5: ícone próprio do Calc 54, se/quando o engenheiro fornecer um
+    # Requisito 4 (ícone do .exe): reaproveita o logo já usado pelo próprio
+    # app (favicon/cabeçalho em static/img/logo-planilhas.svg — ver
+    # static/index.html), convertido para .ico multi-resolução
+    # (16/32/48/256 px). O título da janela (WebView2) e a barra de tarefas
+    # no Windows herdam o ícone embutido no .exe automaticamente — pywebview
+    # 6.2.1 não tem um parâmetro de ícone próprio em `create_window()` para
+    # sobrepor isso (conferido via `inspect.signature`).
+    icon=str(DESKTOP_DIR / "packaging" / "calc54.ico"),
 )
 
 coll = COLLECT(
